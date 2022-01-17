@@ -1,9 +1,9 @@
 from sqlalchemy import Column, Integer, String
 
-from model import modelbdd
+from model import ModelBdd
 
 
-class Pdf(modelbdd.Base):
+class Pdf(ModelBdd.Base):
     __tablename__ = "pdftext"
     id = Column("id", String, primary_key=True)
     name = Column("name", String)

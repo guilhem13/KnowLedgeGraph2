@@ -6,10 +6,10 @@ from flask import Flask, Response, jsonify, render_template, request
 from werkzeug.utils import secure_filename
 
 from __init__ import app
-from model.extractorfrompdf import Extractor
-from model.modelbdd import Session_creator
-from model.notificationmodel import Notification
-from model.pdfmodel import Pdf
+from model.ExtractorFromPdf import Extractor
+from model.ModelBdd import Session_creator
+from model.NotificationModel import Notification
+from model.PdfModel import Pdf
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "basededonneepdf.db")
@@ -20,8 +20,8 @@ app.config["UPLOAD_FOLDER"] = "."
 app.secret_key = "super secret key"
 app.config["SESSION_TYPE"] = "filesystem"
 
-app.config["CELERY_BROKER_URL"] = "amqp://guest:guest@localhost/test"
-app.config["CELERY_RESULT_BACKEND"] = "amqp://guest:guest@localhost/test"#'rpc://'
+app.config["CELERY_BROKER_URL"] = "amqp://username:siocbienG@localhost/"#amqp://guest:guest@localhost/test"
+app.config["CELERY_RESULT_BACKEND"] = "rpc://"#"amqp://guest:guest@localhost/test"#'rpc://'
 celery = Celery(
     app.name,
     broker=app.config["CELERY_BROKER_URL"],
