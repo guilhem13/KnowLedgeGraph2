@@ -2,14 +2,14 @@ import json
 import os
 
 from celery import Celery
-from flask import Flask, Response, jsonify, render_template, request
+from flask import  Response, jsonify, render_template, request # ya avait Flask
 from werkzeug.utils import secure_filename
 
 from __init__ import app
-from model.ExtractorFromPdf import Extractor
-from model.ModelBdd import Session_creator
-from model.NotificationModel import Notification
-from model.PdfModel import Pdf
+from model.extractorfrompdf import Extractor
+from model.modelbdd import session_creator
+from model.notificationmodel import Notification
+from model.pdfmodel import Pdf
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(basedir, "basededonneepdf.db")
@@ -33,7 +33,7 @@ celery = Celery(
 )
 
 
-session = Session_creator()
+session = session_creator()
 
 
 def allowed_file(filename):
