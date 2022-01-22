@@ -1,17 +1,18 @@
 # Extract text from pdf 
 
-It's a simple REST API which parse pdf file in order to extract text from it 
+It's a simple REST API which parses pdf files in order to extract text from it.
+The text file are stocked in a database
 
 ***
 
 ### Features included 
 
- - Feature 1 : Upload pdf and save its data into a database
-        Endpoint : /documents
- - Feature 2 : Get the metadata from this uploading
-        Endpoint : /documents/{id}
- - Feature 3 : Request the text of files uploaded by id
-        Endpoint : /text/{id}.txt
+ * - Feature 1 : Upload pdf and save its data into a database
+      * Endpoint : /documents
+ * - Feature 2 : Get the metadata of an uploading by its id  
+      * Endpoint : /documents/{id}
+ * - Feature 3 : Request the text of files uploaded by id
+      * Endpoint : /text/{id}.txt
 
 ***
 ## Installation 
