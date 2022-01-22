@@ -56,7 +56,9 @@ class Extractor:
                         else 0
                     )
                     if encoding_creation_date != 0:
-                        temp = doc.info[0]["creationdate"].decode(encoding_creation_date)
+                        temp = doc.info[0]["creationdate"].decode(
+                            encoding_creation_date
+                        )
                         date = datetime.strptime(
                             temp.replace("'", ""), "D:%Y%m%d%H%M%S%z"
                         )
@@ -134,7 +136,9 @@ class Extractor:
                 else:
                     self.subject = None
                 self.number_of_pages = resolve1(doc.catalog["Pages"])["Count"]
-                for page in PDFPage.get_pages(file, caching=True, check_extractable=True):
+                for page in PDFPage.get_pages(
+                    file, caching=True, check_extractable=True
+                ):
                     page_interpreter.process_page(page)
 
                 text = fake_file_handle.getvalue()

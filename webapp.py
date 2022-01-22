@@ -20,8 +20,12 @@ app.config["UPLOAD_FOLDER"] = "."
 app.secret_key = "super secret key"
 app.config["SESSION_TYPE"] = "filesystem"
 
-app.config["CELERY_BROKER_URL"] = "amqp://username:siocbienG@localhost/"#amqp://guest:guest@localhost/test"
-app.config["CELERY_RESULT_BACKEND"] = "rpc://"#"amqp://guest:guest@localhost/test"#'rpc://'
+app.config[
+    "CELERY_BROKER_URL"
+] = "amqp://username:siocbienG@localhost/"  # amqp://guest:guest@localhost/test"
+app.config[
+    "CELERY_RESULT_BACKEND"
+] = "rpc://"  # "amqp://guest:guest@localhost/test"#'rpc://'
 celery = Celery(
     app.name,
     broker=app.config["CELERY_BROKER_URL"],
@@ -102,7 +106,9 @@ def InjestPdf(self, file):
 def taskstatus(id):
     task = InjestPdf.AsyncResult(id)
     if task.state == "PENDING":
-        if session.query(Pdf).filter(Pdf.id == id).scalar() is not None: #in Case of an other celery session
+        if (
+            session.query(Pdf).filter(Pdf.id == id).scalar() is not None
+        ):  # in Case of an other celery session
             status = session.query(Pdf).filter(Pdf.id == id).one()
             response = {
                 "id": id,
@@ -117,7 +123,7 @@ def taskstatus(id):
                 "keywords": str(status.keywords),
             }
             return response
-        else:  
+        else:
             response = {"state": "pending"}
 
     elif task.state == "FAILURE":

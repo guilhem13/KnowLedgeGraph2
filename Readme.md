@@ -7,15 +7,20 @@ The text file are stocked in a database
 
 ### Features included 
 
- * - Feature 1 : Upload pdf and save its data into a database
+ *  Feature 1 :  Upload pdf. Save its data into a database and return Id 's document
       * Endpoint : /documents
- * - Feature 2 : Get the metadata of an uploading by its id  
+      * Type : POST
+ *  Feature 2 : Get the metadata of an uploading file by its id  
       * Endpoint : /documents/{id}
- * - Feature 3 : Request the text of files uploaded by id
+      * Type : GET
+ *  Feature 3 : Request the text of files uploaded by id
       * Endpoint : /text/{id}.txt
+      * Type : Get
 
 ***
 ## Installation 
+
+Code had been made with Python 3.8.10
 
 Create a virtualenv and activate it:
 
@@ -29,6 +34,27 @@ Install Packages
 pip install -r requirements.txt
 ```
 ***
+Install Rabbitmq 
+
+```shell
+docker run -d --name some-rabbit -p 5672:5672 -p 5673:5673 -p 15672:15672 rabbitmq:3-management
+```
+* Go to http://localhost:15672/ with username : guest , password : guest 
+* Go to Admin bar and add a user with username : username , password : siocbienG. 
+* Once you have created your user. Click on the user you have created ( inside the table) and click on all "set permission" and "set topic permission" bar.  
+
+***
+Check if you rabbbitmq container is running with 
+
+```shell
+sudo docker ps 
+```
+if your container is not running 
+
+```shell
+sudo docker start  {your container id}
+```
+
 ## Run 
 
 In production 
@@ -64,6 +90,7 @@ Open http://localhost:5000/documents in a browser to upload your pdf
 ```shell
 curl -F 'file=@document.pdf' localhost:5000/documents
 ```
+***
 #### Feature 2
 
 ##### On browser
@@ -76,6 +103,7 @@ Open http://localhost:5000/documents in a browser to upload your pdf
 ```shell
 curl http://127.0.0.1:5000/documents/{id}
 ```
+***
 #### Feature 3 
 
 ##### On browser
