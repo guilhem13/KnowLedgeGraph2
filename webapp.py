@@ -53,7 +53,7 @@ def upload_file():
             file = request.files["file"]
             if file.filename == "":
                 return Response(
-                    Notification("2", "No selected file").Message(),
+                    Notification("400", "No selected file").Message(),
                     status=400,
                     mimetype="application/json",
                 )
@@ -105,6 +105,8 @@ def InjestPdf(self, file):
 @app.route("/documents/<id>")
 def taskstatus(id):
     task = InjestPdf.AsyncResult(id)
+    #result = task.get(timeout=0.1)
+    #print("****"+result)
     if task.state == "PENDING":
         if (
             session.query(Pdf).filter(Pdf.id == id).scalar() is not None
@@ -128,7 +130,7 @@ def taskstatus(id):
 
     elif task.state == "FAILURE":
         response = {
-            "state": "completed",
+            "state": "not completed",
         }
         response["result"] = task.info
     else:
@@ -165,8 +167,15 @@ def display_text(id):
 
 @app.errorhandler(500)
 def internal_server_error(error):
-    print(error)
     return jsonify({"error": ":/"}), 500
+
+@app.errorhandler(404)
+def internal_server_error(error):
+    return Response(
+            Notification("404", "Sorry wrong endpoint.This endpoint doens't exist").Message(),
+            status=404,
+            mimetype="application/json",
+        )
 
 
 session.close()
