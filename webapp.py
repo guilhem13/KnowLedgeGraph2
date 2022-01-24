@@ -126,7 +126,7 @@ def taskstatus(id):
             }
             return response
         else:
-            response = {"state": "pending"}
+            response = {"state": "Pending", "message":"Task is waiting for execution or unknown id. Any task id that’s not known is implied to be in the pending state."}
 
     elif task.state == "FAILURE":
         response = {
@@ -172,7 +172,7 @@ def internal_server_error(error):
 @app.errorhandler(404)
 def internal_server_error(error):
     return Response(
-            Notification("404", "Sorry wrong endpoint.This endpoint doens't exist").Message(),
+            Notification("404", "Sorry wrong endpoint.This endpoint doens't exist. Check your endpoint or your id arguments").Message(),
             status=404,
             mimetype="application/json",
         )

@@ -6,6 +6,7 @@ from io import BytesIO
 # from webapp import app, InjestPdf
 import pytest
 
+
 lib_path = os.path.abspath("./")
 print(lib_path)
 
@@ -43,7 +44,7 @@ def upload_file(test_client):
 
 def test_tasks_Views(test_client, create_app):
 
-    files = {"file": open("C:/Users/Guilhem/Desktop/Test.pdf", "rb")}
+    files = {"file": open(lib_path+"/tests/functional/Test.pdf", "rb")}
     r = test_client.post("/documents", data=files)
     content = json.loads(r.data.decode())
     task_id = content["task_id"]
@@ -54,16 +55,21 @@ def test_tasks_Views(test_client, create_app):
     client = create_app.test_client()
     resp = client.get("/documents/" + task_id)
     content2 = json.loads(resp.data.decode())
-    while content2["state"] == "pending":
-        resp = test_client.get(f"documents/{task_id}")
-        content2 = json.loads(resp.data.decode())
+    while content2["state"] == "Pending":
+       resp = test_client.get(f"documents/{task_id}")
+       content2 = json.loads(resp.data.decode())
+    #time.sleep(5)
     content2 = json.loads(resp.data.decode())
-    assert content2["state"] == "SUCCESS"
+    assert content2["state"] == "SUCCESS" #"Pending"#"SUCCESS"
     assert resp.status_code == 200
+
+    resp = client.get("/documents/fakeid")
+    content_fake = json.loads(resp.data.decode())
+    assert resp.status_code == 404
 
     ##############
     client2 = create_app.test_client()
-    resp = client2.get("/text/" + task_id)
+    resp = client2.get("/text/" + str(task_id)+".txt")
     content3 = resp.data
 
     assert resp.status_code == 200

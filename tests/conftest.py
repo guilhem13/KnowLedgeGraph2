@@ -7,7 +7,7 @@ lib_path = os.path.abspath("./")
 sys.path.append(lib_path)
 
 from model import pdfmodel
-from model.modelbdd import Session_creator
+from model.modelbdd import session_creator
 from webapp import app
 
 
@@ -46,7 +46,7 @@ def test_client():
 @pytest.fixture(scope="module")
 def init_database(test_client):
     # Create the session and add to db
-    session = Session_creator()
+    session = session_creator()
     pdf = pdf = pdfmodel.Pdf(
         "1",
         "pdftest",

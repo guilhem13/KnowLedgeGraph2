@@ -25,7 +25,7 @@ def test_Pdf():
     assert pdf.name == "pdftest"
     assert pdf.data == "data"
     assert pdf.title == "titre du pdf"
-    assert pdf.creationDate == "08/10/1998"
+    assert pdf.creationdate == "08/10/1998"
     assert pdf.author == "Guilhem Maillebuau"
     assert pdf.creator == "pierre"
     assert pdf.producer == "Léon borrelly"
