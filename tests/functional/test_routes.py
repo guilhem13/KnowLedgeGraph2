@@ -65,7 +65,7 @@ def test_tasks_Views(test_client, create_app):
 
     resp = client.get("/documents/fakeid")
     content_fake = json.loads(resp.data.decode())
-    assert resp.status_code == 404
+    assert content_fake["state"] == "Pending"
 
     ##############
     client2 = create_app.test_client()
@@ -74,3 +74,7 @@ def test_tasks_Views(test_client, create_app):
 
     assert resp.status_code == 200
     assert content3 is not None
+
+    resp = client2.get("/text/fakeid.txt")
+    #content4 = resp.data
+    assert resp.status_code == 400
