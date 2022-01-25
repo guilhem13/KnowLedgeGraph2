@@ -65,7 +65,13 @@ python3 webapp.py
 In developement 
 
 ```shell
-********** TO DO *************
+export FLASK_APP=webapp.py
+export FLASK_ENV=development
+flask run
+```
+if flask run doesn't work make : 
+```shell
+python -m flask run
 ```
 
 ***

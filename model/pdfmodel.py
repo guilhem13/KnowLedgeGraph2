@@ -16,6 +16,8 @@ class Pdf(modelbdd.Base):
     subject = Column("subject", String(255))
     keywords = Column("keywords", String(255))
     number_of_pages = Column("number_of_pages", Integer)
+    title_file = Column("title_file", String(255)) 
+    timestamp_uploading = Column("title_file", String(255)) 
 
     def __init__(
         self,
@@ -29,6 +31,8 @@ class Pdf(modelbdd.Base):
         subject,
         keywords,
         number_of_pages,
+        title_file, 
+        timestamp_uploading,
     ):
         self.name = name
         self.data = data
@@ -40,3 +44,5 @@ class Pdf(modelbdd.Base):
         self.subject = subject
         self.keywords = keywords
         self.number_of_pages = number_of_pages
+        self.title_file = title_file
+        self.timestamp_uploading = timestamp_uploading

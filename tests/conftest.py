@@ -14,7 +14,7 @@ from webapp import app
 @pytest.fixture(scope="module")
 def new_pdf():
     pdf = pdfmodel.Pdf(
-        "1",
+        "10",
         "pdftest",
         "data",
         "titre du pdf",
@@ -44,7 +44,7 @@ def test_client():
 
 
 @pytest.fixture(scope="module")
-def init_database(test_client):
+def init_database():
     # Create the session and add to db
     session = session_creator()
     pdf = pdf = pdfmodel.Pdf(
@@ -59,8 +59,9 @@ def init_database(test_client):
         "climate change",
         "nature",
         23,
+        "monfichier.pdf",
     )
     session.add(pdf)
     session.commit()
     session.close()
-    yield
+    yield session

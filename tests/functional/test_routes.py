@@ -44,6 +44,8 @@ def upload_file(test_client):
 
 def test_tasks_Views(test_client, create_app):
 
+    # test return when uploading 
+
     files = {"file": open(lib_path+"/tests/functional/Test.pdf", "rb")}
     r = test_client.post("/documents", data=files)
     content = json.loads(r.data.decode())
@@ -51,30 +53,32 @@ def test_tasks_Views(test_client, create_app):
     assert r.status_code == 202
     assert task_id
 
-    #############
+    # test metadata content from uploading 
+
     client = create_app.test_client()
     resp = client.get("/documents/" + task_id)
     content2 = json.loads(resp.data.decode())
     while content2["state"] == "Pending":
        resp = test_client.get(f"documents/{task_id}")
        content2 = json.loads(resp.data.decode())
-    #time.sleep(5)
+    
+    ## test id metadata content 
     content2 = json.loads(resp.data.decode())
-    assert content2["state"] == "SUCCESS" #"Pending"#"SUCCESS"
+    assert content2["state"] == "SUCCESS"
     assert resp.status_code == 200
 
+    ## test with fake id 
     resp = client.get("/documents/fakeid")
     content_fake = json.loads(resp.data.decode())
     assert content_fake["state"] == "Pending"
 
-    ##############
+    ## test id content 
     client2 = create_app.test_client()
     resp = client2.get("/text/" + str(task_id)+".txt")
     content3 = resp.data
-
     assert resp.status_code == 200
     assert content3 is not None
 
+    ## test id content with fake id 
     resp = client2.get("/text/fakeid.txt")
-    #content4 = resp.data
     assert resp.status_code == 400

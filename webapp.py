@@ -92,6 +92,8 @@ def InjestPdf(self, file):
             getattr(PdfProcessed, "subject"),
             getattr(PdfProcessed, "keywords"),
             getattr(PdfProcessed, "number_of_pages"),
+            getattr(PdfProcessed, "title_file"), 
+            getattr(PdfProcessed, "timestamp_uploading"),
         )
         setattr(pdf, "id", self.request.id)
         session.add(pdf)
@@ -115,7 +117,7 @@ def taskstatus(id):
             response = {
                 "id": id,
                 "state": task.state,
-                "uploaded_date": str(status.creationdate),
+                "creation_date_of_file": str(status.creationdate),
                 "author": str(status.author),
                 "creator": str(status.creator),
                 "producer": str(status.producer),
@@ -123,6 +125,8 @@ def taskstatus(id):
                 "title": str(status.title),
                 "number_of_pages": str(status.number_of_pages),
                 "keywords": str(status.keywords),
+                "title_file":str(status.title_file),
+                "timestamp_uploading" :str(status.timestamp_uploading)
             }
             return response
         else:
@@ -140,7 +144,7 @@ def taskstatus(id):
             response = {
                 "id": id,
                 "state": task.state,
-                "uploaded_date": str(status.creationdate),
+                "creation_date_of_file": str(status.creationdate),
                 "author": str(status.author),
                 "creator": str(status.creator),
                 "producer": str(status.producer),
@@ -148,6 +152,8 @@ def taskstatus(id):
                 "title": str(status.title),
                 "number_of_pages": str(status.number_of_pages),
                 "keywords": str(status.keywords),
+                "title_file":str(status.title_file),
+                "timestamp_uploading" :str(status.timestamp_uploading)
             }
     return jsonify(response)
 

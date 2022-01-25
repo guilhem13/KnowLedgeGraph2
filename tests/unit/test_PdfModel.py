@@ -21,6 +21,8 @@ def test_Pdf():
         "climate change",
         "nature",
         23,
+        "monfichier.pdf",
+        "1643138913.3611"
     )
     assert pdf.name == "pdftest"
     assert pdf.data == "data"
@@ -32,3 +34,5 @@ def test_Pdf():
     assert pdf.subject == "climate change"
     assert pdf.keywords == "nature"
     assert pdf.number_of_pages == 23
+    assert pdf.title_file == "monfichier.pdf"
+    assert pdf.timestamp_uploading == "1643138913.3611"

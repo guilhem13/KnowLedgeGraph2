@@ -1,5 +1,5 @@
 import io
-from datetime import datetime
+import datetime
 
 import chardet
 from pdfminer.converter import TextConverter
@@ -22,6 +22,8 @@ class Extractor:
     title = None
     number_of_pages = None
     extracted = False
+    title_file = None 
+    timestamp_uploading =None
 
     def __init__(self, path):
         self.pdf_path = path
@@ -30,6 +32,8 @@ class Extractor:
         fake_file_handle = io.StringIO()
         converter = TextConverter(resource_manager, fake_file_handle)
         page_interpreter = PDFPageInterpreter(resource_manager, converter)
+        self.title_file = path 
+        self.timestamp_uploading = datetime.datetime.now().timestamp()
         with open(self.pdf_path, "rb") as file:
             try:
                 parser = PDFParser(file)
