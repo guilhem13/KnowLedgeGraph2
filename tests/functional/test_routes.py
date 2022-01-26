@@ -6,7 +6,6 @@ from io import BytesIO
 # from webapp import app, InjestPdf
 import pytest
 
-
 lib_path = os.path.abspath("./")
 print(lib_path)
 
@@ -44,41 +43,41 @@ def upload_file(test_client):
 
 def test_tasks_Views(test_client, create_app):
 
-    # test return when uploading 
+    # test return when uploading
 
-    files = {"file": open(lib_path+"/tests/functional/Test.pdf", "rb")}
+    files = {"file": open(lib_path + "/tests/functional/Test.pdf", "rb")}
     r = test_client.post("/documents", data=files)
     content = json.loads(r.data.decode())
     task_id = content["task_id"]
     assert r.status_code == 202
     assert task_id
 
-    # test metadata content from uploading 
+    # test metadata content from uploading
 
     client = create_app.test_client()
     resp = client.get("/documents/" + task_id)
     content2 = json.loads(resp.data.decode())
     while content2["state"] == "Pending":
-       resp = test_client.get(f"documents/{task_id}")
-       content2 = json.loads(resp.data.decode())
-    
-    ## test id metadata content 
+        resp = test_client.get(f"documents/{task_id}")
+        content2 = json.loads(resp.data.decode())
+
+    ## test id metadata content
     content2 = json.loads(resp.data.decode())
     assert content2["state"] == "SUCCESS"
     assert resp.status_code == 200
 
-    ## test with fake id 
+    ## test with fake id
     resp = client.get("/documents/fakeid")
     content_fake = json.loads(resp.data.decode())
     assert content_fake["state"] == "Pending"
 
-    ## test id content 
+    ## test id content
     client2 = create_app.test_client()
-    resp = client2.get("/text/" + str(task_id)+".txt")
+    resp = client2.get("/text/" + str(task_id) + ".txt")
     content3 = resp.data
     assert resp.status_code == 200
     assert content3 is not None
 
-    ## test id content with fake id 
+    ## test id content with fake id
     resp = client2.get("/text/fakeid.txt")
     assert resp.status_code == 400

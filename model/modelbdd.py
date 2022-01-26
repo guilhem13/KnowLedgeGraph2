@@ -18,5 +18,5 @@ def session_creator():
     )  # "sqlite:///basededonneepdf.db", echo=True)
     Base.metadata.create_all(bind=engine)
     session = sessionmaker(bind=engine)
-    #session = Session()
-    return session()#session
+    # session = Session()
+    return session()  # session

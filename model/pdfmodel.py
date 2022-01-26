@@ -1,6 +1,8 @@
 from sqlalchemy import Column, Integer, String
 
-from model import modelbdd
+#from model import modelbdd
+from . import modelbdd
+
 
 
 class Pdf(modelbdd.Base):
@@ -16,8 +18,8 @@ class Pdf(modelbdd.Base):
     subject = Column("subject", String(255))
     keywords = Column("keywords", String(255))
     number_of_pages = Column("number_of_pages", Integer)
-    title_file = Column("title_file", String(255)) 
-    timestamp_uploading = Column("title_file", String(255)) 
+    title_file = Column("title_file", String(255))
+    timestamp_uploading = Column("timestamp_uploading", String(255))
 
     def __init__(
         self,
@@ -31,7 +33,7 @@ class Pdf(modelbdd.Base):
         subject,
         keywords,
         number_of_pages,
-        title_file, 
+        title_file,
         timestamp_uploading,
     ):
         self.name = name

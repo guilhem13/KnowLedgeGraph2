@@ -2,10 +2,12 @@ import json
 import os
 
 from celery import Celery
-from flask import  Response, jsonify, render_template, request # ya avait Flask
+from flask import Response, jsonify, render_template, request  # ya avait Flask
 from werkzeug.utils import secure_filename
 
 from __init__ import app
+
+
 from model.extractorfrompdf import Extractor
 from model.modelbdd import session_creator
 from model.notificationmodel import Notification
@@ -92,7 +94,7 @@ def InjestPdf(self, file):
             getattr(PdfProcessed, "subject"),
             getattr(PdfProcessed, "keywords"),
             getattr(PdfProcessed, "number_of_pages"),
-            getattr(PdfProcessed, "title_file"), 
+            getattr(PdfProcessed, "title_file"),
             getattr(PdfProcessed, "timestamp_uploading"),
         )
         setattr(pdf, "id", self.request.id)
@@ -107,8 +109,8 @@ def InjestPdf(self, file):
 @app.route("/documents/<id>")
 def taskstatus(id):
     task = InjestPdf.AsyncResult(id)
-    #result = task.get(timeout=0.1)
-    #print("****"+result)
+    # result = task.get(timeout=0.1)
+    # print("****"+result)
     if task.state == "PENDING":
         if (
             session.query(Pdf).filter(Pdf.id == id).scalar() is not None
@@ -125,12 +127,15 @@ def taskstatus(id):
                 "title": str(status.title),
                 "number_of_pages": str(status.number_of_pages),
                 "keywords": str(status.keywords),
-                "title_file":str(status.title_file),
-                "timestamp_uploading" :str(status.timestamp_uploading)
+                "title_file": str(status.title_file),
+                "timestamp_uploading": str(status.timestamp_uploading),
             }
             return response
         else:
-            response = {"state": "Pending", "message":"Task is waiting for execution or unknown id. Any task id that’s not known is implied to be in the pending state."}
+            response = {
+                "state": "Pending",
+                "message": "Task is waiting for execution or unknown id. Any task id that’s not known is implied to be in the pending state.",
+            }
 
     elif task.state == "FAILURE":
         response = {
@@ -152,8 +157,8 @@ def taskstatus(id):
                 "title": str(status.title),
                 "number_of_pages": str(status.number_of_pages),
                 "keywords": str(status.keywords),
-                "title_file":str(status.title_file),
-                "timestamp_uploading" :str(status.timestamp_uploading)
+                "title_file": str(status.title_file),
+                "timestamp_uploading": str(status.timestamp_uploading),
             }
     return jsonify(response)
 
@@ -172,16 +177,20 @@ def display_text(id):
 
 
 @app.errorhandler(500)
-def internal_server_error(error):
+def internal_server_errors(error): # TODO j'ai rajouté un s à error mais à vois si ça change quelque chose 
     return jsonify({"error": ":/"}), 500
+
 
 @app.errorhandler(404)
 def internal_server_error(error):
     return Response(
-            Notification("404", "Sorry wrong endpoint.This endpoint doens't exist. Check your endpoint or your id arguments").Message(),
-            status=404,
-            mimetype="application/json",
-        )
+        Notification(
+            "404",
+            "Sorry wrong endpoint.This endpoint doens't exist. Check your endpoint or your id arguments",
+        ).Message(),
+        status=404,
+        mimetype="application/json",
+    )
 
 
 session.close()
