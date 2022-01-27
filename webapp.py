@@ -177,7 +177,9 @@ def display_text(id):
 
 
 @app.errorhandler(500)
-def internal_server_errors(error): # TODO j'ai rajouté un s à error mais à vois si ça change quelque chose 
+def internal_server_errors(
+    error,
+):  # TODO j'ai rajouté un s à error mais à vois si ça change quelque chose
     return jsonify({"error": ":/"}), 500
 
 

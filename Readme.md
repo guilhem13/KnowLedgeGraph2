@@ -84,18 +84,22 @@ python -m flask run
 Open http://localhost:5000/documents in a browser to upload your pdf 
 ![GitHub Logo](/images/documents.png)
 
-***
-
-###### Result 
-
-Open http://localhost:5000/documents in a browser to upload your pdf 
-![GitHub Logo](/images/document_return_id.png)
-
-###### On Command 
+##### On Command 
 
 ```shell
 curl -F 'file=@document.pdf' localhost:5000/documents
 ```
+***
+
+###### Result 
+
+![GitHub Logo](/images/document_return_id.png)
+
+{
+    # id of pdf which is being uploaded 
+    "task_id": [id],
+}
+
 ***
 #### Feature 2
 
@@ -109,6 +113,26 @@ Open http://localhost:5000/documents in a browser to upload your pdf
 ```shell
 curl http://127.0.0.1:5000/documents/{id}
 ```
+***
+###### Result 
+{
+    # Auhtor of the pdf file in metadata pdf file : String
+    "author": "[author]",
+    # Date when the file was created by the author ; pdf file metadata: String
+    "creation_date_of_file": "[date]",
+    # creator of the pdf, what the author use : String
+    "creator":"[creator]"
+    # id of the file 
+    "id": "[id]" : String
+    #Keywords of the file inside metadata file
+    "keywords" : "[keywords]" : String
+    # Number of pages 
+    "number_of_pages":[integer] : Integer
+    # May be "SUCCESS", "PENDING" or "ERROR" (str)
+    "status": "[status]",   
+    
+
+}
 ***
 #### Feature 3 
 

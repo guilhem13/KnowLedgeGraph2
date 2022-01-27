@@ -13,6 +13,7 @@ print(lib_path)
 def test_main_en_point(test_client):
     response = test_client.get("/")
     assert response.status_code == 404
+    assert json.loads(response.data.decode())['id_error'] == "404"
     response = test_client.get("/documents")
     assert response.status_code == 200
 
