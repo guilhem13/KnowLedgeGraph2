@@ -6,29 +6,12 @@ import pytest
 lib_path = os.path.abspath("./")
 sys.path.append(lib_path)
 
+from random import randrange
+
 from model import pdfmodel
 from model.modelbdd import session_creator
 from webapp import app
-from random import randrange
 
-"""
-@pytest.fixture(scope="module")
-def new_pdf():
-    pdf = pdfmodel.Pdf(
-        "20",
-        "pdftest",
-        "data",
-        "titre du pdf",
-        "08/10/1998",
-        "Guilhem Maillebuau",
-        "pierre",
-        "Léon borrelly",
-        "climate change",
-        "nature",
-        23,
-    )
-    return pdf
-"""
 
 @pytest.fixture
 def create_app():
@@ -62,7 +45,7 @@ def init_database():
         "monfichier.pdf",
         "timestamp",
     )
-    setattr(pdf, "id",str(randrange(10000)))
+    setattr(pdf, "id", str(randrange(10000)))
     session.add(pdf)
     session.commit()
     session.close()

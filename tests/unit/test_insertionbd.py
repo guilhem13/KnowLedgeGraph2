@@ -1,7 +1,9 @@
-from model import pdfmodel
-from model.pdfmodel import Pdf
-from model.modelbdd import session_creator
 from random import randrange
+
+from model import pdfmodel
+from model.modelbdd import session_creator
+from model.pdfmodel import Pdf
+
 
 def test_bd(init_database):
     session = session_creator()
@@ -20,10 +22,9 @@ def test_bd(init_database):
         "monfichier.pdf",
         "timestamp",
     )
-    setattr(pdf, "id",str(randrange(10000)))
+    setattr(pdf, "id", str(randrange(10000)))
     session.add(pdf)
     session.commit()
     session.close()
     response = init_database.query(Pdf).filter(Pdf.name == test).one()
     assert response.timestamp_uploading == "timestamp"
-

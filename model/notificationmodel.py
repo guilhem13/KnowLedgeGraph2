@@ -1,5 +1,9 @@
 import json
 
+"""
+This class return a json with id_error and its message for the user
+"""
+
 
 class Notification:
 
@@ -10,5 +14,5 @@ class Notification:
         self.id_error = id_
         self.error = error
 
-    def Message(self):
+    def message(self):
         return json.dumps(self.__dict__)

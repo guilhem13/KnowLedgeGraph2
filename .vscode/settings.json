@@ -2,8 +2,5 @@
     "git.ignoreLimitWarning": true,
     "python.pythonPath": "venv/bin/python",
     "python.linting.pylintPath": "venv/bin/pylint"
-    /*"python.linting.pylintArgs": [
-        "--init-hook",
-        "import sys; sys.path.insert(0, './model')"
-    ]*/
+    
 }

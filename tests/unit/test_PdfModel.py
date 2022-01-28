@@ -1,11 +1,8 @@
-import os
-import sys
-
 from model import pdfmodel
 
 
 def test_Pdf():
-    
+
     pdf = pdfmodel.Pdf(
         "pdftest",
         "data",

@@ -79,6 +79,13 @@ if flask run doesn't work make :
 ```shell
 python -m flask run
 ```
+Launch celery inside an other shell.
+Make sure you launch your container before 
+
+```shell
+celery -A webapp.celery worker --loglevel=info -P eventlet
+```
+
 
 ***
 ## Usage
@@ -175,3 +182,24 @@ curl http://127.0.0.1:5000/text/{id}.txt
 
  * text: text of the pdf (string)
 
+***
+***
+## Test
+
+#### Launch tests 
+
+In order to launch test , you have to launch celery before
+```shell
+celery -A webapp.celery worker --loglevel=info -P eventlet
+```
+launch test
+
+```shell
+coverage run -m pytest tests
+coverage report
+```
+***
+
+```shell
+
+```

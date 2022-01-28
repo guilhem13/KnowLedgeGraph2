@@ -1,8 +1,11 @@
 from sqlalchemy import Column, Integer, String
 
-#from model import modelbdd
 from . import modelbdd
 
+"""
+Pdf is an ORM class in order to store data and metadata of a pdf inside a database
+
+"""
 
 
 class Pdf(modelbdd.Base):

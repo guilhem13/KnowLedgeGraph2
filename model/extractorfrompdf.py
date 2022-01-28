@@ -1,5 +1,5 @@
-from datetime import datetime
 import io
+from datetime import datetime
 
 import chardet
 from pdfminer.converter import TextConverter
@@ -7,6 +7,13 @@ from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager, resolve1
 from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
+
+"""
+This class takes a file as an argument and extracts all its metadata.
+The metadata of the file are attributes of the class Extractor.
+An instance of this class gets all the metatada of the file given as an argument of this instance
+
+"""
 
 
 class Extractor:
@@ -38,6 +45,8 @@ class Extractor:
             try:
                 parser = PDFParser(file)
                 doc = PDFDocument(parser)
+                # For each metadata we detect the encoding type in order to correctly decode metadata
+                # Because we don't know the encoding before
                 # Title
                 if "Title" in doc.info[0]:
                     encoding_title = (
@@ -149,7 +158,7 @@ class Extractor:
                 self.text_from_pdf = text
                 file.close()
                 self.extracted = True
-            except Exception:  
+            except Exception:
                 pass
         converter.close()
         fake_file_handle.close()
