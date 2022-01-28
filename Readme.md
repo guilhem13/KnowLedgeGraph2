@@ -57,8 +57,9 @@ If the container works, you have to add an user.
 
 * Go to http://localhost:15672/. Log in with => "username" : guest , "password" : guest 
 * Go to the "Admin" bar at the top of the front page. Once there, add a user with "username" : username , "password" : siocbienG 
-* Once you have created your user. The user will appear inside your user table . Click on the user you have created ( inside the table) and click on all "set permission" and "set topic permission" bar.  
+* Once you have created your user. The user will appear inside your user table . Click on the user you have created ( inside the table) and click on all "set permission" and "set topic permission" bar. 
 
+***
 ## Run 
 
 In production 
@@ -111,7 +112,7 @@ curl -F 'file=@document.pdf' localhost:5000/documents
 
 ##### On browser
 
-Open http://localhost:5000/documents in a browser to upload your pdf 
+Open http://localhost:5000/documents/{id} in a browser to get the metadata of pdf with id {id} 
 ![GitHub Logo](/images/document_metadata.png)
 
 ##### On Command 
@@ -122,19 +123,19 @@ curl http://127.0.0.1:5000/documents/{id}
 ***
 ###### Result 
 {    
-     "id": "[id]",
-     "author": "[author]",
-     "state": "[status]",
-     "creation_date_of_file": "[date]",
-     "author": "[author]",
-     "creator": "[creator]",
-     "producer": "[producer]",
-     "subject": "[subject]",
-     "title": "[title]",
-     "number_of_pages": "[number_of_pages]",
-     "keywords": "[keywords]",
-     "title_file": "[title_file]",
-     "timestamp_uploading": "[timestamp_uploading]"
+     "id": "[id]",  
+     "author": "[author]",  
+     "state": "[status]",  
+     "creation_date_of_file": "[date]",  
+     "author": "[author]",  
+     "creator": "[creator]",  
+     "producer": "[producer]",  
+     "subject": "[subject]",  
+     "title": "[title]",  
+     "number_of_pages": "[number_of_pages]",  
+     "keywords": "[keywords]",  
+     "title_file": "[title_file]",  
+     "timestamp_uploading": "[timestamp_uploading]"  
 }
 
  * id : id of the file (string)
@@ -155,7 +156,7 @@ curl http://127.0.0.1:5000/documents/{id}
 
 ##### On browser
 
-Open http://localhost:5000/documents in a browser to upload your pdf 
+Open http://localhost:5000/text/{id}.txt in a browser to get the text of the pdf with id : {id}
 ![GitHub Logo](/images/text_id.png)
 
 ##### On Command 
@@ -167,7 +168,7 @@ curl http://127.0.0.1:5000/text/{id}.txt
 ###### Result 
 
 {
-     "text": "[text]"
+     "text": "[text]"  
 }
 
  * text: text of the pdf (string)
