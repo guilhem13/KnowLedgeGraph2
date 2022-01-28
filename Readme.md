@@ -98,11 +98,11 @@ curl -F 'file=@document.pdf' localhost:5000/documents
 
 ###### Result 
 
-![GitHub Logo](/images/document_return_id.png)
+![GitHub Logo](/images/document_id.png)
 
 {
    
-    "task_id": [id],<br />
+    "task_id": [id]
 }
   * "task_id" : id of pdf which is being uploaded 
 
@@ -112,7 +112,7 @@ curl -F 'file=@document.pdf' localhost:5000/documents
 ##### On browser
 
 Open http://localhost:5000/documents in a browser to upload your pdf 
-![GitHub Logo](/images/get-metadata.png)
+![GitHub Logo](/images/document_metadata.png)
 
 ##### On Command 
 
@@ -121,23 +121,34 @@ curl http://127.0.0.1:5000/documents/{id}
 ```
 ***
 ###### Result 
-{
-    # Auhtor of the pdf file in metadata pdf file : String
-    "author": "[author]",
-    # Date when the file was created by the author ; pdf file metadata: String
-    "creation_date_of_file": "[date]",
-    # creator of the pdf, what the author use : String
-    "creator":"[creator]"
-    # id of the file 
-    "id": "[id]" : String
-    #Keywords of the file inside metadata file
-    "keywords" : "[keywords]" : String
-    # Number of pages 
-    "number_of_pages":[integer] : Integer
-    # May be "SUCCESS", "PENDING" or "ERROR" (str)
-    "status": "[status]",    
-
+{    
+     "id": "[id]",
+     "author": "[author]",
+     "state": "[status]",
+     "creation_date_of_file": "[date]",
+     "author": "[author]",
+     "creator": "[creator]",
+     "producer": "[producer]",
+     "subject": "[subject]",
+     "title": "[title]",
+     "number_of_pages": "[number_of_pages]",
+     "keywords": "[keywords]",
+     "title_file": "[title_file]",
+     "timestamp_uploading": "[timestamp_uploading]"
 }
+
+ * id : id of the file (string)
+ * author : Auhtor of the pdf file in metadata pdf file (string)
+ * status : status of the uploading. May be "SUCCESS", "PENDING" or "ERROR" (string)
+ * creation_date_of_file : Date when the file was created by the author ; pdf file metadata (string)
+ * creator : creator of the pdf. Metadata inside the file (string)
+ * producer : producer of the pdf. Metadata inside the file (string)
+ * subject : subject of the pdf. Metadata inside the file (string)
+ * title : title of the pdf. Metadata inside the file (string)
+ * number_of_pages : number of pages (string)
+ * keywords : keywords of the pdf. Metadata inside the file (string)
+ * title_file : title of file which has been uploaded (string)
+ * timestamp_uploading : Time when the file was uploading (string)
 
 ***
 #### Feature 3 
@@ -145,13 +156,19 @@ curl http://127.0.0.1:5000/documents/{id}
 ##### On browser
 
 Open http://localhost:5000/documents in a browser to upload your pdf 
-![GitHub Logo](/images/Get-text.png)
+![GitHub Logo](/images/text_id.png)
 
 ##### On Command 
 
 ```shell
 curl http://127.0.0.1:5000/text/{id}.txt
 ```
+***
+###### Result 
 
+{
+     "text": "[text]"
+}
 
+ * text: text of the pdf (string)
 

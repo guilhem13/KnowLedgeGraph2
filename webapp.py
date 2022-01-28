@@ -167,7 +167,9 @@ def taskstatus(id):
 def display_text(id):
     try:
         status = session.query(Pdf).filter(Pdf.id == id).one()
-        return status.data
+        response = {"text": str(status.data) }
+        return jsonify(response)
+        
     except Exception:
         return Response(
             Notification("4", "File id not in database").Message(),
