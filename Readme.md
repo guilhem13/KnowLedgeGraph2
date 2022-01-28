@@ -20,7 +20,7 @@ The text file are stocked in a database
 ***
 ## Installation 
 
-Code had been made with Python 3.8.10
+Code has been made with Python 3.8.10
 
 Create a virtualenv and activate it:
 
@@ -39,21 +39,25 @@ Install Rabbitmq
 ```shell
 docker run -d --name some-rabbit -p 5672:5672 -p 5673:5673 -p 15672:15672 rabbitmq:3-management
 ```
-* Go to http://localhost:15672/ with username : guest , password : guest 
-* Go to Admin bar and add a user with username : username , password : siocbienG. 
-* Once you have created your user. Click on the user you have created ( inside the table) and click on all "set permission" and "set topic permission" bar.  
+Once installed, check if the rabbitmq container is running with 
 
-***
-Check if you rabbbitmq container is running with 
-
-```shell
+```shell 
 sudo docker ps 
 ```
+
 if your container is not running 
 
 ```shell
 sudo docker start  {your container id}
 ```
+
+***
+
+If the container works, you have to add an user.
+
+* Go to http://localhost:15672/. Log in with => "username" : guest , "password" : guest 
+* Go to the "Admin" bar at the top of the front page. Once there, add a user with "username" : username , "password" : siocbienG 
+* Once you have created your user. The user will appear inside your user table . Click on the user you have created ( inside the table) and click on all "set permission" and "set topic permission" bar.  
 
 ## Run 
 
@@ -70,6 +74,7 @@ export FLASK_ENV=development
 flask run
 ```
 if flask run doesn't work make : 
+
 ```shell
 python -m flask run
 ```
@@ -96,9 +101,10 @@ curl -F 'file=@document.pdf' localhost:5000/documents
 ![GitHub Logo](/images/document_return_id.png)
 
 {
-    # id of pdf which is being uploaded 
-    "task_id": [id],
+   
+    "task_id": [id],<br />
 }
+  * "task_id" : id of pdf which is being uploaded 
 
 ***
 #### Feature 2
@@ -129,10 +135,10 @@ curl http://127.0.0.1:5000/documents/{id}
     # Number of pages 
     "number_of_pages":[integer] : Integer
     # May be "SUCCESS", "PENDING" or "ERROR" (str)
-    "status": "[status]",   
-    
+    "status": "[status]",    
 
 }
+
 ***
 #### Feature 3 
 
