@@ -139,9 +139,9 @@ curl http://127.0.0.1:5000/documents/{id}
 }
 
  * id : id of the file (string)
- * author : Auhtor of the pdf file in metadata pdf file (string)
- * status : status of the uploading. May be "SUCCESS", "PENDING" or "ERROR" (string)
- * creation_date_of_file : Date when the file was created by the author ; pdf file metadata (string)
+ * author : Author of the pdf file. Metadata inside the file (string)  
+ * status : status of the uploading. May be "SUCCESS", "PENDING" or "ERROR" (string)  
+ * creation_date_of_file : Date when the file was created by the author. Metadata inside the file (string)  
  * creator : creator of the pdf. Metadata inside the file (string)
  * producer : producer of the pdf. Metadata inside the file (string)
  * subject : subject of the pdf. Metadata inside the file (string)
@@ -168,7 +168,9 @@ curl http://127.0.0.1:5000/text/{id}.txt
 ###### Result 
 
 {
+
      "text": "[text]"  
+      
 }
 
  * text: text of the pdf (string)
