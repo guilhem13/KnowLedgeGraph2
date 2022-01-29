@@ -1,4 +1,5 @@
 import json
+
 #
 import os
 from io import BytesIO
@@ -9,6 +10,7 @@ lib_path = os.path.abspath("./")
 print(lib_path)
 
 
+# test endpoints
 def test_main_en_point(test_client):
     response = test_client.get("/")
     assert response.status_code == 404
@@ -16,13 +18,18 @@ def test_main_en_point(test_client):
     response = test_client.get("/documents")
     assert response.status_code == 200
 
+    # test when uploading a fake file
+
 
 def upload_without_file(test_client):
     data = {"file": (b"my file content", "Test.pdf")}
     response = test_client.post(
         "/documents", data=data, content_type="multipart/form-data"
-    )  # we use StringIO to simulate file object
+    )
     assert response.status_code == 400
+    assert json.loads(response.data.decode())["id_error"] == "1"
+
+    # test when uploading a file with wrong extensions
 
 
 def upload_with_forbidden_extension(test_client):
@@ -31,6 +38,9 @@ def upload_with_forbidden_extension(test_client):
         "/documents", data=data, content_type="multipart/form-data"
     )
     assert response.status_code == 400
+    assert json.loads(response.data.decode())["id_error"] == "3"
+
+    # test when uploading a file
 
 
 def upload_file(test_client):

@@ -1,12 +1,6 @@
-import os
-import sys
+from random import randrange
 
 import pytest
-
-lib_path = os.path.abspath("./")
-sys.path.append(lib_path)
-
-from random import randrange
 
 from model import pdfmodel
 from model.modelbdd import session_creator
@@ -21,7 +15,7 @@ def create_app():
 
 @pytest.fixture(scope="module")
 def test_client():
-    """A test client for the app."""
+    # A test client for the app
     with app.test_client() as testing_client:
         with app.app_context():
             yield testing_client

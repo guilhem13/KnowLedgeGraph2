@@ -1,7 +1,7 @@
 from model import pdfmodel
 
 
-def test_Pdf():
+def test_pdf():
 
     pdf = pdfmodel.Pdf(
         "pdftest",

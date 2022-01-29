@@ -14,5 +14,6 @@ class Notification:
         self.id_error = id_
         self.error = error
 
+    # function which create error message
     def message(self):
         return json.dumps(self.__dict__)

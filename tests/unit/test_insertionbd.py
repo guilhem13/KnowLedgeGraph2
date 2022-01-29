@@ -4,6 +4,8 @@ from model import pdfmodel
 from model.modelbdd import session_creator
 from model.pdfmodel import Pdf
 
+""" test to check if the file is correcty stored in the db """
+
 
 def test_bd(init_database):
     session = session_creator()
