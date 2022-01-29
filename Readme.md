@@ -56,8 +56,8 @@ sudo docker start  {your container id}
 If the container works, you have to add an user.
 
 * Go to http://localhost:15672/. Log in with => "username" : guest , "password" : guest
-![GitHub Logo](/images/Rabbit_admin.png) 
 * Go to the "Admin" bar at the top of the front page. Once there, add a user with "username" : username , "password" : siocbienG 
+![GitHub Logo](/images/Rabbit_admin.png) 
 ![GitHub Logo](/images/add_user.png)
 * Once you have created your user. The user will appear inside your user table . Click on the user you have created ( inside the table) and click on all "set permission" and "set topic permission" bar.
 ![GitHub Logo](/images/set_permissions.png) 
