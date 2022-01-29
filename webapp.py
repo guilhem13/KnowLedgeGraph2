@@ -15,7 +15,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
     basedir, "basededonneepdf.db"
 )  # URI where the database is located
-ALLOWED_EXTENSIONS = {"txt", "pdf"}  # list of file extensions which can be downloaded
+ALLOWED_EXTENSIONS = {"pdf"}  # list of file extensions which can be downloaded
 
 # configuration of app settings
 app.config["UPLOAD_FOLDER"] = "."

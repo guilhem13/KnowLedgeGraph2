@@ -57,9 +57,10 @@ If the container works, you have to add an user.
 
 * Go to http://localhost:15672/. Log in with => "username" : guest , "password" : guest
 * Go to the "Admin" bar at the top of the front page. Once there, add a user with "username" : username , "password" : siocbienG 
-![GitHub Logo](/images/Rabbit_admin.png) 
+![GitHub Logo](/images/Rabbit_admin.png)
+* Then 
 ![GitHub Logo](/images/add_user.png)
-* Once you have created your user. The user will appear inside your user table . Click on the user you have created ( inside the table) and click on all "set permission" and "set topic permission" bar.
+* Once you have created your user. The user will appear inside your users table . Click on the user you have created ( inside the table) and click on all "set permission" and "set topic permission" bar.
 ![GitHub Logo](/images/set_permissions.png) 
 
 ***
@@ -117,6 +118,7 @@ curl -F 'file=@document.pdf' localhost:5000/documents
 }
   * "task_id" : id of pdf which is being uploaded 
 
+Task is waiting for execution or unknown. Any task id that’s not known is implied to be in the pending state.
 ***
 #### Feature 2
 
@@ -202,7 +204,10 @@ coverage run -m pytest tests
 coverage report
 ```
 ***
+***
+Launch pylint 
 
+example with model
 ```shell
-
+pylint model --errors-only
 ```
