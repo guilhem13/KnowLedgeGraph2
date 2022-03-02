@@ -52,7 +52,6 @@ def upload_file():
                 ):  # Check if the file has the correct extension
                     filename = secure_filename(file.filename)
                     file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-                    os.remove(filename)
                     task = InjestPdf(file.filename)
                     return Response(
                         json.dumps({"task_id": task.id}),
