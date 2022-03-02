@@ -1,0 +1,1 @@
+from .extractorfrompdf import Extractor
