@@ -3,7 +3,7 @@ import os
 import flask
 from flask import Response, jsonify, render_template, request
 from werkzeug.utils import secure_filename
-from extractorfrompdf import Extractor
+from controller.pipeline.extractorfrompdf_oldversion import Extractor
 from model.notificationmodel import Notification
 
 
@@ -51,6 +51,7 @@ def upload_file():
                     )
     return render_template("index.html")
 
+############################### Error handler ########################################
 # route for error 500
 @app.errorhandler(500)
 def internal_server_errors(error):
@@ -68,6 +69,8 @@ def internal_server_error(error):
         status=404,
         mimetype="application/json",
     )
+##########################################################################################
+
 
 if __name__ == "__main__":
     app.run(port=5000)
