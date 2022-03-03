@@ -32,4 +32,8 @@ class Ontology():
     def save(self,filepath):
         
         self.template_onto.save(filepath)
+    
+
+    def get_ontology(self):
+        return self.template_onto
 

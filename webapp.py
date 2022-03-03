@@ -54,7 +54,7 @@ def upload_file():
 
 @app.route("/arxiv/generatepipeline/<nb_paper>")
 def create_pipeline(nb_paper):
-    nb_paper_to_request = nb_paper
+    nb_paper_to_request = int(nb_paper)
     block_arxiv_size = 5
     arxiv_data = Data(nb_paper_to_request).get_set_data()
     papiers= []
@@ -64,7 +64,13 @@ def create_pipeline(nb_paper):
     owl = ontology.Ontology()
     for papier in papiers: 
         owl.add_papier(papier)
-    owl.save('result.owl')
+    owl.save('result.owl') #TODO retourner en mode json 
+    return Response(
+                    Notification("200", str(owl.get_ontology())).message(),
+                    status=400,
+                    mimetype="application/json",
+                )
+    
 
 ############################### Error handler ########################################
 # route for error 500
