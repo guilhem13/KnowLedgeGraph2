@@ -1,6 +1,6 @@
 import io
 from datetime import datetime
-from model.pdfmodel import Pdf
+from models.pdfmodel import Pdf
 import chardet
 from pdfminer.converter import TextConverter
 from pdfminer.pdfdocument import PDFDocument

@@ -1,23 +1,24 @@
+import nltk
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
 import json
 import os
 import flask
+
 from flask import Response, jsonify, render_template, request
 from werkzeug.utils import secure_filename
 from controller.pipeline.extractorfrompdf_oldversion import Extractor
-from model.notificationmodel import Notification
+from models.notificationmodel import Notification
+from controller import Pipeline
+from owl import ontology
+from controller import Data
+import appmanager
 
 
-import flask
 app = flask.Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "."
-
-
-ALLOWED_EXTENSIONS = {"pdf"}  
-
-
-
-def allowed_file(filename):
-    return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 # Route where the client can download his file
@@ -39,7 +40,7 @@ def upload_file():
                     mimetype="application/json",
                 )
             else:
-                if file and allowed_file(file.filename):  # Check if the file has the correct extension
+                if file and appmanager.allowed_file(file.filename):  # Check if the file has the correct extension
                     filename = secure_filename(file.filename)
                     file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
                     
@@ -51,11 +52,33 @@ def upload_file():
                     )
     return render_template("index.html")
 
+@app.route("/arxiv/generatepipeline/<nb_paper>")
+def create_pipeline(nb_paper):
+    nb_paper_to_request = nb_paper
+    block_arxiv_size = 5
+    arxiv_data = Data(nb_paper_to_request).get_set_data()
+    papiers= []
+    for i in range(0,len(arxiv_data),block_arxiv_size):
+        print(i) 
+        papiers+= appmanager.arxiv_route_main_function(arxiv_data[i:i+block_arxiv_size])
+    owl = ontology.Ontology()
+    for papier in papiers: 
+        owl.add_papier(papier)
+    owl.save('result.owl')
+
 ############################### Error handler ########################################
 # route for error 500
 @app.errorhandler(500)
 def internal_server_errors(error):
-    return jsonify({"error": ":/ Internal Server Error"}), 500
+    return Response(
+        Notification(
+            "404",
+            "error :/ Internal Server Error",
+        ).message(),
+        status=404,
+        mimetype="application/json",
+    )
+
 
 
 # route for error 404
