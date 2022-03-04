@@ -97,6 +97,12 @@ class Textprocessed():
         self.raw_text = textfrompdf
         textfrompdf = self.clean_references_part(self.get_references_part(textfrompdf))
         return textfrompdf
+    
+    def get_data_from_file(self,file_localisation):
+        pdf = PDFx(file_localisation)
+        textfrompdf = pdf.get_text()
+        textfrompdf = self.clean_references_part(self.get_references_part(textfrompdf))
+        return textfrompdf
 
     def __getattr__(self):
         return self.raw_text

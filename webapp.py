@@ -6,23 +6,21 @@ nltk.download('words')
 import json
 import os
 import flask
-
-from flask import Response, jsonify, render_template, request
-from werkzeug.utils import secure_filename
-from controller.pipeline.extractorfrompdf_oldversion import Extractor
-from models.notificationmodel import Notification
-from controller import Pipeline
-from owl import ontology
-from controller import Data
 import appmanager
+from flask import Response, render_template, request
+from werkzeug.utils import secure_filename
+from nlpmodel import service_one_extraction
+from models.notificationmodel import Notification
+from controller import Data,Textprocessed
+from owl import ontology
 
 
 app = flask.Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "."
 
 
-# Route where the client can download his file
-@app.route("/documents", methods=["GET", "POST"])
+# Route where the client wants to get ner from an uploading pdf 
+@app.route("/getner", methods=["GET", "POST"])
 def upload_file():
     if request.method == "POST":
         if "file" not in request.files:  # no file part
@@ -43,7 +41,9 @@ def upload_file():
                 if file and appmanager.allowed_file(file.filename):  # Check if the file has the correct extension
                     filename = secure_filename(file.filename)
                     file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-                    
+                    ners = service_one_extraction.ServiceOne(Textprocessed(None).get_data_from_file(filename)).get_references()
+                    os.remove(filename)
+                    return json.dumps([ob.__dict__ for ob in ners])                      
                 else:
                     return Response(
                         Notification("3", "File type not permitted").message(),
@@ -84,7 +84,6 @@ def internal_server_errors(error):
         status=404,
         mimetype="application/json",
     )
-
 
 
 # route for error 404
