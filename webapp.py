@@ -13,7 +13,16 @@ from nlpmodel import service_one_extraction
 from models.notificationmodel import Notification
 from controller import Data,Textprocessed
 from owl import ontology
+from bdd.manager_bdd import session_creator, feed_bdd
 
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
+    basedir, "basededonneepdf.db"
+)  # URI where the database is located
+session = session_creator()
+
+ALLOWED_EXTENSIONS = {"pdf"}  # list of file extensions which can be downloaded
 
 app = flask.Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "."
@@ -51,6 +60,10 @@ def upload_file():
                         mimetype="application/json",
                     )
     return render_template("index.html")
+
+@app.route("/arxiv/feedbdd/<nb_paper>")
+def injestpaper(self, nb_paper):
+    feed_bdd(nb_paper,session) 
 
 @app.route("/arxiv/generatepipeline/<nb_paper>")
 def create_pipeline(nb_paper):
@@ -99,6 +112,7 @@ def internal_server_error(error):
     )
 ##########################################################################################
 
+session.close()
 
 if __name__ == "__main__":
     app.run(port=5000)

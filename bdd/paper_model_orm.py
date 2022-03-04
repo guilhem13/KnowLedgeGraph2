@@ -1,13 +1,13 @@
 from sqlalchemy import Column, Integer, String
 
-from . import model_bdd
+from .manager_bdd import get_base
 
 """
 Pdf is an ORM class in order to store data and metadata of a pdf inside a database
 """
 
 
-class PapierORM(model_bdd.Base):
+class PapierORM(get_base()):
     __tablename__ = "arxivpaper"
     doi = Column("doi", String, primary_key=True)
     title = Column("title", String)
@@ -17,24 +17,10 @@ class PapierORM(model_bdd.Base):
     data_published = Column("data_published", String(255))
 
 
-   class Papier():
+    def __init__(self,doi,title,authors,link,summary,date_published):
 
-    title = None,
-    doi = None
-    authors = None,
-    link = None,
-    summary = None,
-    date_published= None, 
-    entities_from_reference = None,
-    entities_include_in_text = None, 
-    subject = None
-    url_in_text = None
-    doi_in_text = None  
-
-    def __init__(self,title,doi,authors,link,summary,date_published):
-
-        self.title = title,
         self.doi = doi, 
+        self.title = title,
         self.authors = authors,
         self.link = link,
         self.summary = summary, 
