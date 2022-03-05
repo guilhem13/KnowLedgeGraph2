@@ -1,6 +1,6 @@
 from grobid.client import GrobidClient
 import xml.etree.ElementTree as ET
-from models import Entity
+from knowledgegraph.models import Entity
 
 class Grobid():
 

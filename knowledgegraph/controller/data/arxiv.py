@@ -1,5 +1,5 @@
 import arxiv 
-from models import Papier , Entity
+from knowledgegraph.models import Papier , Entity
 
 class Data():
 

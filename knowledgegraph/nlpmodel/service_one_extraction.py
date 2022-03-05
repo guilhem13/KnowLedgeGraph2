@@ -1,10 +1,10 @@
 import nltk
 from operator import itemgetter
 from nltk.tag import StanfordNERTagger#, StanfordPOSTagger
-PATH_TO_JAR='nlpmodel/rawnlpmodel/stanford-ner.jar'
-PATH_TO_MODEL = 'nlpmodel/rawnlpmodel/english.muc.7class.distsim.crf.ser.gz'
+PATH_TO_JAR='knowledgegraph/nlpmodel/rawnlpmodel/stanford-ner.jar'
+PATH_TO_MODEL = 'knowledgegraph/nlpmodel/rawnlpmodel/english.muc.7class.distsim.crf.ser.gz'
 stner = StanfordNERTagger(PATH_TO_MODEL,PATH_TO_JAR,encoding='utf-8')
-from models import Entity
+from knowledgegraph.models import Entity
 
 
 class ServiceOne():

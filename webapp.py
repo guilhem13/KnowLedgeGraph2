@@ -6,14 +6,14 @@ nltk.download('words')
 import json
 import os
 import flask
-import appmanager
+import webappmanager
 from flask import Response, render_template, request
 from werkzeug.utils import secure_filename
-from nlpmodel import service_one_extraction
-from models.notificationmodel import Notification
-from controller import Data,Textprocessed
-from owl import ontology
-from bdd.manager_bdd import session_creator, feed_bdd
+from knowledgegraph.nlpmodel import service_one_extraction
+from knowledgegraph.models.notificationmodel import Notification
+from knowledgegraph.controller import Data,Textprocessed
+from knowledgegraph.owl import ontology
+from bdd.manager_bdd import session_creator
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -47,7 +47,7 @@ def upload_file():
                     mimetype="application/json",
                 )
             else:
-                if file and appmanager.allowed_file(file.filename):  # Check if the file has the correct extension
+                if file and webappmanager.allowed_file(file.filename):  # Check if the file has the correct extension
                     filename = secure_filename(file.filename)
                     file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
                     ners = service_one_extraction.ServiceOne(Textprocessed(None).get_data_from_file(filename)).get_references()
@@ -62,8 +62,13 @@ def upload_file():
     return render_template("index.html")
 
 @app.route("/arxiv/feedbdd/<nb_paper>")
-def injestpaper(self, nb_paper):
-    feed_bdd(nb_paper,session) 
+def injestpaper(nb_paper):
+    webappmanager.feed_bdd(int(nb_paper),session)
+    return Response(
+                    Notification("200","paper had been injested in database").message(),
+                    status=200,
+                    mimetype="application/json",
+                ) 
 
 @app.route("/arxiv/generatepipeline/<nb_paper>")
 def create_pipeline(nb_paper):
@@ -73,7 +78,7 @@ def create_pipeline(nb_paper):
     papiers= []
     for i in range(0,len(arxiv_data),block_arxiv_size):
         print(i) 
-        papiers+= appmanager.arxiv_route_main_function(arxiv_data[i:i+block_arxiv_size])
+        papiers+= webappmanager.arxiv_route_main_function(arxiv_data[i:i+block_arxiv_size])
     owl = ontology.Ontology()
     for papier in papiers: 
         owl.add_papier(papier)
@@ -83,7 +88,10 @@ def create_pipeline(nb_paper):
                     status=400,
                     mimetype="application/json",
                 )
-    
+
+
+
+   
 
 ############################### Error handler ########################################
 # route for error 500

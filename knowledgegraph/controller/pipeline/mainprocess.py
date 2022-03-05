@@ -1,10 +1,9 @@
 from pickle import TRUE
 from unittest import result
-from controller import Data , Textprocessed
-from nlpmodel import service_one_extraction, service_two_extraction
+from knowledgegraph.controller import Data , Textprocessed
+from knowledgegraph.nlpmodel import service_one_extraction, service_two_extraction
 from multiprocessing.pool import ThreadPool as Pool #TODO A enlever 
 import json
-import redis 
 from multiprocessing import Process
 import multiprocessing as mp
 import urllib.request

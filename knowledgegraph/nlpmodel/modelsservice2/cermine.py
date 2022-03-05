@@ -1,6 +1,6 @@
 import requests
 from xml.etree.ElementTree import fromstring, ElementTree
-from models import Entity
+from knowledgegraph.models import Entity
 
 class Cermine():
 
