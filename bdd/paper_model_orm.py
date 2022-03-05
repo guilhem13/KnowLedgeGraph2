@@ -1,13 +1,11 @@
 from sqlalchemy import Column, Integer, String
 
-from .manager_bdd import get_base
-
 """
 Pdf is an ORM class in order to store data and metadata of a pdf inside a database
 """
 
 
-class PapierORM(get_base()):
+class PapierORM(Base):
     __tablename__ = "arxivpaper"
     doi = Column("doi", String, primary_key=True)
     title = Column("title", String)
