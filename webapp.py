@@ -21,7 +21,7 @@ session = session_creator()
 app = flask.Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "."
 
-
+############################### get ner entities from one pdf  ########################################
 # Route where the client wants to get ner from an uploading pdf 
 @app.route("/getner", methods=["GET", "POST"])
 def upload_file():
@@ -55,6 +55,7 @@ def upload_file():
                     )
     return render_template("index.html")
 
+############################### manage bdd ########################################
 @app.route("/arxiv/sizebdd")
 def size_of_bdd():
     nbrows = session.query(PapierORM).count()
@@ -73,6 +74,8 @@ def injestpaper(nb_paper):
                     mimetype="application/json",
                 ) 
 
+
+############################### Request directly from arxiv########################################
 @app.route("/arxiv/generatepipeline/<nb_paper>")
 def create_pipeline(nb_paper):
     webappmanager.generate_pipeline(nb_paper)#TODO retourner en mode json 

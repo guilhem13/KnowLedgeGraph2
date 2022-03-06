@@ -15,11 +15,11 @@ class Papier():
 
     def __init__(self,title,doi,authors,link,summary,date_published):
 
-        self.title = title,
-        self.doi = doi, 
-        self.authors = authors,
-        self.link = link,
-        self.summary = summary, 
+        self.title = title
+        self.doi = doi 
+        self.authors = authors
+        self.link = link
+        self.summary = summary 
         self.date_published = date_published
    
 

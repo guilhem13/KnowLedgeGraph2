@@ -23,11 +23,17 @@ class Data():
                     p.set_prenom(str(seperate_name[0]+" "+seperate_name[1]))
                     p.set_nom(seperate_name[2])
                     result.append(p)
-                else: 
-                    p = Entity()   #TODO Faie un cas où ya que le nom par exemple    
-                    p.set_prenom(seperate_name[0])
-                    p.set_nom(seperate_name[1])
-                    result.append(p)
+                else:
+                    if len(seperate_name) >1: # cas normal nom prénom 
+                        p = Entity()   
+                        p.set_prenom(seperate_name[0])
+                        p.set_nom(seperate_name[1])
+                        result.append(p)
+                    else: 
+                        p = Entity()   # cas pas normal juste nom ou erreur 
+                        p.set_prenom("No firstname")
+                        p.set_nom(seperate_name[0])
+                        result.append(p)
             return result
         else: 
             print("No authors on this paper")

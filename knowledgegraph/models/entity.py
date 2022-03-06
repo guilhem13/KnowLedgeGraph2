@@ -17,5 +17,5 @@ class Entity():
         self.nom = x
 
     def set_name(self, x):
-        self.name = x      
+        self.name = x    
    
