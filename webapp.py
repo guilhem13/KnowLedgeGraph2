@@ -14,16 +14,10 @@ from knowledgegraph.models.notificationmodel import Notification
 from knowledgegraph.controller import Data,Textprocessed
 from knowledgegraph.owl import ontology
 from bdd.manager_bdd import session_creator
+from bdd.paper_model_orm import PapierORM
 
 
-basedir = os.path.abspath(os.path.dirname(__file__))
-SQLALCHEMY_DATABASE_URI = "sqlite:///" + os.path.join(
-    basedir, "basededonneepdf.db"
-)  # URI where the database is located
 session = session_creator()
-
-ALLOWED_EXTENSIONS = {"pdf"}  # list of file extensions which can be downloaded
-
 app = flask.Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "."
 
@@ -61,11 +55,20 @@ def upload_file():
                     )
     return render_template("index.html")
 
+@app.route("/arxiv/sizebdd")
+def size_of_bdd():
+    nbrows = session.query(PapierORM).count()
+    return Response(
+                    Notification("200","number of papers "+str(nbrows)).message(),
+                    status=200,
+                    mimetype="application/json",
+                )
+
 @app.route("/arxiv/feedbdd/<nb_paper>")
 def injestpaper(nb_paper):
     webappmanager.feed_bdd(int(nb_paper),session)
     return Response(
-                    Notification("200","paper had been injested in database").message(),
+                    Notification("200","papers had been injested in database").message(),
                     status=200,
                     mimetype="application/json",
                 ) 
@@ -88,9 +91,6 @@ def create_pipeline(nb_paper):
                     status=400,
                     mimetype="application/json",
                 )
-
-
-
    
 
 ############################### Error handler ########################################
