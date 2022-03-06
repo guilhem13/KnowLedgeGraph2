@@ -3,6 +3,7 @@ import arxiv
 from knowledgegraph.controller import Pipeline
 from bdd.paper_model_orm import PapierORM
 from knowledgegraph.controller import Data
+from knowledgegraph.owl import ontology
 
 """
 route  getner part 
@@ -36,6 +37,18 @@ def feed_bdd (nb_paper, session):
 """
 route  generate pipeline 
 """
+def generate_pipeline(nb_paper): 
+    nb_paper_to_request = int(nb_paper)
+    block_arxiv_size = 5
+    arxiv_data = Data(nb_paper_to_request).get_set_data()
+    papiers= []
+    for i in range(0,len(arxiv_data),block_arxiv_size):
+        print(i) 
+        papiers+= arxiv_route_main_function(arxiv_data[i:i+block_arxiv_size])
+    owl = ontology.Ontology()
+    for papier in papiers: 
+        owl.add_papier(papier)
+    owl.save('result.owl')
 
 def arxiv_route_main_function(block_paper):
 
