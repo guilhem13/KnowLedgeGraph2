@@ -1,4 +1,5 @@
 import arxiv 
+import re
 from knowledgegraph.models import Papier , Entity
 
 class Data():
@@ -16,12 +17,13 @@ class Data():
         if len(list_authors) >0:
             result= []
             for i in range(len(list_authors)): 
-                auteur = str(list_authors[i])
+                auteur = str(list_authors[i])                 
                 seperate_name = auteur.split(" ")
+
                 if len(seperate_name) >2:  # Prend en compte les noms du type David A. Strubbe
                     p = Entity()
-                    p.set_prenom(str(seperate_name[0]+" "+seperate_name[1]))
-                    p.set_nom(seperate_name[2])
+                    p.set_prenom(' '.join(seperate_name[0:-1]))
+                    p.set_nom(seperate_name[-1])
                     result.append(p)
                 else:
                     if len(seperate_name) >1: # cas normal nom prénom 

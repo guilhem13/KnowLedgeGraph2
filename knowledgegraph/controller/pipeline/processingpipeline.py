@@ -2,6 +2,8 @@ import unicodedata
 import re 
 from .pdfx import PDFx
 from .undesirable_char import undesirable_char_replacements 
+from knowledgegraph.controller import Data
+from knowledgegraph.models import Entity
 
 class Textprocessed(): 
     url = None
@@ -61,6 +63,39 @@ class Textprocessed():
         named_re = re.compile("(?:\(|\[)((?:[ a-zA-Z\.,\n-]+(?:\(|\[)*(?:19|20)[0-9]{2}(?:\)|\])*[; \n]*)+)(?:\)|\])")
         result = named_re.findall(self.raw_text)
         return result
+
+    def find_regex_style(self,regexstyle, text):        
+        res = re.findall(regexstyle, text, re.IGNORECASE) 
+        return list(dict.fromkeys([r.strip(".") for r in res]))  
+
+    def find_entites_based_on_regex(self,text):
+        checkApaStyle = self.find_regex_style("([^\.].*?[0-9])(?=\.|\Z)", text)
+        Entitylist = []
+        if len(checkApaStyle) >0 : # check if contains APA Style references 
+            for item in checkApaStyle: 
+                firstformat = self.find_regex_style("[a-zA-Z]\. [a-zA-Z]+",item) # E. Behjat
+                secondformat = self.find_regex_style("[a-zA-Z]\.\s+[a-zA-Z]\. [a-zA-Z]+",item) #  B. K. Jang
+                thirdformat = self.find_regex_style("[a-zA-Z]\. [a-zA-Z]\.\s[a-zA-Z]\.\s[a-zA-Z]+",item) #J. F. P. Kooij
+                result = firstformat + secondformat + thirdformat
+                regex = re.compile('^[a-zA-Z]\. [a-zA-Z]$') 
+                result = [x for x in result if regex.match(x) == None]# remove A. R part
+                result = list(set(result)) #remove duplicate  
+                if len(result) > 0:
+                    result = Data(1).process_authors(result)
+                    Entitylist.extend(result)
+                else : 
+                    print("liste nulle")
+                    pass 
+        if len(Entitylist) ==0:
+            p = Entity()
+            p.set_prenom("guilhem")
+            p.set_nom("maillebuau")
+            Entitylist.append(p)
+            
+        return Entitylist
+                
+
+
     
     def find_url_in_text(self):
 
