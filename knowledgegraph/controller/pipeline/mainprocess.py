@@ -25,37 +25,11 @@ class Pipeline():
 
 ###########################################################################################################
 
-    """
-    def worker(self, item):
-        try:
-            processor = Textprocessed(item.link[0])            
-            text_processed = processor.get_data_from_pdf()
-            item.entities_include_in_text = processor.find_entities_in_raw_text()
-            item.entities_from_reference = self.get_references(text_processed)
-        except Exception as e:
-            print(e)
-            print('error with item')
-    
-    def multi_threading(self,pool_size):
-        arxiv_data = Data.get_set_data(self.start)
-        pool = Pool(pool_size)
-        for item in arxiv_data:
-            pool.apply_async(self.worker, (item,))
-        pool.close()
-        pool.join()
-        f = open("test.json", "a")
-        for i in range(len(arxiv_data)):
-            f.write(json.dumps(arxiv_data[i].__dict__))
-        f.close()
-        return True#arxiv_data"""
-
-###########################################################################################################
-
     def multi_process(self, data, out_queue):
         #if urllib.request.urlopen("http://172.17.0.2:5000/"):
             #print(data.link[0])  
             time.sleep(3)  
-            processor = Textprocessed(data.link[0])            
+            processor = Textprocessed(data.link) #before  data.link[0]        
             text_processed = processor.get_data_from_pdf()
             data.entities_include_in_text = processor.find_entities_in_raw_text()
             """try: 
@@ -73,7 +47,7 @@ class Pipeline():
             data.entities_from_reference = service_one_extraction.ServiceOne(text_processed).get_references()         
             data.url_in_text = processor.find_url_in_text()
             data.doi_in_text = processor.find_doi_in_text()#frfr
-            os.remove(str("file/"+data.doi[0]+".pdf"))
+            os.remove(str("file/"+data.doi+".pdf"))#before  data.link[0]
             out_queue.put(data)
 
     
@@ -101,8 +75,6 @@ class Pipeline():
         return res_lst
      # TODO récolter le nombre de coeur pour ensuite le mettre sur le code
      # gérer le problème quand c'est 10000  
-     #https://blog.ruanbekker.com/blog/2019/02/19/parallel-processing-with-python-and-multiprocessing-using-queue/
-     #https://towardsdatascience.com/pool-limited-queue-processing-in-python-2d02555b57dc
 
 
     

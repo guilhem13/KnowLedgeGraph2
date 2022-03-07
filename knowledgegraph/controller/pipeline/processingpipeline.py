@@ -21,21 +21,8 @@ class Textprocessed():
             temp = Pdf_Readed
 
         #TODO inclure 
-        """[u'references',
-              u'r\u00C9f\u00E9rences', 
-              u'r\u00C9f\u00C9rences',
-              u'r\xb4ef\xb4erences',
-              u'bibliography',
-              u'bibliographie',
-              u'literaturverzeichnis',
-              u'citations',
-              u'refs',
-              u'publications'
-              u'r\u00E9fs',
-              u'r\u00C9fs',
-              u'reference',
-              u'r\u00E9f\u00E9rence',
-              u'r\u00C9f\u00C9rence']"""
+        """[u'references',u'r\u00C9f\u00E9rences',u'r\u00C9f\u00C9rences',u'r\xb4ef\xb4erences',u'bibliography',u'bibliographie',u'literaturverzeichnis',u'citations',u'refs',u'publications',u'r\u00E9fs',u'r\u00C9fs',u'reference',u'r\u00E9f\u00E9rence',u'r\u00C9f\u00C9rence']"""
+        
         keyword_list = ['\nReferences\n', '\nREFERENCES\n','\nreferences\n','REFERENCES','References\n','References'] #TODO voir les cas où c'est juste " Reference " exeple => https://arxiv.org/pdf/2202.03954v1.pdf
         keyword = [ele for ele in keyword_list if(ele in temp)]
         if keyword != None:
