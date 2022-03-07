@@ -21,6 +21,18 @@ session = session_creator()
 app = flask.Flask(__name__)
 app.config["UPLOAD_FOLDER"] = "."
 
+"""
+import csv
+
+f = open('metadatadatabase.csv', 'w')
+out = csv.writer(f)
+out.writerow(['doi','title','authors','link','summary','date_published'])
+
+
+for item in session.query(PapierORM).all():
+    out.writerow([item.doi, item.title,item.authors, item.link,item.summary,item.datepublished])
+f.close()"""
+
 ############################### get ner entities from one pdf  ########################################
 # Route where the client wants to get ner from an uploading pdf 
 @app.route("/getner", methods=["GET", "POST"])

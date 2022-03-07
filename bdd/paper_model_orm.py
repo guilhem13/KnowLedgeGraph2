@@ -13,15 +13,15 @@ class PapierORM(Base):
     authors = Column("authors", String)
     link = Column("link", String)
     summary = Column("summary", String)
-    data_published = Column("data_published", String)
+    datepublished = Column("data_published", String)
 
 
-    def __init__(self,doi,title,authors,link,summary,date_published):
+    def __init__(self,doi,title,authors,link,summary,datepublished):
 
         self.doi = doi 
         self.title = title
         self.authors = authors
         self.link = link
         self.summary = summary 
-        self.date_published = date_published
+        self.datepublished = datepublished
    
