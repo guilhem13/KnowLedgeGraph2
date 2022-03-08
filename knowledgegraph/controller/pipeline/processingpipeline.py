@@ -84,7 +84,7 @@ class Textprocessed():
                     result = Data(1).process_authors(result)
                     Entitylist.extend(result)
                 else : 
-                    print("liste nulle")
+                    #print("liste nulle")
                     pass 
         if len(Entitylist) ==0:
             p = Entity()

@@ -3,8 +3,9 @@ from bdd.manager_bdd import session_creator
 from knowledgegraph.models import Papier , Entity
 from knowledgegraph.controller import Data
 import ast
+import glob , os 
 
-
+"""
 session = session_creator()
 # User is the name of table that has a column name
 
@@ -23,6 +24,15 @@ papers = session.query(PapierORM).all()
 paper_list = []
 for paper in papers :
     paper_list.append(Papier(paper.title,paper.doi,convert_dict_to_entities(paper.authors),paper.link,paper.summary,paper.data_published))
+"""
 
 
 
+
+files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)
+
+for f in files:
+    try:
+        os.remove(f)
+    except OSError as e:
+        print("Error: %s : %s" % (f, e.strerror))

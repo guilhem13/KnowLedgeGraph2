@@ -20,6 +20,7 @@ if __name__ == '__main__':
     nb_paper_to_request = 15
     block_arxiv_size = 5
     arxiv_data = Data(nb_paper_to_request).get_set_data()
+    print("nb papiers "+str(len(arxiv_data)))
     papiers= []
     for i in range(0,len(arxiv_data),block_arxiv_size):
         print(i) 

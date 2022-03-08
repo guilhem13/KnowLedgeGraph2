@@ -10,6 +10,7 @@ import urllib.request
 import threading
 from multiprocessing import cpu_count
 import os
+import glob 
 import time 
 
 
@@ -44,14 +45,14 @@ class Pipeline():
             #a = service_two_extraction.ServiceTwo(str("file/"+data.doi[0]+".pdf")).get_references()
             #b = [ x.__dict__ for x in a ]
             #data.entities_from_reference = b
-            data.entities_from_reference = service_one_extraction.ServiceOne(text_processed).get_references() 
+            #data.entities_from_reference = service_one_extraction.ServiceOne(text_processed).get_references() 
             print("taille du texte ")
             #print(len(text_processed))
-            #data.entities_from_reference = processor.find_entites_based_on_regex(text_processed)     
+            data.entities_from_reference = processor.find_entites_based_on_regex(text_processed)     
             data.url_in_text = processor.find_url_in_text()
             data.doi_in_text = processor.find_doi_in_text()#frfr
             data.date_published = str(data.date_published) # TODO a enlever c'était pour le test de json
-            os.remove(str("knowledgegraph/file/"+data.doi+".pdf"))#before  data.link[0] #TODO dans le cas où l'on est dans le service 2 
+            #before  data.link[0] #TODO dans le cas où l'on est dans le service 2 
             out_queue.put(data)
 
     
@@ -59,20 +60,26 @@ class Pipeline():
         arxiv_data = block_paper
         res_lst = []        
         f = open("test.json", "a")
-        for i in range(0,len(arxiv_data),batch_size):
-            temp =arxiv_data[i:i+5]
-            workers = [ mp.Process(target=self.multi_process, args=(ele, out_queue) ) for ele in temp]
+        #for i in range(0,len(arxiv_data),1):
+            #temp =arxiv_data[i:i+5]
+        workers = [ mp.Process(target=self.multi_process, args=(ele, out_queue) ) for ele in arxiv_data]
             #s = threading.Semaphore(4)
-            for work in workers:
-                #with s:
-                work.start()
-            for work in workers: work.join(timeout=5)
+        for work in workers:
+               #with s:
+            work.start()
+        for work in workers: work.join(timeout=5)
 
             #res_lst = []
-            for j in range(len(workers)):
-                res_lst.append(out_queue.get())
-                f.write(json.dumps(out_queue.get().__dict__,default=lambda x: x.__dict__))
-
+        for j in range(len(workers)):
+            res_lst.append(out_queue.get())
+            f.write(json.dumps(out_queue.get().__dict__,default=lambda x: x.__dict__))
+            
+        files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)
+        for f in files:
+            try:
+                os.remove(f)
+            except OSError as e:
+                print("Error: %s : %s" % (f, e.strerror))
         #for test in res_lst: 
         #   f.write(json.dumps(test.__dict__))
         f.close()
