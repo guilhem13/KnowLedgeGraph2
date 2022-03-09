@@ -65,35 +65,54 @@ class Textprocessed():
         return result
 
     def find_regex_style(self,regexstyle, text):        
-        res = re.findall(regexstyle, text, re.IGNORECASE) 
-        return list(dict.fromkeys([r.strip(".") for r in res]))  
+        regexp = re.compile(regexstyle)
+        return regexp.findall(text)
+    
+    def check_doublon (self,listcorrect, listaverifier):
+        result = listaverifier
+        for item in listaverifier: 
+            for item2 in listcorrect: 
+                if item in item2:
+                    result.remove(item)
+        return result
 
-    def find_entites_based_on_regex(self,text):
-        checkApaStyle = self.find_regex_style("([^\.].*?[0-9])(?=\.|\Z)", text)
+    
+    def find_entites_based_on_regex(self,text):        
         Entitylist = []
-        if len(checkApaStyle) >0 : # check if contains APA Style references 
-            for item in checkApaStyle: 
-                firstformat = self.find_regex_style("[a-zA-Z]\. [a-zA-Z]+",item) # E. Behjat
-                secondformat = self.find_regex_style("[a-zA-Z]\.\s+[a-zA-Z]\. [a-zA-Z]+",item) #  B. K. Jang
-                thirdformat = self.find_regex_style("[a-zA-Z]\. [a-zA-Z]\.\s[a-zA-Z]\.\s[a-zA-Z]+",item) #J. F. P. Kooij
-                result = firstformat + secondformat + thirdformat
-                regex = re.compile('^[a-zA-Z]\. [a-zA-Z]$') 
-                result = [x for x in result if regex.match(x) == None]# remove A. R part
-                result = list(set(result)) #remove duplicate  
-                if len(result) > 0:
-                    result = Data(1).process_authors(result)
-                    Entitylist.extend(result)
-                else : 
-                    #print("liste nulle")
-                    pass 
+        fithformat = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]\.\s[a-zA-Z]+[,.]',text) #James J. H. Little,
+        fourformat = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]+[,.]',text) #James J. Little,
+        thirdformat = self.find_regex_style("[A-Z]\. [A-Z]\.\s[A-Z]\.\s[a-zA-Z]+[,.]",text) #J. F. P. Kooijffrr
+        result = fithformat +fourformat + thirdformat 
+        result = list(set(result))
+
+        firstformat = self.find_regex_style(r"[A-Z]\. [a-zA-Z]+[,.]",text) # E. Behjat
+        secondformat = self.find_regex_style("[A-Z]\.\s+[A-Z]\. [a-zA-Z]+[,.]",text) #  B. K. Jang 
+        if len(firstformat) >0 and len(result) >0:
+            firstformat = self.check_doublon (result, firstformat)
+            firstformat = list(set(firstformat))
+            result = result + firstformat
+        if len(secondformat) >0 and len(result) >0:       
+            secondformat = self.check_doublon (result, secondformat)
+            secondformat = list(set(secondformat))
+            result = result + secondformat
+        if len(result) > 0:
+            regex_remove = re.compile('^[A-Z]\. [A-Z]\.$') 
+            result = [x for x in result if regex_remove.match(x) == None]# remove A. R part 
+            result = [x[:-1] for x in result ]     
+            result = Data(1).process_authors(result)
+            Entitylist.extend(result)
+        else : 
+            #print("liste nulle")
+            pass
+             
         if len(Entitylist) ==0:
             p = Entity()
             p.set_prenom("guilhem")
             p.set_nom("maillebuau")
             Entitylist.append(p)
-            
-        return Entitylist
-                
+              
+        return Entitylist    
+                    
 
 
     

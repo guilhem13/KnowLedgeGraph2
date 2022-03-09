@@ -1,0 +1,1444 @@
+{
+    "title": "Locate This, Not That: Class-Conditioned Sound Event DOA Estimation",
+    "doi": "2203.04197v1",
+    "authors": [
+        {
+            "prenom": "Olga",
+            "nom": "Slizovskaia"
+        },
+        {
+            "prenom": "Gordon",
+            "nom": "Wichern"
+        },
+        {
+            "prenom": "Zhong-Qiu",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "Jonathan Le",
+            "nom": "Roux"
+        }
+    ],
+    "link": "http://arxiv.org/pdf/2203.04197v1",
+    "summary": "Existing systems for sound event localization and detection (SELD) typically\noperate by estimating a source location for all classes at every time instant.\nIn this paper, we propose an alternative class-conditioned SELD model for\nsituations where we may not be interested in localizing all classes all of the\ntime. This class-conditioned SELD model takes as input the spatial and spectral\nfeatures from the sound file, and also a one-hot vector indicating the class we\nare currently interested in localizing. We inject the conditioning information\nat several points in our model using feature-wise linear modulation (FiLM)\nlayers. Through experiments on the DCASE 2020 Task 3 dataset, we show that the\nproposed class-conditioned SELD model performs better in terms of common SELD\nmetrics than the baseline model that locates all classes simultaneously, and\nalso outperforms specialist models that are trained to locate only a single\nclass of interest. We also evaluate performance on the DCASE 2021 Task 3\ndataset, which includes directional interference (sound events from classes we\nare not interested in localizing) and notice especially strong improvement from\nthe class-conditioned model.",
+    "date_published": "2022-03-08 16:49:15+00:00",
+    "entities_include_in_text": [],
+    "entities_from_reference": [
+        {
+            "prenom": "J.",
+            "nom": "Nikunen"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Politis"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Audio"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Lang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Barfuss"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Araki"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Lee"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Salamon"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bryan"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Online"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Grumiaux"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Jun"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "David"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Huang"
+        },
+        {
+            "prenom": "Le",
+            "nom": "Roux"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Apr"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wilson"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Hershey"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Distill"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Pan"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "D3Nets"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Mesaros"
+        }
+    ],
+    "url_in_text": [
+        "2109.03465",
+        "2106.06999",
+        "2101.02919",
+        "https://doi.org/10.5281/zenodo",
+        "https://doi.org/10.5281/",
+        "https://distill.pub/2018/feature-wise-transformations"
+    ],
+    "doi_in_text": []
+}{
+    "title": "Learning Bidirectional Translation between Descriptions and Actions with Small Paired Data",
+    "doi": "2203.04218v1",
+    "authors": [
+        {
+            "prenom": "Minori",
+            "nom": "Toyoda"
+        },
+        {
+            "prenom": "Kanata",
+            "nom": "Suzuki"
+        },
+        {
+            "prenom": "Yoshihiko",
+            "nom": "Hayashi"
+        },
+        {
+            "prenom": "Tetsuya",
+            "nom": "Ogata"
+        }
+    ],
+    "link": "http://arxiv.org/pdf/2203.04218v1",
+    "summary": "This study achieved bidirectional translation between descriptions and\nactions using small paired data. The ability to mutually generate descriptions\nand actions is essential for robots to collaborate with humans in their daily\nlives. The robot is required to associate real-world objects with linguistic\nexpressions, and large-scale paired data are required for machine learning\napproaches. However, a paired dataset is expensive to construct and difficult\nto collect. This study proposes a two-stage training method for bidirectional\ntranslation. In the proposed method, we train recurrent autoencoders (RAEs) for\ndescriptions and actions with a large amount of non-paired data. Then, we\nfine-tune the entire model to bind their intermediate representations using\nsmall paired data. Because the data used for pre-training do not require\npairing, behavior-only data or a large language corpus can be used. We\nexperimentally evaluated our method using a paired dataset consisting of\nmotion-captured actions and descriptions. The results showed that our method\nperformed well, even when the amount of paired data to train was small. The\nvisualization of the intermediate representations of each RAE showed that\nsimilar actions were encoded in a clustered position and the corresponding\nfeature vectors well aligned.",
+    "date_published": "2022-03-08 17:39:16+00:00",
+    "entities_include_in_text": [
+        "Grant\n\nNumber JPMJMS2031"
+    ],
+    "entities_from_reference": [
+        {
+            "prenom": "No firstname",
+            "nom": "Bongard"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Systems"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Huang"
+        },
+        {
+            "prenom": "Science China Technological",
+            "nom": "Sciences"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Lee"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bert"
+        },
+        {
+            "prenom": "Human Language",
+            "nom": "Technologies"
+        }
+    ],
+    "url_in_text": [
+        "1412.6980",
+        "2006.10029",
+        "2003.04297",
+        "waseda.jp"
+    ],
+    "doi_in_text": []
+}{
+    "title": "Adaptative Perturbation Patterns: Realistic Adversarial Learning for Robust NIDS",
+    "doi": "2203.04234v1",
+    "authors": [
+        {
+            "prenom": "Jo\u00e3o",
+            "nom": "Vitorino"
+        },
+        {
+            "prenom": "Nuno",
+            "nom": "Oliveira"
+        },
+        {
+            "prenom": "Isabel",
+            "nom": "Pra\u00e7a"
+        }
+    ],
+    "link": "http://arxiv.org/pdf/2203.04234v1",
+    "summary": "Adversarial attacks pose a major threat to machine learning and to the\nsystems that rely on it. Nonetheless, adversarial examples cannot be freely\ngenerated for domains with tabular data, such as cybersecurity. This work\nestablishes the fundamental constraint levels required to achieve realism and\nintroduces the Adaptative Perturbation Pattern Method (A2PM) to fulfill these\nconstraints in a gray-box setting. A2PM relies on pattern sequences that are\nindependently adapted to the characteristics of each class to create valid and\ncoherent data perturbations. The developed method was evaluated in a\ncybersecurity case study with two scenarios: Enterprise and Internet of Things\n(IoT) networks. Multilayer Perceptron (MLP) and Random Forest (RF) classifiers\nwere created with regular and adversarial training, using the CIC-IDS2017 and\nIoT-23 datasets. In each scenario, targeted and untargeted attacks were\nperformed against the classifiers, and the generated examples were compared\nwith the original network traffic flows to assess their realism. The obtained\nresults demonstrate that A2PM provides a time efficient generation of realistic\nadversarial examples, which can be advantageous for both adversarial training\nand attacks.",
+    "date_published": "2022-03-08 17:52:09+00:00",
+    "entities_include_in_text": [],
+    "entities_from_reference": [
+        {
+            "prenom": "No firstname",
+            "nom": "Learn"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Track"
+        },
+        {
+            "prenom": "European Union",
+            "nom": "Agency"
+        },
+        {
+            "prenom": "Threat",
+            "nom": "Landscape"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Shlens"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Shlens"
+        },
+        {
+            "prenom": "Machine Learning",
+            "nom": "Algorithms"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Yuan"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Zhu"
+        },
+        {
+            "prenom": "Deep",
+            "nom": "Learning"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Loukas"
+        },
+        {
+            "prenom": "Network Intrusion Detection",
+            "nom": "Systems"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Threat"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Taxonomy"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Santurkar"
+        },
+        {
+            "prenom": "Neural",
+            "nom": "Inf"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Vis"
+        },
+        {
+            "prenom": "Pattern",
+            "nom": "Recognit."
+        },
+        {
+            "prenom": "Data",
+            "nom": "Softw"
+        },
+        {
+            "prenom": "J. D.",
+            "nom": "Tygar"
+        },
+        {
+            "prenom": "J. D.",
+            "nom": "Tygar"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Mach"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "Robust Decision Trees Against Adversarial",
+            "nom": "Examples"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Online"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Chen"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Jiang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Martins"
+        },
+        {
+            "prenom": "J. M.",
+            "nom": "Cruz"
+        },
+        {
+            "prenom": "J. M.",
+            "nom": "Cruz"
+        },
+        {
+            "prenom": "Henriques",
+            "nom": "Abreu"
+        },
+        {
+            "prenom": "Machine Learning",
+            "nom": "Applied"
+        },
+        {
+            "prenom": "Malware",
+            "nom": "Scenarios"
+        },
+        {
+            "prenom": "Fool Deep Neural",
+            "nom": "Networks"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Soc"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Cisse"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Keshet"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Houdini"
+        },
+        {
+            "prenom": "Deep",
+            "nom": "Structured"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Yi"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Yi"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Artif"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Fredrikson"
+        },
+        {
+            "prenom": "Deep Neural",
+            "nom": "Networks"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Evol"
+        },
+        {
+            "prenom": "Graph Structured",
+            "nom": "Data"
+        },
+        {
+            "prenom": "Machine",
+            "nom": "Learning"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Goodfellow"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Nets"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Networks"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Icml"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Rauber"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Rauber"
+        },
+        {
+            "prenom": "Shah",
+            "nom": "Heydari"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Sharafaldin"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Zenodo"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Adams"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Hossin"
+        },
+        {
+            "prenom": "Data",
+            "nom": "Min"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Knowl"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Manag"
+        },
+        {
+            "prenom": "Xerxes DDoS Attack",
+            "nom": "Tools"
+        }
+    ],
+    "url_in_text": [
+        "1707.05373",
+        "2010.16061",
+        "ipp.pt",
+        "https://doi.org/10.3390/xxxxx",
+        "https://creativecommons.org/license",
+        "www.mdpi.com/journal/futureinternet",
+        "https://proceedings.mlr.press/v139/vos21a.html",
+        "http://arxiv.org/abs/1707.05373",
+        "https://proceedings.mlr.press/v80/dai18b.html",
+        "http://arxiv.org/abs/2010.16061"
+    ],
+    "doi_in_text": [
+        "10.1109/TNNLS.2018.2886017",
+        "10.1016/j.procs.2016.06.016",
+        "10.2824/238222",
+        "10.1016/j.ins.2013.03.022",
+        "10.1145/3469659",
+        "10.5281/zenodo.4743746",
+        "10.2824/874249",
+        "10.1145/3128572.3140448",
+        "10.1109/ACCESS.2020.2974752",
+        "10.1109/TEVC.2019.2890858",
+        "10.1016/j.jss.2020.110767",
+        "10.1109/EuroSP.2016.36",
+        "10.1023/A:1010933404324",
+        "10.3390/app9050909",
+        "10.5220/0006639801080116",
+        "10.1109/ICODSE.2017.8285847",
+        "10.1007/978-3-319-58347-1_10",
+        "10.1109/SP.2017.49",
+        "10.1109/ICACCI.2018.8554590",
+        "10.3390/jcp1040037",
+        "10.1109/CVPR.2016.282",
+        "10.1016/j.cosrev.2019.100199"
+    ]
+}{
+    "title": "Policy-Based Bayesian Experimental Design for Non-Differentiable Implicit Models",
+    "doi": "2203.04272v1",
+    "authors": [
+        {
+            "prenom": "Vincent",
+            "nom": "Lim"
+        },
+        {
+            "prenom": "Ellen",
+            "nom": "Novoseller"
+        },
+        {
+            "prenom": "Jeffrey",
+            "nom": "Ichnowski"
+        },
+        {
+            "prenom": "Huang",
+            "nom": "Huang"
+        },
+        {
+            "prenom": "Ken",
+            "nom": "Goldberg"
+        }
+    ],
+    "link": "http://arxiv.org/pdf/2203.04272v1",
+    "summary": "For applications in healthcare, physics, energy, robotics, and many other\nfields, designing maximally informative experiments is valuable, particularly\nwhen experiments are expensive, time-consuming, or pose safety hazards. While\nexisting approaches can sequentially design experiments based on prior\nobservation history, many of these methods do not extend to implicit models,\nwhere simulation is possible but computing the likelihood is intractable.\nFurthermore, they often require either significant online computation during\ndeployment or a differentiable simulation system. We introduce Reinforcement\nLearning for Deep Adaptive Design (RL-DAD), a method for simulation-based\noptimal experimental design for non-differentiable implicit models. RL-DAD\nextends prior work in policy-based Bayesian Optimal Experimental Design (BOED)\nby reformulating it as a Markov Decision Process with a reward function based\non likelihood-free information lower bounds, which is used to learn a policy\nvia deep reinforcement learning. The learned design policy maps prior histories\nto experiment designs offline and can be quickly deployed during online\nexecution. We evaluate RL-DAD and find that it performs competitively with\nbaselines on three benchmarks.",
+    "date_published": "2022-03-08 18:47:01+00:00",
+    "entities_include_in_text": [
+        "Lim et al., 2021; Li et al.,\n2021",
+        "Lim et al., 2021",
+        "Zhao et al., 2021",
+        "Lim et al., 2021",
+        "Huang et al., 2020",
+        "Lindley, 1956",
+        "Yin\net al., 2021",
+        "Wittmann et al., 2021",
+        "Song et al., 2020",
+        "Rainforth et al., 2018",
+        "Foster et al., 2021",
+        "Lindley,\n1956",
+        "Belghazi\net al., 2018",
+        "Foster\net al., 2021",
+        "Ivanova et al., 2021).\n\nStatic BOED Static BOED selects a set of experiments\nupfront. Zhang et al. (2021",
+        "Belghazi et al., 2018",
+        "Snoek et al., 2012)\n\nSequential BOED Sequential BOED algorithms select\nexperiment designs based on existing experiment outcomes.\nMany such algorithms, e.g. Watson (2017); Foster et al.\n(2019",
+        "Foster et al., 2021; Ivanova et al., 2021",
+        "Snoek et al., 2012), rather than\ngeneral BOED. Ivanova et al. (2021",
+        "Jiang et al., 2020",
+        "Foster et al., 2021",
+        "Ivanova et al.,\n2021",
+        "Ivanova et al., 2021",
+        "Ivanova et al., 2021",
+        "Fujimoto et al., 2018",
+        "Pathak\net al., 2017; Andrychowicz et al., 2017",
+        "Poole et al.,\n2019; Oord et al., 2018",
+        "Andrychowicz\net al., 2017",
+        "Ivanova et al., 2021",
+        "Foster et al., 2021",
+        "Foster et al., 2021",
+        "Kirschner et al., 2019",
+        "Foster et al., 2021",
+        "Engstrom et al., 2020",
+        "Lim et al., 2021",
+        "Nagendra et al., 2017), as implemented by\nMakoviychuk et al. (2021"
+    ],
+    "entities_from_reference": [
+        {
+            "prenom": "No firstname",
+            "nom": "Wolski"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ray"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Schneider"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Tobin"
+        },
+        {
+            "prenom": "Pieter",
+            "nom": "Abbeel"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bengio"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wallach"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Garnett"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ashenafi"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Pandita"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ghosh"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Belghazi"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Baratin"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Rajeshwar"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ozair"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Hjelm"
+        },
+        {
+            "prenom": "Machine",
+            "nom": "Learning"
+        },
+        {
+            "prenom": "Machine Learning",
+            "nom": "Research"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Beyer"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Blau"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bonilla"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Chades"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Thomas"
+        },
+        {
+            "prenom": "John",
+            "nom": "Wiley"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Sons"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ilyas"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Santurkar"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Tsipras"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Janoos"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Rudolph"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Foster"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Jankowiak"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Teh"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Goodman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Fox"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ivanova"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Fujimoto"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Hoof"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Meger"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Huan"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Marzouk"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Huang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Danielczuk"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ichnowski"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Lee"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Vanhoucke"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Gutmann"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Jiang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Chai"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Singh"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kirschner"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Mutny"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Hiller"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ischebeck"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kleinegesse"
+        },
+        {
+            "prenom": "Bayesian Experimental",
+            "nom": "Design"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Byk"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Novoseller"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Burdick"
+        },
+        {
+            "prenom": "J.",
+            "nom": "W."
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Sui"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Sadigh"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Yue"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Lim"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Seita"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Planar"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Lindley"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Makoviychuk"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Guo"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Storey"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Macklin"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Hoeller"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Rudin"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Allshire"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Isaac"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Nagendra"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Podila"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ugarakhod"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "George"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Oord"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Li"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Pathak"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Agrawal"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Efros"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Darrell"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Poole"
+        },
+        {
+            "prenom": "Van Den",
+            "nom": "Oord"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Alemi"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Rainforth"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Yang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wood"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Shen"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Snoek"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Adams"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Song"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ermon"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Tokpanov"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Fleischman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Fountaine"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Atwater"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Sutton"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Barto"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Watson"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wittmann"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Yin"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Dalca"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bouman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Zhao"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Gao"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Tresp"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bayes"
+        },
+        {
+            "prenom": "Random Timesteps Batch Size Hidden Layer",
+            "nom": "Size"
+        },
+        {
+            "prenom": "Hidden",
+            "nom": "Layers"
+        },
+        {
+            "prenom": "Updates Per Timestep Policy Update Frequency Policy Update",
+            "nom": "Noise"
+        },
+        {
+            "prenom": "Policy",
+            "nom": "Noise"
+        },
+        {
+            "prenom": "Critic Learning",
+            "nom": "Rate"
+        }
+    ],
+    "url_in_text": [
+        "2112.10944",
+        "2202.00821",
+        "2005.12729",
+        "2103.02438",
+        "1604.08320",
+        "2105.04379",
+        "2108.10470",
+        "1807.03748",
+        "2110.15335",
+        "https://proceedings",
+        "neurips.cc/paper/2017/file/",
+        "https://proceedings.mlr.press/v80/",
+        "neurips.cc/paper/2019/file/",
+        "https://proceedings.mlr.press/",
+        "https://doi.org/10.1214/",
+        "https://openreview.net/forum"
+    ],
+    "doi_in_text": [
+        "10.1214/aoms/"
+    ]
+}{
+    "title": "Trustable Co-label Learning from Multiple Noisy Annotators",
+    "doi": "2203.04199v1",
+    "authors": [
+        {
+            "prenom": "Shikun",
+            "nom": "Li"
+        },
+        {
+            "prenom": "Tongliang",
+            "nom": "Liu"
+        },
+        {
+            "prenom": "Jiyong",
+            "nom": "Tan"
+        },
+        {
+            "prenom": "Dan",
+            "nom": "Zeng"
+        },
+        {
+            "prenom": "Shiming",
+            "nom": "Ge"
+        }
+    ],
+    "link": "http://arxiv.org/pdf/2203.04199v1",
+    "summary": "Supervised deep learning depends on massive accurately annotated examples,\nwhich is usually impractical in many real-world scenarios. A typical\nalternative is learning from multiple noisy annotators. Numerous earlier works\nassume that all labels are noisy, while it is usually the case that a few\ntrusted samples with clean labels are available. This raises the following\nimportant question: how can we effectively use a small amount of trusted data\nto facilitate robust classifier learning from multiple annotators? This paper\nproposes a data-efficient approach, called \\emph{Trustable Co-label Learning}\n(TCL), to learn deep classifiers from multiple noisy annotators when a small\nset of trusted data is available. This approach follows the coupled-view\nlearning manner, which jointly learns the data classifier and the label\naggregator. It effectively uses trusted data as a guide to generate trustable\nsoft labels (termed co-labels). A co-label learning can then be performed by\nalternately reannotating the pseudo labels and refining the classifiers. In\naddition, we further improve TCL for a special complete data case, where each\ninstance is labeled by all annotators and the label aggregator is represented\nby multilayer neural networks to enhance model capacity. Extensive experiments\non synthetic and real datasets clearly demonstrate the effectiveness and\nrobustness of the proposed approach. Source code is available at\nhttps://github.com/ShikunLi/TCL",
+    "date_published": "2022-03-08 16:57:00+00:00",
+    "entities_include_in_text": [],
+    "entities_from_reference": [
+        {
+            "prenom": "No firstname",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "Pattern",
+            "nom": "Recognition"
+        },
+        {
+            "prenom": "Data",
+            "nom": "Mining"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Systems"
+        },
+        {
+            "prenom": "Video",
+            "nom": "Technology"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Ruan"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Ruan"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Zhu"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Huang"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Xu"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Xu"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Tang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Agustsson"
+        },
+        {
+            "prenom": "Pattern",
+            "nom": "Analysis"
+        },
+        {
+            "prenom": "Machine",
+            "nom": "Intelligence"
+        },
+        {
+            "prenom": "Machine",
+            "nom": "Learning"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Deng"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Shasha"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Champ"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Bergsma"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Bergsma"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Gao"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Gao"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Zhao"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kim"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Valadez"
+        },
+        {
+            "prenom": "Machine Learning",
+            "nom": "Research"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Albarqouni"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Pereira"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Lipton"
+        },
+        {
+            "prenom": "Deep",
+            "nom": "Learning"
+        },
+        {
+            "prenom": "Feature",
+            "nom": "Learning"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Yang"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Yang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Song"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Weakly"
+        },
+        {
+            "prenom": "J. C.",
+            "nom": "Platt"
+        },
+        {
+            "prenom": "J. C.",
+            "nom": "Platt"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Simpson"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Smith"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Miller"
+        },
+        {
+            "prenom": "Data",
+            "nom": "Engineering"
+        },
+        {
+            "prenom": "Knowledge",
+            "nom": "Discovery"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Sarma"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Hinton"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Ma"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Ma"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Vikas"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Rosenberg"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "David"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ye"
+        },
+        {
+            "prenom": "Knowledge",
+            "nom": "Management"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bartlett"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Jan"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kumar"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Chapman"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Habbema"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Habbema"
+        },
+        {
+            "prenom": "J. T.",
+            "nom": "Kwok"
+        },
+        {
+            "prenom": "J. T.",
+            "nom": "Kwok"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wiley"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Networks"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Man"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wolpert"
+        },
+        {
+            "prenom": "J. C.",
+            "nom": "Bezdek"
+        },
+        {
+            "prenom": "J. C.",
+            "nom": "Bezdek"
+        },
+        {
+            "prenom": "Fundamenta",
+            "nom": "Informaticae"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Jiang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Rahman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Barnes"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Larson"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Pang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Fan"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Krizhevsky"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Branson"
+        },
+        {
+            "prenom": "Shikun",
+            "nom": "Li"
+        },
+        {
+            "prenom": "Tongliang",
+            "nom": "Liu"
+        },
+        {
+            "prenom": "Jiyong",
+            "nom": "Tan"
+        },
+        {
+            "prenom": "Dan",
+            "nom": "Zeng"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Hefei"
+        },
+        {
+            "prenom": "Pattern Recognition",
+            "nom": "Lab"
+        },
+        {
+            "prenom": "Nokia Research",
+            "nom": "Center"
+        }
+    ],
+    "url_in_text": [
+        "https://github.com/ShikunLi/TCL",
+        "ac.cn",
+        "edu.au",
+        "edu.cn",
+        "whatbird.com"
+    ],
+    "doi_in_text": []
+}

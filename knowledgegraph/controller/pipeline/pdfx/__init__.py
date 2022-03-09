@@ -61,11 +61,12 @@ class PDFx(object):
                 self.stream = BytesIO(content)
             except Exception as e:
                 print("Pas bon ")
+            """    
             try: 
                 with open(str("knowledgegraph/file/"+self.fn+".pdf"), 'wb') as f:
                     f.write(content)
             except Exception as e : 
-                print("N'enregistre pas le fichier")
+                print("N'enregistre pas le fichier")"""
 
         else:
             if not os.path.isfile(uri):

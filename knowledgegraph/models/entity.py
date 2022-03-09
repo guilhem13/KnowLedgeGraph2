@@ -17,5 +17,15 @@ class Entity():
         self.nom = x
 
     def set_name(self, x):
-        self.name = x    
+        self.name = x  
+
+    def __eq__(self, other): 
+        equals = False
+        if not isinstance(other, Entity):
+            return NotImplemented
+        if self.nom == other.nom: 
+            if other.prenom in self.prenom: 
+                equals = True
+
+        return equals
    

@@ -26,7 +26,13 @@ for paper in papers :
     paper_list.append(Papier(paper.title,paper.doi,convert_dict_to_entities(paper.authors),paper.link,paper.summary,paper.data_published))
 """
 
+p = Entity()   
+p.set_prenom('prenom')
+p.set_nom('nom')
 
+a = Entity()   
+a.set_prenom('prenom')
+a.set_nom('nom')
 
 
 files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)

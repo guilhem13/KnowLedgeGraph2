@@ -74,20 +74,20 @@ class ServiceOne():
             temp = liste[i].split(" ")
             if len(temp) >2:  # Prend en compte les noms du type David A. Strubbe
                 p = Entity()
-                p.set_prenom(str(temp[0]+" "+temp[1]))
-                p.set_nom(temp[2])
+                p.set_prenom(' '.join(temp[0:-1]))
+                p.set_nom(temp[-1])
                 result.append(p)
             else:
-                if len(temp) >1:
-                    p = Entity()
+                if len(temp) >1: # cas normal nom prénom 
+                    p = Entity()   
                     p.set_prenom(temp[0])
                     p.set_nom(temp[1])
                     result.append(p)
-                else:  
-                    p = Entity()
-                    p.set_prenom("pas_de_prenom") #TODO gérer cette erreur 
+                else: 
+                    p = Entity()   # cas pas normal juste nom ou erreur 
+                    p.set_prenom("No firstname")
                     p.set_nom(temp[0])
-                    result.append(p) #TODO parfois le retour n'est pas prenom nom il faut donc gérer ce porblème 
+                    result.append(p)
         return result 
 
     def get_references(self):
