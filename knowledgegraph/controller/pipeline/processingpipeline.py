@@ -4,6 +4,7 @@ from .pdfx import PDFx
 from .undesirable_char import undesirable_char_replacements 
 from knowledgegraph.controller import Data
 from knowledgegraph.models import Entity
+from refextract import extract_references_from_file
 
 class Textprocessed(): 
     url = None
@@ -50,7 +51,11 @@ class Textprocessed():
                         result = temp[index +len(keyword):]
                         return result
                     else: 
-                        return "erreur problème: Plusieurs références ! 2"     
+                        return "erreur problème: Plusieurs références ! 2" 
+
+    def get_references_part2(filename): 
+        references = extract_references_from_file(filename)
+        return references
 
     def clean_references_part(self,data):
         temp = re.sub(' +', ' ', data)
@@ -73,37 +78,106 @@ class Textprocessed():
         for item in listaverifier: 
             for item2 in listcorrect: 
                 if item in item2:
+                    if "Astrom" in item:
+                        print("$$db$$") 
+                        print(item)
+                        print(item2)
                     result.remove(item)
+        #print(result)
         return result
+
 
     
     def find_entites_based_on_regex(self,text):        
         Entitylist = []
+
         fithformat = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]\.\s[a-zA-Z]+[,.]',text) #James J. H. Little,
+        fithformat2 = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]\.\s[a-zA-Z]+\sand',text) #James J. H. Little and
+        fithformat = [x[:-1] for x in fithformat] if len(fithformat)>0 else []
+        fithformat2 = [x[:-4] for x in fithformat2] if len(fithformat2)>0 else []
+        Style_one = fithformat +fithformat2
+        Style_one = list(set(Style_one))
+
         fourformat = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]+[,.]',text) #James J. Little,
+        fourformat2 = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]+\sand',text) #James J. Little and
+        fourformat = [x[:-1] for x in fourformat] if len(fourformat)>0 else []
+        fourformat2 = [x[:-4] for x in fourformat2] if len(fourformat2)>0 else []
+        Style_two = fourformat + fourformat2
+        Style_two = list(set(Style_two))
+
         thirdformat = self.find_regex_style("[A-Z]\. [A-Z]\.\s[A-Z]\.\s[a-zA-Z]+[,.]",text) #J. F. P. Kooijffrr
-        result = fithformat +fourformat + thirdformat 
+        thirdformat2 = self.find_regex_style("[A-Z]\. [A-Z]\.\s[A-Z]\.\s[a-zA-Z]+\sand",text) #J. F. P. Kooijffrr and
+        thirdformat = [x[:-1] for x in thirdformat] if len(thirdformat)>0 else []
+        thirdformat2 = [x[:-4] for x in thirdformat2] if len(thirdformat2)>0 else []
+        Style_three = thirdformat + thirdformat2
+        Style_three = list(set(Style_three))
+
+        """Style_two = self.check_doublon(Style_one, Style_two)
+        result = Style_one + Style_two 
+        Style_three = self.check_doublon(result, Style_three)
+        result = result + Style_three """
+        result = Style_one + Style_two + Style_three
         result = list(set(result))
 
-        firstformat = self.find_regex_style(r"[A-Z]\. [a-zA-Z]+[,.]",text) # E. Behjat
+        firstformat = self.find_regex_style("[A-Z]\. [a-zA-Z]+[,.]",text) # E. Behjat
+        firstformat2 = self.find_regex_style("[A-Z]\. [a-zA-Z]+\sand",text) # E. Behjat and
+        firstformat = [x[:-1] for x in firstformat] if len(firstformat)>0 else []
+        firstformat2 = [x[:-4] for x in firstformat2] if len(firstformat2)>0 else []
+        firstformat = firstformat + firstformat2 
+        firstformat = list(set(firstformat))
+
         secondformat = self.find_regex_style("[A-Z]\.\s+[A-Z]\. [a-zA-Z]+[,.]",text) #  B. K. Jang 
-        if len(firstformat) >0 and len(result) >0:
-            firstformat = self.check_doublon (result, firstformat)
+        secondformat2 = self.find_regex_style("[A-Z]\.\s+[A-Z]\. [a-zA-Z]+\sand",text)# B. K. Jang  and
+        secondformat2 = [x[:-4] for x in secondformat2] if len(secondformat2)>0 else []
+        secondformat = [x[:-1] for x in secondformat] if len(secondformat)>0 else []
+        secondformat = secondformat + secondformat2
+        secondformat = list(set(secondformat))
+
+        if len(firstformat) >0:
+            if len(result) >0: 
+                print(firstformat)
+                firstformat = self.check_doublon(result, firstformat)
             firstformat = list(set(firstformat))
             result = result + firstformat
-        if len(secondformat) >0 and len(result) >0:       
-            secondformat = self.check_doublon (result, secondformat)
+        if len(secondformat) >0:  
+            if len(result) >0:     
+                secondformat = self.check_doublon(result, secondformat)
             secondformat = list(set(secondformat))
             result = result + secondformat
+        """
+        sithformat = self.find_regex_style(r"[A-Z]\.\s[a-zA-Z]+\sand\s[A-Z]\. [a-zA-Z]",text) #F. Englert and R. Brout, captuer le F.Englert
+        if len(sithformat) >0:
+            sithformat = [x.split(" and")[0] for x in sithformat ]
+            if len(result) >0: 
+                sithformat = self.check_doublon (result, sithformat)
+            sithformat = list(set(sithformat))
+            result = result + sithformat"""
+
+        sevenformat = self.find_regex_style(r"[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-z]+",text) #Alan Akbik, Duncan Blythe, and Roland Vollgraf
+        if len(sevenformat) >0:
+            newsevenformat =[]
+            for item in sevenformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1])
+                newsevenformat.append(temp[2][4:])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+
         if len(result) > 0:
-            regex_remove = re.compile('^[A-Z]\. [A-Z]\.$') 
-            result = [x for x in result if regex_remove.match(x) == None]# remove A. R part 
-            result = [x[:-1] for x in result ]     
+            regex_remove = re.compile('^[A-Z]\. [A-Z]\.$')
+            regex_remove2 = re.compile('^[A-Z]\. [A-Z]$')
+            result = [x for x in result if regex_remove.match(x) == None]# remove "A. R "  part 
+            result = [x for x in result if regex_remove2.match(x) == None]
+            #result = [x[:-1] for x in result ]   
             result = Data(1).process_authors(result)
             Entitylist.extend(result)
         else : 
             #print("liste nulle")
             pass
+        
              
         if len(Entitylist) ==0:
             p = Entity()

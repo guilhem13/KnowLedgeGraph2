@@ -6,6 +6,7 @@ from knowledgegraph.controller import Data
 from knowledgegraph.owl import ontology
 from knowledgegraph.models import Papier , Entity
 import ast
+
 """
 route --- getner part 
 """
@@ -30,12 +31,10 @@ def feed_bdd (nb_paper, session):
         if session.query(PapierORM).first() ==None : 
             session.add(p)
             session.commit()
-            print("*****1 c'est inserré mec !")
         else:   
             if session.query(PapierORM).filter(PapierORM.doi == p.doi).scalar() is None: 
                 session.add(p)
                 session.commit()
-                print("********2 c'est inserré mec !")
                 
 """
 route --- generate pipeline 

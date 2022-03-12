@@ -4,18 +4,18 @@ from xml.sax.saxutils import escape
 class Ontology():
 
     def __init__(self):
-        self.template_onto = get_ontology("file://owl/onto3.owl").load()
+        self.template_onto = get_ontology("file://knowledgegraph/owl/onto3.owl").load()
         self.foaf = self.template_onto.get_imported_ontologies().first().load()
     
                 
     def add_papier(self, papier):
          with self.template_onto:
-            document_object = self.template_onto.Papier(escape(papier.doi[0]))
-            document_object.doi.append(papier.doi[0])
-            document_object.doi.append(papier.title[0])
-            document_object.doi.append(papier.link[0]) 
+            document_object = self.template_onto.Papier(escape(papier.doi))
+            document_object.doi.append(papier.doi)
+            document_object.doi.append(papier.title)
+            document_object.doi.append(papier.link) 
             
-            for entite in papier.authors[0]: 
+            for entite in papier.authors: 
                 author_object = self.template_onto.Auteur(entite.nom)
                 author_object.firstName.append(entite.prenom)
                 author_object.lastName.append(entite.nom)

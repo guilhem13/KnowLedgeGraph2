@@ -97,7 +97,7 @@ class Pipeline():
             #print(len(text_processed))"""
             #data.entities_from_reference = processor.find_entites_based_on_regex(text_processed)
             entities_from_regex = processor.find_entites_based_on_regex(text_processed)
-            entities_from_serviceone = service_one_extraction.ServiceOne(text_processed).get_references()
+            """entities_from_serviceone = service_one_extraction.ServiceOne(text_processed).get_references()
             final_entities_list =[]
             print(len(entities_from_regex))
             print(len(entities_from_serviceone))
@@ -118,19 +118,20 @@ class Pipeline():
                 else:
                     data.entities_from_reference =  entities_from_regex
             else: 
-                data.entities_from_reference =  entities_from_serviceone 
-            #data.entities_from_reference = final_entities_list
+                data.entities_from_reference =  entities_from_serviceone """
+            data.entities_from_reference = entities_from_regex #final_entities_list
             data.url_in_text = processor.find_url_in_text()
             data.doi_in_text = processor.find_doi_in_text()#frfr
             data.date_published = str(data.date_published) # TODO a enlever c'était pour le test de json
-            #before  data.link[0] #TODO dans le cas où l'on est dans le service 2 
+            #before  data.link[0] #TODO dans le cas où l'on est dans le service 2
+            #os.remove(str("knowledge/file/"+data.doi+".pdf")) 
             out_queue.put(data)
 
     
     def make_traitement_pipeline(self,block_paper,out_queue,batch_size): 
         arxiv_data = block_paper
         res_lst = []        
-        f = open("test2.json", "a")
+        #f = open("test2.json", "a")
         #for i in range(0,len(arxiv_data),1):
         #    temp =arxiv_data[i:i+5]
         workers = [ mp.Process(target=self.multi_process, args=(ele, out_queue) ) for ele in block_paper]
@@ -144,16 +145,16 @@ class Pipeline():
         for j in range(len(workers)):
             res_lst.append(out_queue.get())
         
-        """ 
+        
         files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)
         for f in files:
             try:
                 os.remove(f)
             except OSError as e:
-                print("Error: %s : %s" % (f, e.strerror))"""
-        for test in res_lst: 
+                print("Error: %s : %s" % (f, e.strerror))
+        """for test in res_lst: 
            f.write(json.dumps(test.__dict__,default=lambda x: x.__dict__))#,default=lambda x: x.__dict__))
-        f.close()
+        f.close()"""
         return res_lst
      # TODO récolter le nombre de coeur pour ensuite le mettre sur le code
      # gérer le problème quand c'est 10000  
