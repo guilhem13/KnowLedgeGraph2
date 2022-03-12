@@ -88,15 +88,36 @@ def injestpaper(nb_paper):
 
 
 ############################### Request directly from arxiv########################################
-@app.route("/arxiv/generatepipeline/<nb_paper>")
-def create_pipeline(nb_paper):
-    webappmanager.generate_pipeline(nb_paper)#TODO retourner en mode json 
+@app.route("/arxiv/pipeline/<nb_paper>")
+def create_pipeline_from_arxiv(nb_paper):
+    webappmanager.pipeline_from_arxiv(nb_paper)#TODO retourner en mode json 
     return Response(
                     Notification("200", "Done").message(), #TODO Retouner l'ontologie en version json 
                     status=400,
                     mimetype="application/json",
                 )
-   
+
+############################### Request papers from db ########################################
+@app.route("/arxiv/bdd/pipeline/<nb_paper>")
+def create_pipeline_from_bdd(nb_paper):
+    Done = webappmanager.pipeline_from_bdd(session, nb_paper)#TODO retourner en mode json
+    if Done == True:
+        return Response(
+                        Notification("200", "Done").message(), #TODO Retouner l'ontologie en version json 
+                        status=400,
+                        mimetype="application/json",
+                    )
+    else: 
+        return Response(
+                        Notification("400", "Can't generate ontology").message(), #TODO Retouner l'ontologie en version json 
+                        status=400,
+                        mimetype="application/json",
+                    )
+
+
+
+
+
 
 ############################### Error handler ########################################
 # route for error 500

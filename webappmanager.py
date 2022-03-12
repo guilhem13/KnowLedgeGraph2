@@ -37,9 +37,9 @@ def feed_bdd (nb_paper, session):
                 session.commit()
                 
 """
-route --- generate pipeline 
+route --- pipeline
 """
-def generate_pipeline(nb_paper): 
+def pipeline_from_arxiv(nb_paper): 
     nb_paper_to_request = int(nb_paper)
     block_arxiv_size = 5
     arxiv_data = Data(nb_paper_to_request).get_set_data()
@@ -60,7 +60,7 @@ def arxiv_route_main_function(block_paper):
     return p.make_traitement_pipeline(block_paper, out_queue, batch_size)
 
 """
-route --- generate pipeline 
+route --- bdd/pipeline/
 """
 
 def convert_dict_to_entities(stringdict):
@@ -74,10 +74,29 @@ def convert_dict_to_entities(stringdict):
 
     return entities_list
 
-def pipeline_from_bdd(session): 
-    papers = session.query(PapierORM).all()
-    paper_list = []
-    for paper in papers :
-        paper_list.append(Papier(paper.title,paper.doi,convert_dict_to_entities(paper.authors),paper.link,paper.summary,paper.data_published))
-    
-    return True
+def pipeline_from_bdd(session, nb_paper):
+
+    try: 
+        block_arxiv_size = 5
+        papiers= []
+        arxiv_data = []
+        papers = session.query(PapierORM).filter().limit(int(nb_paper)).all()
+
+        for paper in papers :
+            arxiv_data.append(Papier(paper.title,paper.doi,convert_dict_to_entities(paper.authors),paper.link,paper.summary,paper.datepublished))
+
+
+        for i in range(0,len(arxiv_data),block_arxiv_size):
+            print(i) 
+            papiers+= arxiv_route_main_function(arxiv_data[i:i+block_arxiv_size])
+
+        owl = ontology.Ontology()
+        for papier in papiers: 
+            owl.add_papier(papier)
+        owl.save('result.owl')
+
+        return True
+
+    except Exception as e: 
+        print(e)
+        return False
