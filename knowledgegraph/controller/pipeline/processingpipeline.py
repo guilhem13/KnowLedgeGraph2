@@ -74,18 +74,12 @@ class Textprocessed():
         return regexp.findall(text)
     
     def check_doublon (self,listcorrect, listaverifier):
-        result = listaverifier
-        for item in listaverifier: 
-            for item2 in listcorrect: 
-                if item in item2:
-                    if "Astrom" in item:
-                        print("$$db$$") 
-                        print(item)
-                        print(item2)
-                    result.remove(item)
-        #print(result)
-        return result
-
+        for i in range(len(listaverifier)): 
+            for j in range(len(listcorrect)): 
+                if listaverifier[i] in listcorrect[j]:
+                    listaverifier[i] = "TOREMOVE"
+        listaverifier = [x for x in listaverifier if x != "TOREMOVE"]
+        return listaverifier
 
     
     def find_entites_based_on_regex(self,text):        
@@ -132,6 +126,12 @@ class Textprocessed():
         secondformat = [x[:-1] for x in secondformat] if len(secondformat)>0 else []
         secondformat = secondformat + secondformat2
         secondformat = list(set(secondformat))
+        
+        if len(secondformat) >0:  
+            if len(result) >0:     
+                secondformat = self.check_doublon(result, secondformat)
+            secondformat = list(set(secondformat))
+            result = result + secondformat
 
         if len(firstformat) >0:
             if len(result) >0: 
@@ -139,21 +139,53 @@ class Textprocessed():
                 firstformat = self.check_doublon(result, firstformat)
             firstformat = list(set(firstformat))
             result = result + firstformat
-        if len(secondformat) >0:  
-            if len(result) >0:     
-                secondformat = self.check_doublon(result, secondformat)
-            secondformat = list(set(secondformat))
-            result = result + secondformat
-        """
-        sithformat = self.find_regex_style(r"[A-Z]\.\s[a-zA-Z]+\sand\s[A-Z]\. [a-zA-Z]",text) #F. Englert and R. Brout, captuer le F.Englert
-        if len(sithformat) >0:
-            sithformat = [x.split(" and")[0] for x in sithformat ]
+        
+        tenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-z]+",text) # 5 noms + and
+        if len(tenformat) >0:
+            newsevenformat =[]
+            for item in tenformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1])
+                newsevenformat.append(temp[2])
+                newsevenformat.append(temp[3])
+                newsevenformat.append(temp[4])
+                newsevenformat.append(temp[5][4:])
             if len(result) >0: 
-                sithformat = self.check_doublon (result, sithformat)
-            sithformat = list(set(sithformat))
-            result = result + sithformat"""
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
 
-        sevenformat = self.find_regex_style(r"[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-z]+",text) #Alan Akbik, Duncan Blythe, and Roland Vollgraf
+        eightformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-z]+",text) # 4 noms + and
+        if len(eightformat) >0:
+            newsevenformat =[]
+            for item in eightformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1])
+                newsevenformat.append(temp[2])
+                newsevenformat.append(temp[3])
+                newsevenformat.append(temp[4][4:])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+
+        nineformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-z]+",text) # 3 noms + and
+        if len(nineformat) >0:
+            newsevenformat =[]
+            for item in nineformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1])
+                newsevenformat.append(temp[2])
+                newsevenformat.append(temp[3][4:])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+
+        sevenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-z]+",text) #Alan Akbik, Duncan Blythe, and Roland Vollgraf
         if len(sevenformat) >0:
             newsevenformat =[]
             for item in sevenformat:
@@ -179,17 +211,14 @@ class Textprocessed():
             pass
         
              
-        if len(Entitylist) ==0:
+        if len(Entitylist) ==0: #TODO gérer le cas où ya pas de nom et prenom 
             p = Entity()
             p.set_prenom("guilhem")
             p.set_nom("maillebuau")
             Entitylist.append(p)
               
-        return Entitylist    
-                    
+        return Entitylist                
 
-
-    
     def find_url_in_text(self):
 
         arxiv_regex = r"""arxiv:\s?([^\s,]+)"""

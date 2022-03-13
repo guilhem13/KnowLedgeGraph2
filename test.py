@@ -5,13 +5,13 @@ from knowledgegraph.controller import Data
 import ast
 import glob , os 
 
-
+"""
 session = session_creator()
 # User is the name of table that has a column name
 papers = session.query(PapierORM).filter().limit(5).all()
 print(len(papers))
 
-"""
+
 def convert_dict_to_entities(stringdict):
     entities_list = []
     res = ast.literal_eval(stringdict)

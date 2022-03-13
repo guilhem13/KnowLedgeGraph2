@@ -30,7 +30,8 @@ if __name__ == '__main__':
         papiers+= main_function(arxiv_data[i:i+block_arxiv_size])
        
     #papiers = main_function()
+    """
     owl = ontology.Ontology()
     for papier in papiers: 
         owl.add_papier(papier)
-    owl.save('result.owl')
+    owl.save('result.owl')"""

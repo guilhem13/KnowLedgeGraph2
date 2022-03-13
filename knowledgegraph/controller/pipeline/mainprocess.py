@@ -131,7 +131,7 @@ class Pipeline():
     def make_traitement_pipeline(self,block_paper,out_queue,batch_size): 
         arxiv_data = block_paper
         res_lst = []        
-        #f = open("test2.json", "a")
+        f = open("test2.json", "a")
         #for i in range(0,len(arxiv_data),1):
         #    temp =arxiv_data[i:i+5]
         workers = [ mp.Process(target=self.multi_process, args=(ele, out_queue) ) for ele in block_paper]
@@ -147,14 +147,15 @@ class Pipeline():
         
         
         files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)
-        for f in files:
+        for fh in files:
             try:
-                os.remove(f)
+                os.remove(fh)
             except OSError as e:
-                print("Error: %s : %s" % (f, e.strerror))
-        """for test in res_lst: 
-           f.write(json.dumps(test.__dict__,default=lambda x: x.__dict__))#,default=lambda x: x.__dict__))
-        f.close()"""
+                print("Error: %s : %s" % (fh, e.strerror))
+
+        for test in res_lst: 
+           f.write(json.dumps(test.__dict__,default=lambda x: x.__dict__))
+        f.close()
         return res_lst
      # TODO récolter le nombre de coeur pour ensuite le mettre sur le code
      # gérer le problème quand c'est 10000  
