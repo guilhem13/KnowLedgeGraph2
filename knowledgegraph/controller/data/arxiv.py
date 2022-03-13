@@ -24,18 +24,21 @@ class Data():
                     p = Entity()
                     p.set_prenom(' '.join(seperate_name[0:-1]))
                     p.set_nom(seperate_name[-1])
-                    result.append(p)
+                    if len(p.nom)>2: 
+                        result.append(p)
                 else:
                     if len(seperate_name) >1: # cas normal nom prénom 
                         p = Entity()   
                         p.set_prenom(seperate_name[0])
                         p.set_nom(seperate_name[1])
-                        result.append(p)
+                        if len(p.nom)>2: 
+                            result.append(p)
                     else: 
                         p = Entity()   # cas pas normal juste nom ou erreur 
                         p.set_prenom("No firstname")
                         p.set_nom(seperate_name[0])
-                        result.append(p)
+                        if len(p.nom)>2: 
+                            result.append(p)
             return result
         else: 
             print("No authors on this paper")
