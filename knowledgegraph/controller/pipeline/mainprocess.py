@@ -97,29 +97,35 @@ class Pipeline():
             #print(len(text_processed))"""
             #data.entities_from_reference = processor.find_entites_based_on_regex(text_processed)
             entities_from_regex = processor.find_entites_based_on_regex(text_processed)
-            """entities_from_serviceone = service_one_extraction.ServiceOne(text_processed).get_references()
-            final_entities_list =[]
-            print(len(entities_from_regex))
-            print(len(entities_from_serviceone))
+            entities_from_serviceone = service_one_extraction.ServiceOne(text_processed).get_references()
+            #final_entities_list =[]
+            #print(len(entities_from_regex))
+            #print(len(entities_from_serviceone))
             if len(entities_from_regex) >0 :
                 if len(entities_from_serviceone)>0:
-                    for i in range(len(entities_from_serviceone)): 
+                    """for i in range(len(entities_from_regex)): 
                         j = 0
                         stop = False 
-                        while (j < len(entities_from_regex)):# or (stop == False):
-                            if entities_from_serviceone[i].__eq__(entities_from_regex[j])==True:
-                                final_entities_list.append(entities_from_regex[j])
+                        while (j < len(entities_from_serviceone)):# or (stop == False):
+                            if entities_from_serviceone[j].__eq__(entities_from_regex[i])==False:
+                                final_entities_list.append(entities_from_serviceone[j])
                                 stop = True
                             j = j+1
                         
-                        final_entities_list.append(entities_from_serviceone[i])
+                        #final_entities_list.append(entities_from_serviceone[i])"""
+                    
+                    for i in range(len(entities_from_serviceone)): 
+                        for j in range(len(entities_from_regex)): 
+                            if entities_from_serviceone[i].__eq__(entities_from_regex[j])==False:
+                                entities_from_regex.append(entities_from_serviceone[i])
 
-                    data.entities_from_reference =  final_entities_list
+                    data.entities_from_reference =  entities_from_regex
                 else:
                     data.entities_from_reference =  entities_from_regex
             else: 
-                data.entities_from_reference =  entities_from_serviceone """
-            data.entities_from_reference = entities_from_regex #final_entities_list
+                data.entities_from_reference =  entities_from_serviceone 
+                
+            data.entities_from_reference = entities_from_regex #entities_from_regex #final_entities_list
             data.url_in_text = processor.find_url_in_text()
             data.doi_in_text = processor.find_doi_in_text()#frfr
             data.date_published = str(data.date_published) # TODO a enlever c'était pour le test de json

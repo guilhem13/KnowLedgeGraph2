@@ -135,7 +135,6 @@ class Textprocessed():
 
         if len(firstformat) >0:
             if len(result) >0: 
-                print(firstformat)
                 firstformat = self.check_doublon(result, firstformat)
             firstformat = list(set(firstformat))
             result = result + firstformat

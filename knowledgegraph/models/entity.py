@@ -24,8 +24,8 @@ class Entity():
         if not isinstance(other, Entity):
             return NotImplemented
         if self.nom == other.nom: 
-            if other.prenom in self.prenom: 
-                equals = True
+            #if other.prenom in self.prenom: 
+            equals = True
 
         return equals
    
