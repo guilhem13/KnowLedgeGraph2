@@ -15,6 +15,7 @@ from knowledgegraph.controller import Data,Textprocessed
 from knowledgegraph.owl import ontology
 from bdd.manager_bdd import session_creator
 from bdd.paper_model_orm import PapierORM
+import test_aws
 
 
 session = session_creator()
@@ -56,9 +57,11 @@ def upload_file():
                 if file and webappmanager.allowed_file(file.filename):  # Check if the file has the correct extension
                     filename = secure_filename(file.filename)
                     file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-                    ners = service_one_extraction.ServiceOne(Textprocessed(None).get_data_from_file(filename)).get_references()
+                    #ners = service_one_extraction.ServiceOne(Textprocessed(None).get_data_from_file(filename)).get_references()
+                    ners = test_aws.Awsner(4900).get_entities(Textprocessed(None).get_data_from_file(filename))
                     os.remove(filename)
-                    return json.dumps([ob.__dict__ for ob in ners])                      
+                    #return json.dumps([ob.__dict__ for ob in ners])
+                    return json.dumps(ners)                      
                 else:
                     return Response(
                         Notification("3", "File type not permitted").message(),

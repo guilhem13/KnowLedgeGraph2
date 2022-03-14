@@ -1,3 +1,4 @@
+from threading import local
 from bdd.paper_model_orm import PapierORM
 from bdd.manager_bdd import session_creator
 from knowledgegraph.models import Papier , Entity
@@ -59,10 +60,42 @@ for item in references:
         result.append
     listreferences.append(item['raw_ref']) 
 
-print(listreferences)"""
+print(listreferences)
 files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)
 for f in files:
     try:
         os.remove(f)
     except OSError as e:
-        print("Error: %s : %s" % (f, e.strerror))
+        print("Error: %s : %s" % (f, e.strerror))"""
+
+dict ={}
+
+persons_objects =[]
+organisations_objects =['azeaaedaaeded','adedafdeda','afefefedcfdc']
+lists = ['persons_objects','organisations_objects']
+output = {}
+data = {listname: locals()[listname] for listname in lists}
+
+
+p = Entity()   
+p.set_prenom('prenom1')
+p.set_nom('nom1')
+
+a = Entity()   
+a.set_prenom('prenom1')
+a.set_nom('nom1')
+
+
+vv = []
+vv.append(p)
+vv.append(a)
+
+data['Personne'] = []
+for i in range(len(vv)): 
+    data['Personne'].append(vv[i].__dict__)
+
+dict['chunk_1']=data
+print(dict)
+"""
+with open('abc.json', 'w') as outfile:
+    json.dump(data, outfile, indent=4)"""
