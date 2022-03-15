@@ -1,6 +1,8 @@
 import nltk
 from operator import itemgetter
 from nltk.tag import StanfordNERTagger#, StanfordPOSTagger
+import polyglot
+from polyglot.text import Text
 PATH_TO_JAR='knowledgegraph/nlpmodel/rawnlpmodel/stanford-ner.jar'
 PATH_TO_MODEL = 'knowledgegraph/nlpmodel/rawnlpmodel/english.muc.7class.distsim.crf.ser.gz'
 stner = StanfordNERTagger(PATH_TO_MODEL,PATH_TO_JAR,encoding='utf-8')
@@ -67,6 +69,15 @@ class ServiceOne():
         entities['persons']= persons
         
         return entities
+
+    def polyglot_entities(self):
+        text = Text(self.text_processed)
+        result =[]
+        for entity in text.entities:
+            etext = " ".join(entity)
+            if entity.tag == 'I-PER':
+                result.append(etext)            
+        return result
     
     def convert_string2entity(self, liste):
         result =[]
@@ -91,10 +102,11 @@ class ServiceOne():
         return result 
 
     def get_references(self):
-        nltkresult = self.nltktreelist()["persons"]
+        #nltkresult = self.nltktreelist()["persons"]
+        polyglotresult = self.polyglot_entities()
         Standfordresult = self.get_continuous_chunks()["persons"]
-        resultList= list(set(nltkresult) | set(Standfordresult))
-        resultList = [x for x in nltkresult if len(x)>1 ]
+        resultList= list(set(polyglotresult) | set(Standfordresult))
+        resultList = [x for x in polyglotresult if len(x)>1 ]
         resultList = self.convert_string2entity(resultList)
         forbidden_list = ["Network","Systems","Verification","Research","XVII","Deeep","Dataset","Science","Programming","Mathematical","Analysis","Intelligence","Retrieval","Learning","Machine","Data","Engineering","Update","AGCN","Ct","Measure","Task","Ht","Bert","Momentum","Improved","Random","Are","Towards","Thus","Practical","Online","Systems","Available","Parameter"]
         resultList = [x for x in resultList if x.nom not in forbidden_list]
