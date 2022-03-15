@@ -1,3 +1,4 @@
+from http.client import FORBIDDEN
 import unicodedata
 import re 
 from .pdfx import PDFx
@@ -27,12 +28,15 @@ class Textprocessed():
         """[u'references',u'r\u00C9f\u00E9rences',u'r\u00C9f\u00C9rences',u'r\xb4ef\xb4erences',u'bibliography',u'bibliographie',u'literaturverzeichnis',u'citations',u'refs',u'publications',u'r\u00E9fs',u'r\u00C9fs',u'reference',u'r\u00E9f\u00E9rence',u'r\u00C9f\u00C9rence']"""
         
         keyword_list = ['\nReferences\n', '\nREFERENCES\n','\nreferences\n','REFERENCES','References\n','References'] #TODO voir les cas où c'est juste " Reference " exeple => https://arxiv.org/pdf/2202.03954v1.pdf
+        forbidden_part =['Appendices','Supplementary Material','Supplementary material']
         keyword = [ele for ele in keyword_list if(ele in temp)]
         if keyword != None:
             if len(keyword) == 1: 
                 keyword = str(keyword[0]) 
-                index = temp.index(keyword) # check ici parcequ'il y a plusieurs versions de références 
-                result = temp[index +len(keyword):]
+                indexstart = temp.index(keyword) # check ici parcequ'il y a plusieurs versions de références
+                indexend = [temp[indexstart:].find(ele) for ele in forbidden_part ]
+                indexend = [ele for ele in indexend  if ele != -1]
+                result = temp[indexstart +len(keyword):indexend[0]] if len(indexend)>0 else temp[indexstart +len(keyword):]                
                 return result
             else:
                 if(len(keyword)!=0):
@@ -40,15 +44,19 @@ class Textprocessed():
                     delta = max(index_keyword)-min(index_keyword)
                     if delta < 14: 
                         keyword = str(keyword[0]) 
-                        index = temp.index(keyword) # check ici parcequ'il y a plusieurs versions de références 
-                        result = temp[index +len(keyword):]
+                        indexstart  = temp.index(keyword) # check ici parcequ'il y a plusieurs versions de références 
+                        indexend = [temp[indexstart:].find(ele) for ele in forbidden_part ]
+                        indexend = [ele for ele in indexend  if ele != -1]
+                        result = temp[indexstart+len(keyword):indexend[0]] if len(indexend)>0 else temp[indexstart +len(keyword):] 
                         return result
                     else: 
                         return "erreur problème: Plusieurs références ! "  #TODO enlever cette partie non disruptive 
                 else:
                     if temp.count("Reference") == 1: 
-                        index = temp.index("Reference") # check ici parcequ'il y a plusieurs versions de références 
-                        result = temp[index +len(keyword):]
+                        indexstart  = temp.index("Reference") # check ici parcequ'il y a plusieurs versions de références 
+                        indexend = [temp[indexstart:].find(ele) for ele in forbidden_part ]
+                        indexend = [ele for ele in indexend  if ele != -1]
+                        result = temp[indexstart +len(keyword):indexend[0]] if len(indexend)>0 else temp[indexstart +len(keyword):] 
                         return result
                     else: 
                         return "erreur problème: Plusieurs références ! 2" 
@@ -80,11 +88,10 @@ class Textprocessed():
                     listaverifier[i] = "TOREMOVE"
         listaverifier = [x for x in listaverifier if x != "TOREMOVE"]
         return listaverifier
-
     
-    def find_entites_based_on_regex(self,text):        
-        Entitylist = []
+    def get_first_format(self,text): #IEEE ACM
 
+        Entitylist = []
         fithformat = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]\.\s[a-zA-Z]+[,.]',text) #James J. H. Little,
         fithformat2 = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]\.\s[a-zA-Z]+\sand',text) #James J. H. Little and
         fithformat = [x[:-1] for x in fithformat] if len(fithformat)>0 else []
@@ -106,10 +113,6 @@ class Textprocessed():
         Style_three = thirdformat + thirdformat2
         Style_three = list(set(Style_three))
 
-        """Style_two = self.check_doublon(Style_one, Style_two)
-        result = Style_one + Style_two 
-        Style_three = self.check_doublon(result, Style_three)
-        result = result + Style_three """
         result = Style_one + Style_two + Style_three
         result = list(set(result))
 
@@ -208,15 +211,60 @@ class Textprocessed():
         else : 
             #print("liste nulle")
             pass
+        return Entitylist
+
+    def get_sec_format(self,text): #APA style , 
+        result=[] 
+        Entitylist=[]
+
+        template_one = self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.\s[A-Z]\.\s[A-Z]\.",text) #Johnson, D. D. P.
+        template_two= self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.\s[A-Z]\.",text) #Johnson, D. D.
+        template_three= self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.\s[A-Z]\.",text) #Johnson, D.
+
+        if len(template_one)>0:
+            result += template_one
+        if len(template_two)>0:
+            if len(result)>0:
+                template_two = self.check_doublon(result,  template_two)
+                template_two = list(set(template_two))
+                result = result + template_two
+            else: 
+                result+=template_two
+
+        if len(template_three)>0:
+            if len(result)>0:
+                template_three = self.check_doublon(result,  template_three)
+                template_three = list(set(template_three))
+                result = result + template_three
+            else: 
+                result+=template_three
+
+        if len(result)>0:
+            
+            for item in result: 
+                temp = item.split(",")
+                p = Entity()
+                p.set_prenom(temp[1])
+                p.set_nom(temp[0])
+                Entitylist.append(p)
+        
+        return Entitylist
+        
+    def find_entites_based_on_regex(self,text):        
+        final_entity_list = []
+
+        result_first_format = self.get_first_format(text)
+        result_second_format = self.get_sec_format(text)
+        final_entity_list = result_first_format + result_second_format
         
              
-        if len(Entitylist) ==0: #TODO gérer le cas où ya pas de nom et prenom 
+        if len(final_entity_list) ==0: #TODO gérer le cas où ya pas de nom et prenom 
             p = Entity()
             p.set_prenom("guilhem")
             p.set_nom("maillebuau")
-            Entitylist.append(p)
+            final_entity_list.append(p)
               
-        return Entitylist                
+        return final_entity_list           
 
     def find_url_in_text(self):
 

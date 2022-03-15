@@ -1,0 +1,2675 @@
+{
+    "title": "Diversifying Content Generation for Commonsense Reasoning with Mixture of Knowledge Graph Experts",
+    "doi": "2203.07285v1",
+    "authors": [
+        {
+            "prenom": "Chenguang",
+            "nom": "Zhu"
+        },
+        {
+            "prenom": "Lianhui",
+            "nom": "Qin"
+        },
+        {
+            "prenom": "Zhihan",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "Tong",
+            "nom": "Zhao"
+        },
+        {
+            "prenom": "Meng",
+            "nom": "Jiang"
+        }
+    ],
+    "link": "http://arxiv.org/pdf/2203.07285v1",
+    "summary": "Generative commonsense reasoning (GCR) in natural language is to reason about\nthe commonsense while generating coherent text. Recent years have seen a surge\nof interest in improving the generation quality of commonsense reasoning tasks.\nNevertheless, these approaches have seldom investigated diversity in the GCR\ntasks, which aims to generate alternative explanations for a real-world\nsituation or predict all possible outcomes. Diversifying GCR is challenging as\nit expects to generate multiple outputs that are not only semantically\ndifferent but also grounded in commonsense knowledge. In this paper, we propose\nMoKGE, a novel method that diversifies the generative reasoning by a mixture of\nexpert (MoE) strategy on commonsense knowledge graphs (KG). A set of knowledge\nexperts seek diverse reasoning on KG to encourage various generation outputs.\nEmpirical experiments demonstrated that MoKGE can significantly improve the\ndiversity while achieving on par performance on accuracy on two GCR benchmarks,\nbased on both automatic and human evaluations.",
+    "date_published": "2022-03-14 16:57:50+00:00",
+    "entities_include_in_text": [
+        "Tevet and Berant,\n2021",
+        "Gupta et al.,\n2018",
+        "Shen et al., 2019; Cho\net al., 2019; Yu et al., 2021; Shen et al., 2022",
+        "Shen et al., 2019",
+        "Gupta et al., 2018",
+        "Wang et al., 2020",
+        "Gupta et al.,\n2018",
+        "Holtzman et al., 2020",
+        "Holtzman et al., 2020)",
+        "Shen et al., 2019",
+        "Gupta et al., 2018",
+        "Cho et al., 2019",
+        "Dou et al.,\n2021",
+        "Yu et al., 2021",
+        "Lachaux et al., 2020",
+        "Holtzman et al., 2020",
+        "Gupta et al., 2018",
+        "Lachaux et al., 2020) to produce\nuncertainty. In addition, Shen et al. (2019) adopted\na mixture of experts to diversify machine transla-\ntion, where a minimum-loss predictor is assigned\nto each source input. Shi et al. (2018",
+        "Guan et al., 2020; Bhaga-\nvatula et al., 2020; Liu et al., 2021). For example,\nGuan et al. (2020",
+        "Cho et al., 2019; Shen et al., 2019; Holtzman\net al., 2020",
+        "Schlichtkrull et al.,\n2018",
+        "Bor-\ndes et al., 2013",
+        "Vaswani et al.,\n2017",
+        "Shen et al., 2019; Cho\net al., 2019",
+        "Demp-\nster et al., 1977",
+        "Shen et al., 2019",
+        "Shen et al., 2019). We\nfollow the parameter sharing schema in Cho et al.\n(2019); Shen et al. (2019",
+        "Wang et al.,\n2019",
+        "Wang et al., 2020",
+        "Bhagavatula et al., 2020",
+        "Kingma and Welling, 2014",
+        "Gupta et al., 2018",
+        "Shen et al.,\n2019",
+        "Cho et al., 2019",
+        "Fan et al., 2018",
+        "Holtzman et al., 2020",
+        "Fan et al., 2018",
+        "Holtzman et al., 2020",
+        "Lewis et al., 2020",
+        "Gehrmann et al., 2021",
+        "Wolf et al., 2020",
+        "Ott et al.,\n2018; Vijayakumar et al., 2018; Zhu et al., 2018;\nCho et al., 2019; Yu et al., 2021",
+        "Papineni et al., 2002",
+        "Lin, 2004",
+        "Vijayakumar\net al., 2018",
+        "Zhu et al., 2018",
+        "Li et al., 2016",
+        "Zhang et al., 2018",
+        "Shen et al., 2019",
+        "Gupta et al., 2018",
+        "Sellam et al., 2020",
+        "GEM 2021"
+    ],
+    "entities_from_reference": [
+        {
+            "prenom": "Shaohan",
+            "nom": "Huang"
+        },
+        {
+            "prenom": "Hao",
+            "nom": "Zhou"
+        },
+        {
+            "prenom": "Jianfeng",
+            "nom": "Gao"
+        },
+        {
+            "prenom": "Meng",
+            "nom": "Jiang"
+        },
+        {
+            "prenom": "Yilong",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "Luke",
+            "nom": "Zettlemoyer"
+        },
+        {
+            "prenom": "Cunxiang",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "Yuwei",
+            "nom": "Fang"
+        },
+        {
+            "prenom": "Minlie",
+            "nom": "Huang"
+        },
+        {
+            "prenom": "Yiming",
+            "nom": "Yang"
+        },
+        {
+            "prenom": "Michael",
+            "nom": "Zeng"
+        },
+        {
+            "prenom": "Jiaxian",
+            "nom": "Guo"
+        },
+        {
+            "prenom": "Weinan",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "Veselin",
+            "nom": "Stoyanov"
+        },
+        {
+            "prenom": "Xiaoyan",
+            "nom": "Zhu"
+        },
+        {
+            "prenom": "Haizhou",
+            "nom": "Zhao"
+        },
+        {
+            "prenom": "Lei",
+            "nom": "Zheng"
+        },
+        {
+            "prenom": "Qingyun",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "Yili",
+            "nom": "Jin"
+        },
+        {
+            "prenom": "Chenguang",
+            "nom": "Zhu"
+        },
+        {
+            "prenom": "Michel",
+            "nom": "Galley"
+        },
+        {
+            "prenom": "Tom",
+            "nom": "Young"
+        },
+        {
+            "prenom": "Jun",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "Shuailong",
+            "nom": "Liang"
+        },
+        {
+            "prenom": "Omer",
+            "nom": "Levy"
+        },
+        {
+            "prenom": "Furu",
+            "nom": "Wei"
+        },
+        {
+            "prenom": "Zhe",
+            "nom": "Gan"
+        },
+        {
+            "prenom": "Bill",
+            "nom": "Dolan"
+        },
+        {
+            "prenom": "Abdelrahman",
+            "nom": "Mohamed"
+        },
+        {
+            "prenom": "Yue",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "Naman",
+            "nom": "Goyal"
+        },
+        {
+            "prenom": "Chris",
+            "nom": "Brockett"
+        },
+        {
+            "prenom": "Xiaodan",
+            "nom": "Zhu"
+        },
+        {
+            "prenom": "Marjan",
+            "nom": "Ghazvininejad"
+        },
+        {
+            "prenom": "Xiang",
+            "nom": "Ren"
+        },
+        {
+            "prenom": "Shuohang",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "Chun",
+            "nom": "Zeng"
+        },
+        {
+            "prenom": "Fei",
+            "nom": "Huang"
+        },
+        {
+            "prenom": "Dawei",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "Jan",
+            "nom": "Buys"
+        },
+        {
+            "prenom": "Xinyao",
+            "nom": "Shen"
+        },
+        {
+            "prenom": "Ari",
+            "nom": "Holtzman"
+        },
+        {
+            "prenom": "Zhihao",
+            "nom": "Zhao"
+        },
+        {
+            "prenom": "Maxwell",
+            "nom": "Forbes"
+        },
+        {
+            "prenom": "Yanghua",
+            "nom": "Xiao"
+        },
+        {
+            "prenom": "Jiangjie",
+            "nom": "Chen"
+        },
+        {
+            "prenom": "Zhichun",
+            "nom": "Guo"
+        },
+        {
+            "prenom": "Tian",
+            "nom": "Gao"
+        },
+        {
+            "prenom": "Yang",
+            "nom": "Zhou"
+        },
+        {
+            "prenom": "Tong",
+            "nom": "Zhao"
+        },
+        {
+            "prenom": "Jiaze",
+            "nom": "Chen"
+        },
+        {
+            "prenom": "Yejin",
+            "nom": "Choi"
+        },
+        {
+            "prenom": "Jian",
+            "nom": "Guan"
+        },
+        {
+            "prenom": "Vikram",
+            "nom": "Nitin"
+        },
+        {
+            "prenom": "Shikhar",
+            "nom": "Vashishth"
+        },
+        {
+            "prenom": "Xipeng",
+            "nom": "Qiu"
+        },
+        {
+            "prenom": "Houyu",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "Yao",
+            "nom": "Dou"
+        },
+        {
+            "prenom": "Soumya",
+            "nom": "Sanyal"
+        },
+        {
+            "prenom": "Stefan",
+            "nom": "Lee"
+        },
+        {
+            "prenom": "David",
+            "nom": "Crandall"
+        },
+        {
+            "prenom": "Piyush",
+            "nom": "Rai"
+        },
+        {
+            "prenom": "Xuanjing",
+            "nom": "Huang"
+        },
+        {
+            "prenom": "Zhan",
+            "nom": "Shi"
+        },
+        {
+            "prenom": "Partha",
+            "nom": "Talukdar"
+        },
+        {
+            "prenom": "Arvind",
+            "nom": "Agarwal"
+        },
+        {
+            "prenom": "Zhenghao",
+            "nom": "Liu"
+        },
+        {
+            "prenom": "Qing",
+            "nom": "Sun"
+        },
+        {
+            "prenom": "Xiangyu",
+            "nom": "Dong"
+        },
+        {
+            "prenom": "Zhiyuan",
+            "nom": "Liu"
+        },
+        {
+            "prenom": "Chenyan",
+            "nom": "Xiong"
+        },
+        {
+            "prenom": "Prawaan",
+            "nom": "Singh"
+        },
+        {
+            "prenom": "Dhruv",
+            "nom": "Batra"
+        },
+        {
+            "prenom": "Xinchi",
+            "nom": "Chen"
+        },
+        {
+            "prenom": "Ankush",
+            "nom": "Gupta"
+        },
+        {
+            "prenom": "Yann",
+            "nom": "Dauphin"
+        },
+        {
+            "prenom": "Guillaume",
+            "nom": "Lample"
+        },
+        {
+            "prenom": "Dipanjan",
+            "nom": "Das"
+        },
+        {
+            "prenom": "Angela",
+            "nom": "Fan"
+        },
+        {
+            "prenom": "Anne",
+            "nom": "Lachaux"
+        },
+        {
+            "prenom": "Max",
+            "nom": "Welling"
+        },
+        {
+            "prenom": "Hannaneh",
+            "nom": "Hajishirzi"
+        },
+        {
+            "prenom": "Ankur",
+            "nom": "Parikh"
+        },
+        {
+            "prenom": "Armand",
+            "nom": "Joulin"
+        },
+        {
+            "prenom": "Den",
+            "nom": "Berg"
+        },
+        {
+            "prenom": "Ivan",
+            "nom": "Titov"
+        },
+        {
+            "prenom": "Mike",
+            "nom": "Lewis"
+        },
+        {
+            "prenom": "Jaemin",
+            "nom": "Cho"
+        },
+        {
+            "prenom": "Thibault",
+            "nom": "Sellam"
+        },
+        {
+            "prenom": "Minjoon",
+            "nom": "Seo"
+        },
+        {
+            "prenom": "Yoav",
+            "nom": "Artzi."
+        },
+        {
+            "prenom": "Ashish",
+            "nom": "Vaswani"
+        },
+        {
+            "prenom": "Guillaume",
+            "nom": "Lample."
+        },
+        {
+            "prenom": "Minjoon",
+            "nom": "Seo"
+        },
+        {
+            "prenom": "Khyathi",
+            "nom": "Raghavi"
+        },
+        {
+            "prenom": "Jiwei",
+            "nom": "Li"
+        },
+        {
+            "prenom": "Llion",
+            "nom": "Jones"
+        },
+        {
+            "prenom": "Michael",
+            "nom": "Schlichtkrull"
+        },
+        {
+            "prenom": "Ashwin K",
+            "nom": "Vijayakumar"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Naman"
+        },
+        {
+            "prenom": "Dhruv",
+            "nom": "Batra."
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Evaluation"
+        },
+        {
+            "prenom": "Kilian Q",
+            "nom": "Weinberger"
+        },
+        {
+            "prenom": "Sasanka",
+            "nom": "Ammanamanchi"
+        },
+        {
+            "prenom": "Zaitang",
+            "nom": "Li"
+        },
+        {
+            "prenom": "Philip S",
+            "nom": "Yu"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Maximum"
+        },
+        {
+            "prenom": "Doug",
+            "nom": "Downey"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Lifang"
+        },
+        {
+            "prenom": "Diederik P",
+            "nom": "Kingma"
+        },
+        {
+            "prenom": "Noam",
+            "nom": "Shazeer"
+        },
+        {
+            "prenom": "Varsha",
+            "nom": "Kishore"
+        },
+        {
+            "prenom": "Jingfang",
+            "nom": "Xu"
+        },
+        {
+            "prenom": "Karmanya",
+            "nom": "Aggarwal"
+        },
+        {
+            "prenom": "Yao",
+            "nom": "Wan"
+        },
+        {
+            "prenom": "Michael",
+            "nom": "Cogswell"
+        },
+        {
+            "prenom": "Pei",
+            "nom": "Ke"
+        },
+        {
+            "prenom": "Niki",
+            "nom": "Parmar"
+        },
+        {
+            "prenom": "Michael",
+            "nom": "Zeng."
+        },
+        {
+            "prenom": "Hannah",
+            "nom": "Rashkin"
+        },
+        {
+            "prenom": "Heng",
+            "nom": "Ji"
+        },
+        {
+            "prenom": "Zhiting",
+            "nom": "Hu"
+        },
+        {
+            "prenom": "Bing",
+            "nom": "Qin"
+        },
+        {
+            "prenom": "Yoav",
+            "nom": "Artzi"
+        },
+        {
+            "prenom": "Peter",
+            "nom": "Bloem"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bertscore"
+        },
+        {
+            "prenom": "Data",
+            "nom": "Mining"
+        },
+        {
+            "prenom": "Max",
+            "nom": "Welling."
+        },
+        {
+            "prenom": "Nan M",
+            "nom": "Laird"
+        },
+        {
+            "prenom": "David",
+            "nom": "Grangier"
+        },
+        {
+            "prenom": "Xiujun",
+            "nom": "Li"
+        },
+        {
+            "prenom": "Nitesh V",
+            "nom": "Chawla"
+        },
+        {
+            "prenom": "Ankur",
+            "nom": "Parikh."
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bleurt"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Texygen"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Li"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Duran"
+        },
+        {
+            "prenom": "Haozhe",
+            "nom": "Ji"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bleu"
+        },
+        {
+            "prenom": "Yichong",
+            "nom": "Xu"
+        },
+        {
+            "prenom": "Jinfeng",
+            "nom": "Lin"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kaiser"
+        },
+        {
+            "prenom": "Khyathi Raghavi",
+            "nom": "Chandu"
+        },
+        {
+            "prenom": "Myle",
+            "nom": "Ott"
+        },
+        {
+            "prenom": "Jakob",
+            "nom": "Uszkoreit"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Toward"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ramprasaath"
+        },
+        {
+            "prenom": "Piyush",
+            "nom": "Rai."
+        },
+        {
+            "prenom": "Annual",
+            "nom": "Meeting"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Scott"
+        },
+        {
+            "prenom": "Wiley Online",
+            "nom": "Library"
+        },
+        {
+            "prenom": "Alberto",
+            "nom": "GarciaJason"
+        },
+        {
+            "prenom": "Michael",
+            "nom": "Auli"
+        },
+        {
+            "prenom": "Tosin",
+            "nom": "Adewumi"
+        },
+        {
+            "prenom": "Kaustubh",
+            "nom": "Dhole"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Diverse"
+        },
+        {
+            "prenom": "Yong",
+            "nom": "Yu"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Abductive"
+        },
+        {
+            "prenom": "Thomas N",
+            "nom": "Kipf"
+        },
+        {
+            "prenom": "Donald B",
+            "nom": "Rubin"
+        },
+        {
+            "prenom": "Arthur P",
+            "nom": "Dempster"
+        },
+        {
+            "prenom": "Xiaonan",
+            "nom": "Li"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Rouge"
+        },
+        {
+            "prenom": "Donghan",
+            "nom": "Yu"
+        },
+        {
+            "prenom": "Yann",
+            "nom": "Dauphin."
+        },
+        {
+            "prenom": "Wenhao",
+            "nom": "Yu"
+        },
+        {
+            "prenom": "Guy",
+            "nom": "Tevet"
+        },
+        {
+            "prenom": "Antoine",
+            "nom": "Bordes"
+        },
+        {
+            "prenom": "Oksana",
+            "nom": "Yakhnenko"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Chaitanya"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Clinciu"
+        },
+        {
+            "prenom": "Jonathan",
+            "nom": "Berant."
+        },
+        {
+            "prenom": "Jonathan",
+            "nom": "Berant"
+        },
+        {
+            "prenom": "Nicolas",
+            "nom": "Usunier"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Multitalk"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Minlie"
+        },
+        {
+            "prenom": "Chaitanya",
+            "nom": "Malaviya"
+        },
+        {
+            "prenom": "Aidan N",
+            "nom": "Gomez"
+        },
+        {
+            "prenom": "Kishore",
+            "nom": "Papineni"
+        },
+        {
+            "prenom": "Felix",
+            "nom": "Wu"
+        },
+        {
+            "prenom": "Anuoluwapo",
+            "nom": "Aremu"
+        },
+        {
+            "prenom": "Joint",
+            "nom": "Conference"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Chandra"
+        },
+        {
+            "prenom": "Sidi",
+            "nom": "Lu"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Rianne"
+        },
+        {
+            "prenom": "Li",
+            "nom": "Du"
+        },
+        {
+            "prenom": "Todd",
+            "nom": "Ward"
+        },
+        {
+            "prenom": "Zhonghai",
+            "nom": "Wu"
+        },
+        {
+            "prenom": "Salim",
+            "nom": "Roukos"
+        },
+        {
+            "prenom": "Hao",
+            "nom": "Peng"
+        },
+        {
+            "prenom": "Partha",
+            "nom": "Talukdar."
+        },
+        {
+            "prenom": "Jane",
+            "nom": "ClelandHuang"
+        },
+        {
+            "prenom": "Thomas",
+            "nom": "Wolf"
+        },
+        {
+            "prenom": "Ramprasaath R",
+            "nom": "Selvaraju"
+        },
+        {
+            "prenom": "Alberto GarciaJason",
+            "nom": "Weston"
+        },
+        {
+            "prenom": "Illia",
+            "nom": "Polosukhin"
+        },
+        {
+            "prenom": "Luke",
+            "nom": "Zettlemoyer."
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kilian"
+        },
+        {
+            "prenom": "Keisuke",
+            "nom": "Sakaguchi"
+        },
+        {
+            "prenom": "Pawan Sebastian",
+            "nom": "Gehrmann"
+        },
+        {
+            "prenom": "Ronan Le",
+            "nom": "Bras"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Mixture"
+        },
+        {
+            "prenom": "Scott",
+            "nom": "Wen-tau"
+        },
+        {
+            "prenom": "Antoine",
+            "nom": "Bosselut"
+        }
+    ],
+    "url_in_text": [
+        "washington.edu",
+        "https://github.com/DM2-ND/MoKGE",
+        "https://conceptnet.io/"
+    ],
+    "doi_in_text": []
+}{
+    "title": "Federated Cycling (FedCy): Semi-supervised Federated Learning of Surgical Phases",
+    "doi": "2203.07345v1",
+    "authors": [
+        {
+            "prenom": "Hasan",
+            "nom": "Kassem"
+        },
+        {
+            "prenom": "Deepak",
+            "nom": "Alapatt"
+        },
+        {
+            "prenom": "Pietro",
+            "nom": "Mascagni"
+        },
+        {
+            "prenom": "AI4SafeChole",
+            "nom": "Consortium"
+        },
+        {
+            "prenom": "Alexandros",
+            "nom": "Karargyris"
+        },
+        {
+            "prenom": "Nicolas",
+            "nom": "Padoy"
+        }
+    ],
+    "link": "http://arxiv.org/pdf/2203.07345v1",
+    "summary": "Recent advancements in deep learning methods bring computer-assistance a step\ncloser to fulfilling promises of safer surgical procedures. However, the\ngeneralizability of such methods is often dependent on training on diverse\ndatasets from multiple medical institutions, which is a restrictive requirement\nconsidering the sensitive nature of medical data. Recently proposed\ncollaborative learning methods such as Federated Learning (FL) allow for\ntraining on remote datasets without the need to explicitly share data. Even so,\ndata annotation still represents a bottleneck, particularly in medicine and\nsurgery where clinical expertise is often required. With these constraints in\nmind, we propose FedCy, a federated semi-supervised learning (FSSL) method that\ncombines FL and self-supervised learning to exploit a decentralized dataset of\nboth labeled and unlabeled videos, thereby improving performance on the task of\nsurgical phase recognition. By leveraging temporal patterns in the labeled\ndata, FedCy helps guide unsupervised training on unlabeled data towards\nlearning task-specific features for phase recognition. We demonstrate\nsignificant performance gains over state-of-the-art FSSL methods on the task of\nautomatic recognition of surgical phases using a newly collected\nmulti-institutional dataset of laparoscopic cholecystectomy videos.\nFurthermore, we demonstrate that our approach also learns more generalizable\nfeatures when tested on data from an unseen domain.",
+    "date_published": "2022-03-14 17:44:53+00:00",
+    "entities_include_in_text": [
+        "MultiChole2022"
+    ],
+    "entities_from_reference": [
+        {
+            "prenom": "S. J.",
+            "nom": "Hwang"
+        },
+        {
+            "prenom": "G. D.",
+            "nom": "Hager"
+        },
+        {
+            "prenom": "A. P.",
+            "nom": "Twinanda"
+        },
+        {
+            "prenom": "C. I.",
+            "nom": "Bercea"
+        },
+        {
+            "prenom": "M. J.",
+            "nom": "Sheller"
+        },
+        {
+            "prenom": "G. A.",
+            "nom": "Reina"
+        },
+        {
+            "prenom": "C. A.",
+            "nom": "Raffel"
+        },
+        {
+            "prenom": "B. S.",
+            "nom": "Ciftler"
+        },
+        {
+            "prenom": "Y. A.",
+            "nom": "Farha"
+        },
+        {
+            "prenom": "H.",
+            "nom": "Yang"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Ding"
+        },
+        {
+            "prenom": "N.",
+            "nom": "Carlini"
+        },
+        {
+            "prenom": "N.",
+            "nom": "Papernot"
+        },
+        {
+            "prenom": "M.",
+            "nom": "Norouzi"
+        },
+        {
+            "prenom": "V.",
+            "nom": "Tarokh"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Oliver"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Zisserman"
+        },
+        {
+            "prenom": "C.",
+            "nom": "Meng"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "LeCun"
+        },
+        {
+            "prenom": "E.",
+            "nom": "Moore"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Koller"
+        },
+        {
+            "prenom": "G.",
+            "nom": "Yengera"
+        },
+        {
+            "prenom": "X.",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "X.",
+            "nom": "Gan"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Shi"
+        },
+        {
+            "prenom": "W.",
+            "nom": "Jeong"
+        },
+        {
+            "prenom": "X.",
+            "nom": "Wei"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "D.",
+            "nom": "Zeng"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Chopra"
+        },
+        {
+            "prenom": "M.",
+            "nom": "Kranzfelder"
+        },
+        {
+            "prenom": "Z.",
+            "nom": "Long"
+        },
+        {
+            "prenom": "P.",
+            "nom": "Barnaghi"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "V.",
+            "nom": "Tsouvalas"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Heng"
+        },
+        {
+            "prenom": "H.",
+            "nom": "Liu"
+        },
+        {
+            "prenom": "N.",
+            "nom": "Navab"
+        },
+        {
+            "prenom": "T.",
+            "nom": "Ozcelebi"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Aytar"
+        },
+        {
+            "prenom": "X.",
+            "nom": "Shi"
+        },
+        {
+            "prenom": "N.",
+            "nom": "Padoy"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Bakas"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Zhu"
+        },
+        {
+            "prenom": "Z.",
+            "nom": "Dai"
+        },
+        {
+            "prenom": "D.",
+            "nom": "Berthelot"
+        },
+        {
+            "prenom": "H.",
+            "nom": "Haddadi"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Kornblith"
+        },
+        {
+            "prenom": "D.",
+            "nom": "Rueckert"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Saeed"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Zhao"
+        },
+        {
+            "prenom": "N.",
+            "nom": "Dong"
+        },
+        {
+            "prenom": "E.",
+            "nom": "Hovy"
+        },
+        {
+            "prenom": "L.",
+            "nom": "Che"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Jin"
+        },
+        {
+            "prenom": "H.",
+            "nom": "Chan"
+        },
+        {
+            "prenom": "B.",
+            "nom": "McMahan"
+        },
+        {
+            "prenom": "P.",
+            "nom": "Sermanet"
+        },
+        {
+            "prenom": "T.",
+            "nom": "Chen"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Walid"
+        },
+        {
+            "prenom": "R.",
+            "nom": "Hadsell"
+        },
+        {
+            "prenom": "H.",
+            "nom": "Feuner"
+        },
+        {
+            "prenom": "T.",
+            "nom": "Saravirta"
+        },
+        {
+            "prenom": "X.",
+            "nom": "Peng"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Ren"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Rambhatla"
+        },
+        {
+            "prenom": "G.",
+            "nom": "Hinton"
+        },
+        {
+            "prenom": "Q.",
+            "nom": "Xie"
+        },
+        {
+            "prenom": "G.",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "D.",
+            "nom": "Mutter"
+        },
+        {
+            "prenom": "Q.",
+            "nom": "Liu"
+        },
+        {
+            "prenom": "X.",
+            "nom": "Gao"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Tompson"
+        },
+        {
+            "prenom": "R.",
+            "nom": "DiPietro"
+        },
+        {
+            "prenom": "Z.",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Albaseer"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Liu"
+        },
+        {
+            "prenom": "Z.",
+            "nom": "Huang"
+        },
+        {
+            "prenom": "Q.",
+            "nom": "Dou"
+        },
+        {
+            "prenom": "R.",
+            "nom": "Stauder"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Martin"
+        },
+        {
+            "prenom": "W.",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "E.",
+            "nom": "Yang"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Hampson"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Marescaux"
+        },
+        {
+            "prenom": "B.",
+            "nom": "Edwards"
+        },
+        {
+            "prenom": "H.",
+            "nom": "Yao"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Cui"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Long"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Albarqouni"
+        },
+        {
+            "prenom": "G.",
+            "nom": "Long"
+        },
+        {
+            "prenom": "T.",
+            "nom": "Bdair"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Wen"
+        },
+        {
+            "prenom": "M.",
+            "nom": "Abdallah"
+        },
+        {
+            "prenom": "L.",
+            "nom": "Song"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Sun"
+        },
+        {
+            "prenom": "D.",
+            "nom": "Dwibedi"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Gall"
+        },
+        {
+            "prenom": "H.",
+            "nom": "Xiao"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Yoon"
+        },
+        {
+            "prenom": "Z.",
+            "nom": "Iqbal"
+        },
+        {
+            "prenom": "R.",
+            "nom": "Presotto"
+        },
+        {
+            "prenom": "Z.",
+            "nom": "Luo"
+        },
+        {
+            "prenom": "I.",
+            "nom": "Goodfellow"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Pan"
+        },
+        {
+            "prenom": "Q.",
+            "nom": "Yang"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Shehata"
+        },
+        {
+            "prenom": "D.",
+            "nom": "Ostler"
+        },
+        {
+            "prenom": "W.",
+            "nom": "Zhuang"
+        },
+        {
+            "prenom": "E.",
+            "nom": "Diao"
+        },
+        {
+            "prenom": "I.",
+            "nom": "Voiculescu"
+        },
+        {
+            "prenom": "K.",
+            "nom": "Saenko"
+        },
+        {
+            "prenom": "B.",
+            "nom": "Wiestler"
+        },
+        {
+            "prenom": "D.",
+            "nom": "Ramage"
+        },
+        {
+            "prenom": "B.",
+            "nom": "Gong"
+        },
+        {
+            "prenom": "T.",
+            "nom": "Luong"
+        },
+        {
+            "prenom": " G. A.",
+            "nom": "Sheller"
+        },
+        {
+            "prenom": " B. S.",
+            "nom": "Albaseer"
+        },
+        {
+            "prenom": "C. R.",
+            "nom": "Garrow"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Frequency"
+        },
+        {
+            "prenom": "Pattern",
+            "nom": "Recognition"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Annals"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Le"
+        },
+        {
+            "prenom": "B. A.",
+            "nom": "y"
+        },
+        {
+            "prenom": "C.",
+            "nom": "Ma"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Clipping"
+        },
+        {
+            "prenom": "Gallbladder",
+            "nom": "Dissection"
+        },
+        {
+            "prenom": "L.",
+            "nom": "Maier-Hein"
+        },
+        {
+            "prenom": "Mobile",
+            "nom": "Computing"
+        },
+        {
+            "prenom": "Data",
+            "nom": "Mining"
+        },
+        {
+            "prenom": "Gallbladder",
+            "nom": "Packaging"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Springer"
+        },
+        {
+            "prenom": "Calot",
+            "nom": "Triangle"
+        },
+        {
+            "prenom": "K.",
+            "nom": "Sohn"
+        },
+        {
+            "prenom": "Mobile Data",
+            "nom": "Management"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Jacques"
+        },
+        {
+            "prenom": "N.",
+            "nom": "Rieke"
+        },
+        {
+            "prenom": "T.",
+            "nom": "Czempiel"
+        }
+    ],
+    "url_in_text": [
+        "1805.08569",
+        "2012.03292",
+        "2106.01432",
+        "2109.04533",
+        "2107.06877",
+        "2002.11545",
+        "2102.12920",
+        "2010.08982",
+        "2103.03705",
+        "https://pypi.org/"
+    ],
+    "doi_in_text": []
+}{
+    "title": "Stubborn: A Strong Baseline for Indoor Object Navigation",
+    "doi": "2203.07359v1",
+    "authors": [
+        {
+            "prenom": "Haokuan",
+            "nom": "Luo"
+        },
+        {
+            "prenom": "Albert",
+            "nom": "Yue"
+        },
+        {
+            "prenom": "Zhang-Wei",
+            "nom": "Hong"
+        },
+        {
+            "prenom": "Pulkit",
+            "nom": "Agrawal"
+        }
+    ],
+    "link": "http://arxiv.org/pdf/2203.07359v1",
+    "summary": "We present a strong baseline that surpasses the performance of previously\npublished methods on the Habitat Challenge task of navigating to a target\nobject in indoor environments. Our method is motivated from primary failure\nmodes of prior state-of-the-art: poor exploration, inaccurate object\nidentification, and agent getting trapped due to imprecise map construction. We\nmake three contributions to mitigate these issues: (i) First, we show that\nexisting map-based methods fail to effectively use semantic clues for\nexploration. We present a semantic-agnostic exploration strategy (called\nStubborn) without any learning that surprisingly outperforms prior work. (ii)\nWe propose a strategy for integrating temporal information to improve object\nidentification. (iii) Lastly, due to inaccurate depth observation the agent\noften gets trapped in small regions. We develop a multi-scale collision map for\nobstacle identification that mitigates this issue.",
+    "date_published": "2022-03-14 17:55:00+00:00",
+    "entities_include_in_text": [],
+    "entities_from_reference": [
+        {
+            "prenom": "J. M. M.",
+            "nom": "Montiel"
+        },
+        {
+            "prenom": "A. R.",
+            "nom": "Zamir"
+        },
+        {
+            "prenom": "A. X.",
+            "nom": "Chang"
+        },
+        {
+            "prenom": "J. A.",
+            "nom": "Sethian"
+        },
+        {
+            "prenom": "D. S.",
+            "nom": "Chaplot"
+        },
+        {
+            "prenom": "J. D.",
+            "nom": "Tardos"
+        },
+        {
+            "prenom": "B.",
+            "nom": "Ichter"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Malik"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Gokaslan"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Dosovitskiy"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Kadian"
+        },
+        {
+            "prenom": "E.",
+            "nom": "Wijmans"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Wahid"
+        },
+        {
+            "prenom": "G.",
+            "nom": "Grisettiyz"
+        },
+        {
+            "prenom": "L.",
+            "nom": "Keselman"
+        },
+        {
+            "prenom": "D.",
+            "nom": "Gandhi"
+        },
+        {
+            "prenom": "M.",
+            "nom": "Savva"
+        },
+        {
+            "prenom": "P.",
+            "nom": "Anderson"
+        },
+        {
+            "prenom": "H.",
+            "nom": "Chen"
+        },
+        {
+            "prenom": "R.",
+            "nom": "Salakhutdinov"
+        },
+        {
+            "prenom": "Z.",
+            "nom": "Dai"
+        },
+        {
+            "prenom": "W.",
+            "nom": "Burgard"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Davidson"
+        },
+        {
+            "prenom": "B.",
+            "nom": "Efron"
+        },
+        {
+            "prenom": "L.",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "R.",
+            "nom": "Tibshirani"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Zeng"
+        },
+        {
+            "prenom": "K.",
+            "nom": "Chen"
+        },
+        {
+            "prenom": "T.",
+            "nom": "Funkhouser"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Straub"
+        },
+        {
+            "prenom": "W.",
+            "nom": "Galuba"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Liu"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Zhao"
+        },
+        {
+            "prenom": "V.",
+            "nom": "Koltun"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Kosecka"
+        },
+        {
+            "prenom": "M.",
+            "nom": "Fiser"
+        },
+        {
+            "prenom": "M.",
+            "nom": "Tan"
+        },
+        {
+            "prenom": "C.",
+            "nom": "Stachniss"
+        },
+        {
+            "prenom": "L.",
+            "nom": "Weihs"
+        },
+        {
+            "prenom": "B.",
+            "nom": "Jain"
+        },
+        {
+            "prenom": "Y.",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "G.",
+            "nom": "Grisetti"
+        },
+        {
+            "prenom": "Z.",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Dai"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Chang"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Khandelwal"
+        },
+        {
+            "prenom": "R.",
+            "nom": "Mottaghi"
+        },
+        {
+            "prenom": "Q.",
+            "nom": "Zhu"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Stone"
+        },
+        {
+            "prenom": "D.",
+            "nom": "Batra"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Toshev"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Lee"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Kembhavi"
+        },
+        {
+            "prenom": "B.",
+            "nom": "Yamauchi"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Das"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Song"
+        },
+        {
+            "prenom": "S.",
+            "nom": "Gupta"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Gupta"
+        },
+        {
+            "prenom": "O.",
+            "nom": "Maksymets"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Bhowmik"
+        },
+        {
+            "prenom": "H.",
+            "nom": "Liu"
+        },
+        {
+            "prenom": "D.",
+            "nom": "Parikh"
+        },
+        {
+            "prenom": "M.",
+            "nom": "Niessner"
+        },
+        {
+            "prenom": "L.",
+            "nom": "Zheng"
+        },
+        {
+            "prenom": "M.",
+            "nom": "Halber"
+        },
+        {
+            "prenom": "F.",
+            "nom": "Luo"
+        },
+        {
+            "prenom": "J.",
+            "nom": "Jiang"
+        },
+        {
+            "prenom": "V.",
+            "nom": "Cartillier"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Mousavian"
+        },
+        {
+            "prenom": " J. M. M.",
+            "nom": "Artal"
+        },
+        {
+            "prenom": " A. X.",
+            "nom": "Anderson"
+        },
+        {
+            "prenom": " D. S.",
+            "nom": "Chang"
+        },
+        {
+            "prenom": "J.",
+            "nom": "M."
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Clip"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Habitat"
+        },
+        {
+            "prenom": "J. Iselin",
+            "nom": "Woodfill"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Le"
+        },
+        {
+            "prenom": "R.",
+            "nom": "Mur-Artal"
+        },
+        {
+            "prenom": "A.",
+            "nom": "Grunnet-Jepsen"
+        },
+        {
+            "prenom": "Pattern Recognition",
+            "nom": "Workshops"
+        }
+    ],
+    "url_in_text": [
+        "1810.06543",
+        "1706.05587",
+        "2102.08643",
+        "1903.01959",
+        "1807.06757",
+        "2006.13171",
+        "1806.01054",
+        "2111.09888",
+        "https://github.com/Improbable-AI/Stubborn",
+        "http://kaldir.vc.in.tum.de/matterport/MP"
+    ],
+    "doi_in_text": []
+}{
+    "title": "Do DNNs trained on Natural Images acquire Gestalt Properties?",
+    "doi": "2203.07302v1",
+    "authors": [
+        {
+            "prenom": "Valerio",
+            "nom": "Biscione"
+        },
+        {
+            "prenom": "Jeffrey S.",
+            "nom": "Bowers"
+        }
+    ],
+    "link": "http://arxiv.org/pdf/2203.07302v1",
+    "summary": "Under some circumstances, humans tend to perceive individual elements as a\ngroup or \"whole\". This has been widely investigated for more than a century by\nthe school of Gestalt Psychology, which formulated several laws of perceptual\ngrouping. Recently, Deep Neural Networks (DNNs) trained on natural images have\nbeen proposed as compelling models of human vision based on reports that they\nlearn internal representations similar to the primate ventral visual stream and\nshow similar patterns of errors in object classification tasks. That is, DNNs\noften perform well on brain and behavioral benchmarks. Here we compared human\nand DNN responses in discrimination judgments that assess a range of Gestalt\norganization principles (Pomerantz et al., 1977; Pomerantz and Portillo, 2011).\nAmongst the DNNs tested we selected models that perform well on the Brain-Score\nbenchmark (Schrimpf et al., 2018). We found that network trained on natural\nimages exhibited sensitivity to shapes at the last stage of classification,\nwhich in some cases matched humans responses. When shape familiarity was\ncontrolled for (by using dot patterns that would not resemble shapes) we found\nthe networks were insensitive to the standard Gestalt principles of proximity,\norientation, and linearity, which have been shown to have a strong and robust\neffect on humans. This shows that models that perform well on behavioral and\nbrain benchmarks nevertheless miss fundamental principles of human vision.",
+    "date_published": "2022-03-14 17:06:11+00:00",
+    "entities_include_in_text": [
+        "Pomerantz\net al., 1977; Pomerantz and Portillo, 2011",
+        "Schrimpf\net al., 2018",
+        "Pomerantz et al., 1977; Pomerantz and Portillo, 2011",
+        "Gauthier and Tarr, 2016; Kriegeskorte, 2015",
+        "Pomer-\nantz et al., 1977; Pomerantz and Portillo, 2011",
+        "Yamins and DiCarlo, 2016; Khaligh-Razavi and Kriegeskorte,\n2014; Schrimpf et al., 2018",
+        "Schrimpf et al., 2018",
+        "Geirhos\net al., 2018; Malhotra and Bowers, 2019",
+        "Geirhos et al., 2018",
+        "German and Jacobs, 2020",
+        "Puebla and\nIn addition, DNNs often act in surprising non-human-like\nBowers, 2021",
+        "Kauderer-Abrams, 2017; Gong et al., 2014; Chen et al.,\n2017). Furthermore, recent work by Xu and Vaziri-Pashkam (2021",
+        "Blything et al., 2021, 2020",
+        "Watanabe et al.,\n2018",
+        "Lotter et al.,\n2020",
+        "Watan-\nabe et al., 2018",
+        "Biederman, 1987; Perrett and\nOram, 1993; Spillmann, 2009",
+        "Pomerantz et al.,\n1977; Pomerantz and Pristach, 1989; Pomerantz and Portillo, 2011",
+        "Metzger, 1966",
+        "Wertheimer, 1923",
+        "see also Peterson 2019",
+        "He\net al., 2015",
+        "Schrimpf et al., 2018",
+        "Krizhevsky et al., 2012",
+        "Simonyan and Zisserman,\n2014",
+        "He et al., 2016",
+        "Szegedy et al., 2015) was shown by Kim et al. (2021",
+        "Huang et al., 2017",
+        "Biscione and Bowers,\n2021",
+        "Kubilius et al., 2019",
+        "Dapello et al., 2020",
+        "Pe-\nterson, 2019; Duncan, 1984",
+        "Pomerantz and Portillo, 2011",
+        "Pomerantz and Portillo, 2011",
+        "Blything et al., 2021",
+        "Treisman, 1998",
+        "Biederman, 1987",
+        "Alexander and Van Leeuwen,\n2010",
+        "Bowers\net al., 2022",
+        "Hayden et al., 2008",
+        "see also Quinn and Bhatt (2005)). This does not incon-\ntrovertibly indicates a gradual acquisition based on learning, but it might\ndepend on the on-going development of the visual system in infants.\nIn\nfact, the work Kim et al. (2021",
+        "Grossberg et al., 1997; Francis et al., 2017; Herzog et al., 2003",
+        "Linsley et al., 2018",
+        "NeurIPS 2020",
+        "NeurIPS 2019"
+    ],
+    "entities_from_reference": [
+        {
+            "prenom": "I.",
+            "nom": "Conceptual"
+        },
+        {
+            "prenom": "J.",
+            "nom": "NEUNET"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Geirhos"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Jacob"
+        },
+        {
+            "prenom": "Psychologische Forschung",
+            "nom": "II"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Annual"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Curran"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Sager"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Zhang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Peterson"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Jia"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Reif"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wallach"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Goodfellow"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Illusory"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Maaten"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Erlikhman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Vanrullen"
+        },
+        {
+            "prenom": "Annual",
+            "nom": "Conference"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kar"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Symposium"
+        },
+        {
+            "prenom": "Object",
+            "nom": "Recognition"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Phenomenology"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Zisserman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Oram"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Treisman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Schrimpf"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ernst"
+        },
+        {
+            "prenom": "Pattern",
+            "nom": "Recognition"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kubilius"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Heydt"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Biscione"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Temme"
+        },
+        {
+            "prenom": "Technical",
+            "nom": "Report"
+        },
+        {
+            "prenom": "Shallow",
+            "nom": "Recurrent"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Watanabe"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ren"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Lotter"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Schmidt"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Francis"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bashivan"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Hayden"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Quinn"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Feature"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Grossberg"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Image"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Todorovic"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Singh"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Biederman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Alexander"
+        },
+        {
+            "prenom": "Annual",
+            "nom": "Review"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kimchi"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Krizhevsky"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Erhan"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Humana"
+        },
+        {
+            "prenom": "Object",
+            "nom": "Identity"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Baker"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Tarr"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kreiman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Feldman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Zemel"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kellman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Brain"
+        },
+        {
+            "prenom": "Psychological",
+            "nom": "Bulletin"
+        },
+        {
+            "prenom": "Brain",
+            "nom": "Information"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Elder"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "German"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Schutt"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Vecera"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Jacobs"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Malhotra"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Untersuchungen"
+        },
+        {
+            "prenom": "Nature",
+            "nom": "Neuroscience"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Wattenberg"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Gestalt"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ludwig"
+        },
+        {
+            "prenom": "Medina",
+            "nom": "Temme"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Helm"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Biol"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Zaremba"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Isik"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Biggs"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Dujmovic"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Weinberger"
+        },
+        {
+            "prenom": "Basic",
+            "nom": "Gestalts"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kitaoka"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Cox"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Gepshtein"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Herzog"
+        },
+        {
+            "prenom": "Deep",
+            "nom": "Convolutional"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Roig"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Vanhoucke"
+        },
+        {
+            "prenom": "Shared Visual",
+            "nom": "Representations"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Vankov"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bhatt"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Farah"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Vision"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Pang"
+        },
+        {
+            "prenom": "Psychological",
+            "nom": "Review"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Puebla"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Gauthier"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Ross"
+        },
+        {
+            "prenom": "Human",
+            "nom": "Perception"
+        },
+        {
+            "prenom": "Perceive Illusory",
+            "nom": "Contours"
+        },
+        {
+            "prenom": "Van",
+            "nom": "Leeuwen"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Simonyan"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Katti"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Pomerantz"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Grauman"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Rabinovich"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Manassi"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Dapello"
+        },
+        {
+            "prenom": "Visual",
+            "nom": "Object"
+        },
+        {
+            "prenom": "Psychonomic",
+            "nom": "Bulletin"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Marques"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Guo"
+        },
+        {
+            "prenom": "Biggs",
+            "nom": "Omay"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Gibson"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Van"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Liu"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Deep"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bear"
+        },
+        {
+            "prenom": "Deep Convolutional Neural",
+            "nom": "Networks"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Perrett"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Spillmann"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bruna"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Lehre"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kriegeskorte"
+        },
+        {
+            "prenom": "Untersuchungen zur",
+            "nom": "Lehre"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Yasugi"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Szegedy"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Linsley"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Geiger"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Huang"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Bengio"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Metzger"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Garnett"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Reed"
+        },
+        {
+            "prenom": "Networks",
+            "nom": "Trained"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Boix"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Gong"
+        },
+        {
+            "prenom": "Lecture",
+            "nom": "Notes"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Dicarlo"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Kim"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Duncan"
+        },
+        {
+            "prenom": "No firstname",
+            "nom": "Anguelov"
+        },
+        {
+            "prenom": "Deep Convolutional",
+            "nom": "Networks"
+        }
+    ],
+    "url_in_text": [
+        "2012.05950",
+        "1801.01450v1",
+        "2102.01955v2",
+        "1409.1556",
+        "2011",
+        "2110.01476",
+        "1403.1840",
+        "1801.01450",
+        "1409.4842v1",
+        "1312.6199v4",
+        "http://arxiv.org/abs/2011",
+        "http://jmlr.org/papers/v22/",
+        "http://arxiv.org/abs/2110.01476",
+        "http://arxiv.org/abs/2012.05950",
+        "https://doi.org/10.1167/jov.21.2.9",
+        "https://github.com/",
+        "https://pubmed.ncbi.nlm.nih.gov/6240521/",
+        "https://doi.org/10.1016/j.visres.2019.12.001",
+        "http://arxiv.org/abs/1403.1840",
+        "https://pubmed.ncbi.nlm.nih.gov/",
+        "https://pubmed.ncbi.nlm",
+        "nih.gov/12959667/",
+        "https://www.nature.com/articles/s41467-021-22078-3",
+        "http://arxiv.org/abs/1801.01450",
+        "https://link.springer.com/article/10.1007/s42113-021-00100-7",
+        "www.annualreviews.org",
+        "http://dx.doi.org/10.1038/",
+        "https://pillow",
+        "readthedocs.io",
+        "https://www.biorxiv.org/content/10.1101/",
+        "www.biorxiv.org/content/10.1101/",
+        "https://link.springer.com/article/10.3758/",
+        "www.biorxiv.org/content/10.1101/407007v1",
+        "www.robots.ox.ac.uk/",
+        "arxiv.org/abs/1409.4842v1",
+        "https://arxiv.org/abs/1312.6199v4",
+        "www.ncbi.nlm.nih.gov/pmc/articles/PMC1692340/",
+        "https://pubmed.ncbi.nlm.nih.gov/9401461/",
+        "https://link.springer.com/article/10.1007/BF00410640",
+        "https://pubmed.ncbi.nlm.nih.gov/33789916/",
+        "https://www.nature.com/articles/nn.4244"
+    ],
+    "doi_in_text": [
+        "10.1109/ICCV.2015.123",
+        "10.1371/journal.pcbi.1006613",
+        "10.1098/",
+        "10.1146/annurev-vision-111815-114621",
+        "10.1037/a0029334",
+        "10.1007/BF00410640",
+        "10.1016/",
+        "10.7554/ELIFE.55978",
+        "10.1007/",
+        "10.3758/PBR.15.2.443",
+        "10.1037/A0024330",
+        "10.1167/jov",
+        "10.1101/2021.09.03.458919",
+        "10.1037/",
+        "10.1016/S0166-2236(96)01002-8",
+        "10.1038/s42256-020-0170-9",
+        "10.1016/J",
+        "10.1101/2021.10.20.465074",
+        "10.1037/0096-1523.28.1.202",
+        "10.1037/REV0000070",
+        "10.1016/0262-8856(93)",
+        "10.1016/BS.PLM",
+        "10.1371/journal.pcbi.1003915",
+        "10",
+        "10.1037/a0029333",
+        "10.1038/s41467-021-22078-3",
+        "10.1007/S42113-021-00100-7/FIGURES/8",
+        "10.1109/CVPR.2016.90",
+        "10.1523/jneurosci.1993-20.2021",
+        "10.1146/annurev-vision-082114-035447",
+        "10.3389/FPSYG.2018.00345/BIBTEX",
+        "10.32470/ccn.2018.1116-0",
+        "10.1038/",
+        "10.1162/089976603322297304",
+        "10.1111/j.0956-7976",
+        "10.1109/CVPR.2015.7298594",
+        "10.1037/0096-1523.3.3.422",
+        "10.3758/BF03206951",
+        "10.1101/407007",
+        "10.1016/J.VISRES.2009.02.022"
+    ]
+}{
+    "title": "Defending From Physically-Realizable Adversarial Attacks Through Internal Over-Activation Analysis",
+    "doi": "2203.07341v1",
+    "authors": [
+        {
+            "prenom": "Giulio",
+            "nom": "Rossolini"
+        },
+        {
+            "prenom": "Federico",
+            "nom": "Nesti"
+        },
+        {
+            "prenom": "Fabio",
+            "nom": "Brau"
+        },
+        {
+            "prenom": "Alessandro",
+            "nom": "Biondi"
+        },
+        {
+            "prenom": "Giorgio",
+            "nom": "Buttazzo"
+        }
+    ],
+    "link": "http://arxiv.org/pdf/2203.07341v1",
+    "summary": "This work presents Z-Mask, a robust and effective strategy to improve the\nadversarial robustness of convolutional networks against physically-realizable\nadversarial attacks. The presented defense relies on specific Z-score analysis\nperformed on the internal network features to detect and mask the pixels\ncorresponding to adversarial objects in the input image. To this end, spatially\ncontiguous activations are examined in shallow and deep layers to suggest\npotential adversarial regions. Such proposals are then aggregated through a\nmulti-thresholding mechanism. The effectiveness of Z-Mask is evaluated with an\nextensive set of experiments carried out on models for both semantic\nsegmentation and object detection. The evaluation is performed with both\ndigital patches added to the input images and printed patches positioned in the\nreal world. The obtained results confirm that Z-Mask outperforms the\nstate-of-the-art methods in terms of both detection accuracy and overall\nperformance of the networks under attack. Additional experiments showed that\nZ-Mask is also robust against possible defense-aware attacks.",
+    "date_published": "2022-03-14 17:41:46+00:00",
+    "entities_include_in_text": [
+        "May\n\n2018",
+        "September 2018",
+        "Oct 2016",
+        "Jun\n\n2019",
+        "Oct 2016"
+    ],
+    "entities_from_reference": [
+        {
+            "prenom": "guilhem",
+            "nom": "maillebuau"
+        }
+    ],
+    "url_in_text": [
+        "1712.09665",
+        "1610.02357",
+        "2105.07334",
+        "2101.06085",
+        "1906.11897",
+        "2112.04532",
+        "2101.12100",
+        "2201.01850",
+        "pytorch.org/vision/stable/models.html#object-detection-instance-segmentation-and-person-keypoint-",
+        "github.com/ydhongHIT/DDRNet",
+        "github.com/ycszen/TorchSeg",
+        "github.com/hszhao/ICNet"
+    ],
+    "doi_in_text": []
+}

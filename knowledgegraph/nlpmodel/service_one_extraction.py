@@ -102,11 +102,11 @@ class ServiceOne():
         return result 
 
     def get_references(self):
-        #nltkresult = self.nltktreelist()["persons"]
-        polyglotresult = self.polyglot_entities()
+        nltkresult = self.nltktreelist()["persons"]
+        #polyglotresult = self.polyglot_entities()
         Standfordresult = self.get_continuous_chunks()["persons"]
-        resultList= list(set(polyglotresult) | set(Standfordresult))
-        resultList = [x for x in polyglotresult if len(x)>1 ]
+        resultList= list(set( nltkresult) | set(Standfordresult))
+        resultList = [x for x in resultList if len(x)>1 ]
         resultList = self.convert_string2entity(resultList)
         forbidden_list = ["Network","Systems","Verification","Research","XVII","Deeep","Dataset","Science","Programming","Mathematical","Analysis","Intelligence","Retrieval","Learning","Machine","Data","Engineering","Update","AGCN","Ct","Measure","Task","Ht","Bert","Momentum","Improved","Random","Are","Towards","Thus","Practical","Online","Systems","Available","Parameter"]
         resultList = [x for x in resultList if x.nom not in forbidden_list]
