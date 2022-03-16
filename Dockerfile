@@ -3,7 +3,7 @@ FROM python:3.8-slim
 
 EXPOSE 5000
 
-ENV key=venv
+#ENV key=venv
 
 # Keeps Python from generating .pyc files in the container
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -14,6 +14,10 @@ ENV PYTHONUNBUFFERED=1
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
+RUN python -m nltk.downloader punkt
+RUN python -m nltk.downloader averaged_perceptron_tagger
+RUN python -m nltk.downloader maxent_ne_chunker
+RUN python -m nltk.downloader words
 
 WORKDIR /ProjetPythonAPI
 COPY . /ProjetPythonAPI

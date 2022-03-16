@@ -216,10 +216,10 @@ class Textprocessed():
     def get_sec_format(self,text): #APA style , 
         result=[] 
         Entitylist=[]
-
+        
         template_one = self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.\s[A-Z]\.\s[A-Z]\.",text) #Johnson, D. D. P.
         template_two= self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.\s[A-Z]\.",text) #Johnson, D. D.
-        template_three= self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.\s[A-Z]\.",text) #Johnson, D.
+        template_three= self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.",text) #Johnson, D.
 
         if len(template_one)>0:
             result += template_one
@@ -239,8 +239,30 @@ class Textprocessed():
             else: 
                 result+=template_three
 
-        if len(result)>0:
-            
+        template_four = self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.[A-Z]\.[A-Z]\.",text) #Johnson, D.D.P.
+        template_five= self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.[A-Z]\.",text) #Johnson, D.D.
+        template_six= self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.",text) #Johnson, D.
+
+        if len(template_four)>0:
+            result += template_four
+        if len(template_five)>0:
+            if len(result)>0:
+                template_five = self.check_doublon(result,  template_five)
+                template_five = list(set(template_five))
+                result = result + template_five
+            else: 
+                result+=template_four
+
+        if len( template_six)>0:
+            if len(result)>0:
+                template_six= self.check_doublon(result, template_six)
+                template_six = list(set( template_six))
+                result = result + template_six
+            else: 
+                result+= template_six
+
+
+        if len(result)>0:            
             for item in result: 
                 temp = item.split(",")
                 p = Entity()

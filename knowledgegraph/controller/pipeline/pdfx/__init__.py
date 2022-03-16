@@ -63,7 +63,8 @@ class PDFx(object):
                 print("Pas bon ")
                 
             try: 
-                with open(str("knowledgegraph/file/"+self.fn+".pdf"), 'wb') as f:
+                name = self.fn.replace(".pdf","")
+                with open(str("knowledgegraph/file/"+name+".pdf"), 'wb') as f:
                     f.write(content)
             except Exception as e : 
                 print("N'enregistre pas le fichier")
