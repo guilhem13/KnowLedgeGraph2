@@ -26,15 +26,6 @@ dulwich==0.19.16
 feedparser==6.0.8
 Flask==2.0.3
 greenlet==1.1.2
-hdfs==2.6.0
-hiredis==2.0.0
-icu==0.0.1
-idna==3.3
-inspire-utils==3.0.24
-itsdangerous==2.1.0
-Jinja2==3.0.3
-jmespath==0.10.0
-joblib==1.1.0
 langcodes==3.3.0
 lxml==4.7.1
 MarkupSafe==2.0.1
@@ -90,7 +81,7 @@ tqdm==4.62.3
 typer==0.4.0
 types-redis==4.1.11
 types-six==1.16.10
-typing-extensions==4.0.1
+typing_extensions==4.0.1
 Unidecode==1.3.2
 urllib3==1.26.8
 wasabi==0.9.0

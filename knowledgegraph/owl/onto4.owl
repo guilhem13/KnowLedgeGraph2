@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/guilhem/ontologies/2022/1/untitled-ontology-11"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/guilhem/ontologies/2022/1/untitled-ontology-11">
+    <Prefix name="" IRI="http://www.semanticweb.org/guilhem/ontologies/2022/1/untitled-ontology-11"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="ns" IRI="http://www.w3.org/2003/06/sw-vocab-status/ns#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="wot" IRI="http://xmlns.com/wot/0.1/"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://xmlns.com/foaf/0.1/</Import>
+    <Declaration>
+        <Class IRI="#Auteur"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Papier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#lien_url"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#a_cite_comme_lien"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#a_cite_comme_papier"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#a_comme_auteur"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#a_comme_reference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#a_ecrit"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#est_reference_dans"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#doi"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#link"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#url"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Auteur"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#a_ecrit"/>
+            <Class IRI="#Papier"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Auteur"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Papier"/>
+        <Class abbreviatedIRI="foaf:Document"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#lien_url"/>
+        <Class abbreviatedIRI="foaf:Agent"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Auteur"/>
+        <Class IRI="#Papier"/>
+    </DisjointClasses>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#a_cite_comme_lien"/>
+        <Class IRI="#Papier"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#a_cite_comme_papier"/>
+        <Class IRI="#Papier"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#a_comme_auteur"/>
+        <Class IRI="#Papier"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#a_comme_reference"/>
+        <Class IRI="#Papier"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#a_ecrit"/>
+        <Class IRI="#Auteur"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#est_reference_dans"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#a_cite_comme_lien"/>
+        <Class IRI="#lien_url"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#a_cite_comme_papier"/>
+        <Class IRI="#Papier"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#a_comme_auteur"/>
+        <Class IRI="#Auteur"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#a_comme_reference"/>
+        <Class abbreviatedIRI="foaf:Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#a_ecrit"/>
+        <Class IRI="#Papier"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#est_reference_dans"/>
+        <Class IRI="#Papier"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#doi"/>
+        <Class IRI="#Papier"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#link"/>
+        <Class IRI="#Papier"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#url"/>
+        <Class IRI="#lien_url"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="foaf:title"/>
+        <Class IRI="#Papier"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#doi"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#link"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#url"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="foaf:title"/>
+        <Datatype abbreviatedIRI="rdfs:Literal"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

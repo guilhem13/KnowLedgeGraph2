@@ -9,7 +9,7 @@ import polyglot
 from polyglot.text import Text
 from knowledgegraph.controller.pipeline.processingpipeline import Textprocessed
 import re 
-
+"""
 a ="[1] K. J. Astrom and B. M. Appendices Bernhardsson, Comparison of riemann and lebesgue sampling for first order stochastic systems, in Proceedings of the 41st IEEE Conference on Decision and Control, 2002., vol. 2, pp. 20112016, IEEE, 2002.  [2] P. Tabuada, Event-triggered real-time scheduling of stabilizing control tasks, IEEE Transactions on Automatic Control, vol. 52, no. 9, pp. 16801685, 2007.  [3] A. S. Kolarijani and M. Mazo, Formal traffic characterization of lti event-triggered control systems, IEEE Transactions on Control of Network Systems, vol. 5, no. 1, pp. 274283, 2016.  [4] P. Tabuada, Verification and control of hybrid systems: a symbolic  approach. Springer Science & Business Media, 2009.  [5] G. d. A. Gleizer and M. Mazo Jr, Scalable traffic models for scheduling of linear periodic event-triggered controllers, IFAC-PapersOnLine, vol. 53, no. 2, pp. 27262732, 2020.  [6] G. d. A. Gleizer and M. Mazo, Towards traffic bisimulation of linear periodic event-triggered controllers, IEEE Control Systems Letters, vol. 5, no. 1, pp. 2530, 2020.  [7] G. de A. Gleizer and M. Mazo Jr, Computing the sampling performance of event-triggered control, in Proceedings of the 24th International Conference on Hybrid Systems: Computation and Control, pp. 17, 2021.  [8] G. Delimpaltadakis, G. de Albuquerque Gleizer, I. van Straalen, and M. Mazo Jr., Etcetera: beyond event-triggered control, in Proceedings of the 25th International Conference on Hybrid Systems: Computation and Control, 2022.  [9] M. Cubuktepe, N. Jansen, S. Junges, J.-P. Katoen, and U. Topcu, Scenario-based verification of uncertain mdps, in International Conference on Tools and Algorithms for the Construction and Analysis of Systems, pp. 287305, Springer, 2020.  [10] T. S. Badings, A. Abate, N. Jansen, D. Parker, H. A. Poonawala, and M. Stoelinga, Sampling-based robust control of autonomous systems with non-gaussian noise, arXiv preprint arXiv:2110.12662, 2021. [11] M. Campi and S. Garatti, The exact feasibility of randomized solutions of uncertain convex programs, SIAM Journal on Optimization, vol. 19, no. 3, pp. 12111230, 2008.  [12] M. C. Campi, S. Garatti, and F. A. Ramponi, A general scenario theory for nonconvex optimization and decision making, IEEE Transactions on Automatic Control, vol. 63, no. 12, pp. 40674078, 2018. [13] S. Garatti and M. C. Campi, Risk and complexity in scenario  optimization, Mathematical Programming, pp. 137, 2019.  [14] M. C. Campi and S. Garatti, Scenario optimization with relaxation: a new tool for design and application to machine learning problems, in 2020 59th IEEE Conference on Decision and Control (CDC), pp. 24632468, IEEE, 2020.  [15] W. H. Heemels, M. Donkers, and A. R. Teel, Periodic event-triggered control for linear systems, IEEE Transactions on automatic control, vol. 58, no. 4, pp. 847861, 2012.  [16] G. de Albuquerque Gleizer and M. Mazo Jr, Chaos and order in  event-triggered control, arXiv e-prints, 2022.  [17] K. Chatterjee, L. Doyen, and T. A. Henzinger, Quantitative languages, ACM Transactions on Computational Logic (TOCL), vol. 11, no. 4, pp. 138, 2010.  [18] R. M. Karp, A characterization of the minimum cycle mean in a  digraph, Discrete mathematics, vol. 23, no. 3, pp. 309311, 1978.  [19] J. Weston and C. Watkins, Multi-class support vector machines, tech.  rep., Citeseer, 1998.  [20] M. Mazo, A. Anta, and P. Tabuada, On self-triggered control for linear systems: Guarantees and complexity, in 2009 European Control Conference (ECC), pp. 37673772, IEEE, 2009.  [21] C.-W. Hsu and C.-J. Lin, A comparison of methods for multiclass support vector machines, IEEE transactions on Neural Networks, vol. 13, no. 2, pp. 415425, 2002.  [22] K. Crammer and Y. Singer, On the algorithmic implementation of multiclass kernel-based vector machines, Journal of machine learning research, vol. 2, no. Dec, pp. 265292, 2001.  \x0c"
 forbidden_part =['Appendices','Supplementary Material','Supplementary material']
 #print(Text(a).entities)
@@ -63,7 +63,7 @@ def get_sec_format(text): #APA style ,
   return result
 
 print(get_sec_format(text_processed))
-"""
+
 session = session_creator()
 # User is the name of table that has a column name
 papers = session.query(PapierORM).filter().limit(5).all()
@@ -103,7 +103,7 @@ for f in files:
         os.remove(f)
     except OSError as e:
         print("Error: %s : %s" % (f, e.strerror))
-
+"""
 from refextract import extract_references_from_file
 references = extract_references_from_file('1810.04805.pdf')
 listreferences = []
@@ -116,7 +116,7 @@ for item in references:
         result += "&!&"
         result.append
     listreferences.append(item['raw_ref']) 
-
+"""
 print(listreferences)
 files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)
 for f in files:

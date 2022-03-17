@@ -26,9 +26,19 @@ class Cermine():
                 for person in persons:
                     p = Entity()
                     if person.tag == 'given-names':
-                        p.set_prenom(person.text)
+                        if person.text is not None: 
+                            p.set_prenom(person.text)
+                        else:
+                            p.set_prenom("NoPrenom")
                     if person.tag =='surname': 
-                        p.set_nom(person.text)
+                        if person.text is not None: 
+                            p.set_nom(person.text)
+                        else:
+                            p.set_nom("Nonom")
+                    if p.nom[0] is None :
+                        p.set_nom("Nonom")
+                    if p.prenom is None: 
+                        p.set_nom("NoPrenom")
                     result.append(p)
                     
         return result
