@@ -4,7 +4,7 @@ from xml.sax.saxutils import escape
 class Ontology():
 
     def __init__(self):
-        self.template_onto = get_ontology("file://knowledgegraph/owl/onto5.owl").load()
+        self.template_onto = get_ontology("file://knowledgegraph/owl/onto6.owl").load()
         self.foaf = self.template_onto.get_imported_ontologies().first().load()
     
                 
@@ -16,16 +16,16 @@ class Ontology():
             document_object.doi.append(papier.link) 
             
             for entite in papier.authors: 
-                author_object = self.template_onto.Auteur(escape(entite.nom))
+                author_object = self.template_onto.Auteur(escape(entite.name))
                 author_object.firstName.append(entite.prenom)
-                author_object.familyName.append(entite.nom)
+                author_object.family_name.append(entite.nom)
                 author_object.a_ecrit.append(document_object)
                 document_object.a_comme_auteur.append(author_object)
             
             for reference in papier.entities_from_reference: 
-                person = self.foaf.Person(reference.nom)
+                person = self.foaf.Person(reference.name)
                 person.firstName.append(reference.prenom)
-                person.lastName.append(reference.nom)
+                person.family_name.append(reference.nom)
                 person.est_reference_dans.append(document_object)
                 document_object.a_comme_reference.append(person)
             
