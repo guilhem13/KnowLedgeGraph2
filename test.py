@@ -103,7 +103,7 @@ for f in files:
         os.remove(f)
     except OSError as e:
         print("Error: %s : %s" % (f, e.strerror))
-"""
+
 from refextract import extract_references_from_file
 references = extract_references_from_file('1810.04805.pdf')
 listreferences = []
@@ -116,7 +116,7 @@ for item in references:
         result += "&!&"
         result.append
     listreferences.append(item['raw_ref']) 
-"""
+
 print(listreferences)
 files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)
 for f in files:

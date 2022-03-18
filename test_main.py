@@ -35,8 +35,9 @@ if __name__ == '__main__':
     else:
         papiers+= main_function(arxiv_data[0:nb_paper_to_request])
     #papiers = main_function()
+    """
     print(len(papiers))
     owl = ontology.Ontology()
     for papier in papiers: 
         owl.add_papier(papier)
-    owl.save('result.owl')
+    owl.save('result.owl')"""

@@ -12,7 +12,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Install pip requirements
-COPY requirements.txt .
+#COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
 RUN python -m nltk.downloader punkt
 RUN python -m nltk.downloader averaged_perceptron_tagger

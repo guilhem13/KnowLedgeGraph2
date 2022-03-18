@@ -89,428 +89,1869 @@
   <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
 </rdf:Description>
 
-<Papier rdf:about="#2203.08788v1">
+<Papier rdf:about="#2203.09513v1">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <a_comme_auteur rdf:resource="#ShenHua"/>
-  <a_comme_auteur rdf:resource="#GuoWenbo"/>
-  <a_comme_auteur rdf:resource="#HuangTing-Hao 'Kenneth'"/>
-  <a_comme_reference rdf:resource="#WallaceByron C."/>
-  <a_comme_reference rdf:resource="#WainwrightMartin J."/>
-  <a_comme_reference rdf:resource="#ManningChristopher D."/>
-  <a_comme_reference rdf:resource="#JordanMichael I."/>
-  <a_comme_reference rdf:resource="#JoshiMandar"/>
-  <a_comme_reference rdf:resource="#HajishirziHannaneh"/>
-  <a_comme_reference rdf:resource="#ZettlemoyerLuke"/>
-  <a_comme_reference rdf:resource="#ThickstunJohn"/>
-  <a_comme_reference rdf:resource="#ParanjapeBhargavi"/>
-  <a_comme_reference rdf:resource="#JaakkolaTommi"/>
-  <a_comme_reference rdf:resource="#VafaKeyon"/>
-  <a_comme_reference rdf:resource="#DengYuntian"/>
-  <a_comme_reference rdf:resource="#ChangShiyu"/>
-  <a_comme_reference rdf:resource="#RushAlexander"/>
-  <a_comme_reference rdf:resource="#ZhangYang"/>
-  <a_comme_reference rdf:resource="#BleiDavid"/>
-  <a_comme_reference rdf:resource="#TanChenhao"/>
-  <a_comme_reference rdf:resource="#VedaldiAndrea"/>
-  <a_comme_reference rdf:resource="#LeiTao"/>
-  <a_comme_reference rdf:resource="#GuestrinCarlos"/>
-  <a_comme_reference rdf:resource="#FongRuth"/>
-  <a_comme_reference rdf:resource="#CartonSamuel"/>
-  <a_comme_reference rdf:resource="#RibeiroTulio"/>
-  <a_comme_reference rdf:resource="#BarzilayRegina"/>
-  <a_comme_reference rdf:resource="#RathoreAnirudh"/>
-  <a_comme_reference rdf:resource="#PatrickMandela"/>
-  <a_comme_reference rdf:resource="#SinghSameer"/>
-  <a_comme_reference rdf:resource="#BastingsJasmijn"/>
-  <a_comme_reference rdf:resource="#AzizWilker"/>
-  <a_comme_reference rdf:resource="#TitovIvan"/>
-  <a_comme_reference rdf:resource="#PooleBen"/>
-  <a_comme_reference rdf:resource="#JangEric"/>
+  <a_comme_auteur rdf:resource="#YangYuzhe"/>
+  <a_comme_auteur rdf:resource="#WangHao"/>
+  <a_comme_auteur rdf:resource="#KatabiDina"/>
+  <a_comme_reference rdf:resource="#VaughanJ. W."/>
+  <a_comme_reference rdf:resource="#HallL. O."/>
+  <a_comme_reference rdf:resource="#AltschulerS. J."/>
+  <a_comme_reference rdf:resource="#KegelmeyerW. P."/>
+  <a_comme_reference rdf:resource="#PanS. J."/>
+  <a_comme_reference rdf:resource="#HintonG. E."/>
+  <a_comme_reference rdf:resource="#VapnikV. N."/>
+  <a_comme_reference rdf:resource="#PriolR. L."/>
+  <a_comme_reference rdf:resource="#KingmaD. P."/>
+  <a_comme_reference rdf:resource="#LoyC. C."/>
+  <a_comme_reference rdf:resource="#KotA. C."/>
+  <a_comme_reference rdf:resource="#RockmoreD. N."/>
+  <a_comme_reference rdf:resource="#HashimotoT. B."/>
+  <a_comme_reference rdf:resource="#CarrollJ. D."/>
+  <a_comme_reference rdf:resource="#DeshmukhA. A."/>
+  <a_comme_reference rdf:resource="#SalakhutdinovR. R."/>
+  <a_comme_reference rdf:resource="#ChawlaN. V."/>
+  <a_comme_reference rdf:resource="#ChenC. L."/>
+  <a_comme_reference rdf:resource="#BorgwardtK. M."/>
+  <a_comme_reference rdf:resource="#GarciaE. A."/>
+  <a_comme_reference rdf:resource="#BowyerK. W."/>
+  <a_comme_reference rdf:resource="#MassartD. L."/>
+  <a_comme_reference rdf:resource="#MazurowskiM. A."/>
+  <a_comme_reference rdf:resource="#RaschM. J."/>
+  <a_comme_reference rdf:resource="#CarlucciF. M."/>
+  <a_comme_reference rdf:resource="#KohP. W."/>
+  <a_comme_reference rdf:resource="#HospedalesT. M."/>
+  <a_comme_reference rdf:resource="#TorrP. H."/>
+  <a_comme_reference rdf:resource="#FanL."/>
+  <a_comme_reference rdf:resource="#PeronaP."/>
+  <a_comme_reference rdf:resource="#ZhaoQ."/>
+  <a_comme_reference rdf:resource="#BudaM."/>
+  <a_comme_reference rdf:resource="#HannunA."/>
+  <a_comme_reference rdf:resource="#CaballeroE."/>
+  <a_comme_reference rdf:resource="#ZhangX."/>
+  <a_comme_reference rdf:resource="#GaidonA."/>
+  <a_comme_reference rdf:resource="#YuanY."/>
+  <a_comme_reference rdf:resource="#GermainP."/>
+  <a_comme_reference rdf:resource="#SmolaA."/>
+  <a_comme_reference rdf:resource="#BelongieS."/>
+  <a_comme_reference rdf:resource="#YooD."/>
+  <a_comme_reference rdf:resource="#WenY."/>
+  <a_comme_reference rdf:resource="#BinasJ."/>
+  <a_comme_reference rdf:resource="#XiangT."/>
+  <a_comme_reference rdf:resource="#TishbyN."/>
+  <a_comme_reference rdf:resource="#OuyangW."/>
+  <a_comme_reference rdf:resource="#LinY."/>
+  <a_comme_reference rdf:resource="#RoweisS."/>
+  <a_comme_reference rdf:resource="#BlitzerJ."/>
+  <a_comme_reference rdf:resource="#HuangC."/>
+  <a_comme_reference rdf:resource="#LeeH."/>
+  <a_comme_reference rdf:resource="#SongY."/>
+  <a_comme_reference rdf:resource="#SynnaeveG."/>
+  <a_comme_reference rdf:resource="#BissaccoA."/>
+  <a_comme_reference rdf:resource="#JiaM."/>
+  <a_comme_reference rdf:resource="#WeiC."/>
+  <a_comme_reference rdf:resource="#SeelyJ."/>
+  <a_comme_reference rdf:resource="#LianL."/>
+  <a_comme_reference rdf:resource="#BalduzziD."/>
+  <a_comme_reference rdf:resource="#EusebioJ."/>
+  <a_comme_reference rdf:resource="#WangH."/>
+  <a_comme_reference rdf:resource="#KatabiD."/>
+  <a_comme_reference rdf:resource="#ParkJ."/>
+  <a_comme_reference rdf:resource="#BaiQ."/>
+  <a_comme_reference rdf:resource="#MarchandM."/>
+  <a_comme_reference rdf:resource="#TianQ."/>
+  <a_comme_reference rdf:resource="#WangT."/>
+  <a_comme_reference rdf:resource="#CaoK."/>
+  <a_comme_reference rdf:resource="#FerisR."/>
+  <a_comme_reference rdf:resource="#PereiraF."/>
+  <a_comme_reference rdf:resource="#FengJ."/>
+  <a_comme_reference rdf:resource="#ZhuX."/>
+  <a_comme_reference rdf:resource="#CoatesA."/>
+  <a_comme_reference rdf:resource="#CaoP."/>
+  <a_comme_reference rdf:resource="#ArabieP."/>
+  <a_comme_reference rdf:resource="#ShuJ."/>
+  <a_comme_reference rdf:resource="#GuptaA."/>
+  <a_comme_reference rdf:resource="#SunB."/>
+  <a_comme_reference rdf:resource="#ZhaK."/>
+  <a_comme_reference rdf:resource="#LempitskyV."/>
+  <a_comme_reference rdf:resource="#ZhanX."/>
+  <a_comme_reference rdf:resource="#MengD."/>
+  <a_comme_reference rdf:resource="#KuleszaA."/>
+  <a_comme_reference rdf:resource="#ChechikG."/>
+  <a_comme_reference rdf:resource="#PanchanathanS."/>
+  <a_comme_reference rdf:resource="#ChenM."/>
+  <a_comme_reference rdf:resource="#HaffnerP."/>
+  <a_comme_reference rdf:resource="#HongL."/>
+  <a_comme_reference rdf:resource="#CuiY."/>
+  <a_comme_reference rdf:resource="#QiaoY."/>
+  <a_comme_reference rdf:resource="#FangZ."/>
+  <a_comme_reference rdf:resource="#RenJ."/>
+  <a_comme_reference rdf:resource="#SchoenauerM."/>
+  <a_comme_reference rdf:resource="#GongM."/>
+  <a_comme_reference rdf:resource="#WangJ."/>
+  <a_comme_reference rdf:resource="#RenS."/>
+  <a_comme_reference rdf:resource="#GaninY."/>
+  <a_comme_reference rdf:resource="#ZhangA."/>
+  <a_comme_reference rdf:resource="#GongB."/>
+  <a_comme_reference rdf:resource="#YanZ."/>
+  <a_comme_reference rdf:resource="#GordoA."/>
+  <a_comme_reference rdf:resource="#DredzeM."/>
+  <a_comme_reference rdf:resource="#WangB."/>
+  <a_comme_reference rdf:resource="#SunJ."/>
+  <a_comme_reference rdf:resource="#LeeG."/>
+  <a_comme_reference rdf:resource="#CrammerK."/>
+  <a_comme_reference rdf:resource="#LiuT."/>
+  <a_comme_reference rdf:resource="#LevineS."/>
+  <a_comme_reference rdf:resource="#LiuZ."/>
+  <a_comme_reference rdf:resource="#YanS."/>
+  <a_comme_reference rdf:resource="#AjakanH."/>
+  <a_comme_reference rdf:resource="#HuangZ."/>
+  <a_comme_reference rdf:resource="#LarochelleH."/>
+  <a_comme_reference rdf:resource="#XiaX."/>
+  <a_comme_reference rdf:resource="#ZhangY."/>
+  <a_comme_reference rdf:resource="#MarklundH."/>
+  <a_comme_reference rdf:resource="#ZhangW."/>
+  <a_comme_reference rdf:resource="#NetzerY."/>
+  <a_comme_reference rdf:resource="#PengX."/>
+  <a_comme_reference rdf:resource="#SebagM."/>
+  <a_comme_reference rdf:resource="#XieS."/>
+  <a_comme_reference rdf:resource="#GongS."/>
+  <a_comme_reference rdf:resource="#GoldbergerJ."/>
+  <a_comme_reference rdf:resource="#VenkateswaraH."/>
+  <a_comme_reference rdf:resource="#BeeryS."/>
+  <a_comme_reference rdf:resource="#GulrajaniI."/>
+  <a_comme_reference rdf:resource="#FangC."/>
+  <a_comme_reference rdf:resource="#NamH."/>
+  <a_comme_reference rdf:resource="#BottouL."/>
+  <a_comme_reference rdf:resource="#YoonW."/>
+  <a_comme_reference rdf:resource="#XiaoT."/>
+  <a_comme_reference rdf:resource="#HeinrichL."/>
+  <a_comme_reference rdf:resource="#JacobsenH."/>
+  <a_comme_reference rdf:resource="#BlanchardG."/>
+  <a_comme_reference rdf:resource="#MuandetK."/>
+  <a_comme_reference rdf:resource="#SaenkoK."/>
+  <a_comme_reference rdf:resource="#CourvilleA."/>
+  <a_comme_reference rdf:resource="#SagawaS."/>
+  <a_comme_reference rdf:resource="#ZhangM."/>
+  <a_comme_reference rdf:resource="#ShiY."/>
+  <a_comme_reference rdf:resource="#DollarP."/>
+  <a_comme_reference rdf:resource="#RohrbachM."/>
+  <a_comme_reference rdf:resource="#GoyalP."/>
+  <a_comme_reference rdf:resource="#MakiA."/>
+  <a_comme_reference rdf:resource="#WangX."/>
+  <a_comme_reference rdf:resource="#ScholkopfB."/>
+  <a_comme_reference rdf:resource="#GrettonA."/>
+  <a_comme_reference rdf:resource="#BengioY."/>
+  <a_comme_reference rdf:resource="#ChakrabortyS."/>
+  <a_comme_reference rdf:resource="#SongZ."/>
+  <a_comme_reference rdf:resource="#LeCunY."/>
+  <a_comme_reference rdf:resource="#ZhouB."/>
+  <a_comme_reference rdf:resource="#KalantidisY."/>
+  <a_comme_reference rdf:resource="#LavioletteF."/>
+  <a_comme_reference rdf:resource="#TaoD."/>
+  <a_comme_reference rdf:resource="#ChenC."/>
+  <a_comme_reference rdf:resource="#WangS."/>
+  <a_comme_reference rdf:resource="#ZhangJ."/>
+  <a_comme_reference rdf:resource="#ZhouS."/>
+  <a_comme_reference rdf:resource="#TangX."/>
+  <a_comme_reference rdf:resource="#WangC."/>
+  <a_comme_reference rdf:resource="#YangY."/>
+  <a_comme_reference rdf:resource="#DongQ."/>
+  <a_comme_reference rdf:resource="#KruegerD."/>
+  <a_comme_reference rdf:resource="#GlobersonA."/>
+  <a_comme_reference rdf:resource="#BucciS."/>
+  <a_comme_reference rdf:resource="#ZhouK."/>
+  <a_comme_reference rdf:resource="#SpecificallyA."/>
+  <a_comme_reference rdf:resource="#UstinovaE."/>
+  <a_comme_reference rdf:resource="#TommasiT."/>
+  <a_comme_reference rdf:resource="#CuiQ."/>
+  <a_comme_reference rdf:resource="#MiaoZ."/>
+  <a_comme_reference rdf:resource="#ArjovskyM."/>
+  <a_comme_reference rdf:resource="#FinnC."/>
+  <a_comme_reference rdf:resource="#CaputoB."/>
+  <a_comme_reference rdf:resource="#HospedalesT."/>
+  <a_comme_reference rdf:resource="#XieQ."/>
+  <a_comme_reference rdf:resource="#YangQ."/>
+  <a_comme_reference rdf:resource="#ArechigaN."/>
+  <a_comme_reference rdf:resource="#LiangP."/>
+  <a_comme_reference rdf:resource="#TianX."/>
+  <a_comme_reference rdf:resource="#DoganU."/>
+  <a_comme_reference rdf:resource="#UsunierN."/>
+  <a_comme_reference rdf:resource="#DInnocenteA."/>
+  <a_comme_reference rdf:resource="#IndykP."/>
+  <a_comme_reference rdf:resource="#SohnK."/>
+  <a_comme_reference rdf:resource="#BaiY."/>
+  <a_comme_reference rdf:resource="#SiddharthN."/>
+  <a_comme_reference rdf:resource="#ZhaoH."/>
+  <a_comme_reference rdf:resource="#KangB."/>
+  <a_comme_reference rdf:resource="#GirshickR."/>
+  <a_comme_reference rdf:resource="#HooiB."/>
+  <a_comme_reference rdf:resource="#WeiS."/>
+  <a_comme_reference rdf:resource="#ScottC."/>
   <a_comme_reference rdf:resource="#(None,)"/>
-  <a_cite_comme_lien rdf:resource="#washington.edu"/>
-  <a_cite_comme_lien rdf:resource="#https://github.com/"/>
-  <a_cite_comme_lien rdf:resource="#OpenReview.net"/>
-  <doi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2203.08788v1</doi>
-  <doi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Are Shortest Rationales the Best Explanations for Human Understanding?</doi>
-  <doi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://arxiv.org/pdf/2203.08788v1</doi>
+  <a_cite_comme_papier rdf:resource="#1907.02893"/>
+  <a_cite_comme_papier rdf:resource="#2003.00688"/>
+  <a_cite_comme_papier rdf:resource="#2110.04596"/>
+  <a_cite_comme_papier rdf:resource="#2007.02931"/>
+  <a_cite_comme_papier rdf:resource="#1902.07379"/>
+  <a_cite_comme_papier rdf:resource="#2103.02503"/>
+  <a_cite_comme_papier rdf:resource="#2107.09249"/>
+  <a_cite_comme_papier rdf:resource="#2104.09937"/>
+  <a_cite_comme_papier rdf:resource="#2111.13998"/>
+  <a_cite_comme_lien rdf:resource="#https://github.com/YyzHarry/multi-domain-imbalance"/>
+  <doi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2203.09513v1</doi>
+  <doi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">On Multi-Domain Long-Tailed Recognition, Generalization and Beyond</doi>
+  <doi rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://arxiv.org/pdf/2203.09513v1</doi>
 </Papier>
 
-<Auteur rdf:about="#ShenHua">
+<Auteur rdf:about="#YangYuzhe">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <a_ecrit rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hua</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shen</x_0.1:family_name>
+  <a_ecrit rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yuzhe</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yang</x_0.1:family_name>
 </Auteur>
 
-<Auteur rdf:about="#GuoWenbo">
+<Auteur rdf:about="#WangHao">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <a_ecrit rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wenbo</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guo</x_0.1:family_name>
+  <a_ecrit rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hao</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wang</x_0.1:family_name>
 </Auteur>
 
-<Auteur rdf:about="#HuangTing-Hao 'Kenneth'">
+<Auteur rdf:about="#KatabiDina">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <a_ecrit rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ting-Hao 'Kenneth'</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huang</x_0.1:family_name>
+  <a_ecrit rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dina</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Katabi</x_0.1:family_name>
 </Auteur>
 
-<x_0.1:Person rdf:about="#WallaceByron C.">
+<x_0.1:Person rdf:about="#VaughanJ. W.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Byron C.</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wallace</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J. W.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vaughan</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#WainwrightMartin J.">
+<x_0.1:Person rdf:about="#HallL. O.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Martin J.</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wainwright</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L. O.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hall</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#ManningChristopher D.">
+<x_0.1:Person rdf:about="#AltschulerS. J.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Christopher D.</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manning</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S. J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Altschuler</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#JordanMichael I.">
+<x_0.1:Person rdf:about="#KegelmeyerW. P.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Michael I.</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jordan</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W. P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kegelmeyer</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#JoshiMandar">
+<x_0.1:Person rdf:about="#PanS. J.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mandar</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Joshi</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S. J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pan</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#HajishirziHannaneh">
+<x_0.1:Person rdf:about="#HintonG. E.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hannaneh</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hajishirzi</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G. E.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hinton</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#ZettlemoyerLuke">
+<x_0.1:Person rdf:about="#VapnikV. N.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luke</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zettlemoyer</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">V. N.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vapnik</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#ThickstunJohn">
+<x_0.1:Person rdf:about="#PriolR. L.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thickstun</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R. L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Priol</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#ParanjapeBhargavi">
+<x_0.1:Person rdf:about="#KingmaD. P.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bhargavi</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Paranjape</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D. P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kingma</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#JaakkolaTommi">
+<x_0.1:Person rdf:about="#LoyC. C.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tommi</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jaakkola</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C. C.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loy</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#VafaKeyon">
+<x_0.1:Person rdf:about="#KotA. C.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Keyon</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vafa</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A. C.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kot</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#DengYuntian">
+<x_0.1:Person rdf:about="#RockmoreD. N.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yuntian</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deng</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D. N.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rockmore</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#ChangShiyu">
+<x_0.1:Person rdf:about="#HashimotoT. B.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shiyu</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chang</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T. B.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hashimoto</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#RushAlexander">
+<x_0.1:Person rdf:about="#CarrollJ. D.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alexander</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rush</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J. D.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carroll</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#ZhangYang">
+<x_0.1:Person rdf:about="#DeshmukhA. A.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yang</x_0.1:firstName>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A. A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deshmukh</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SalakhutdinovR. R.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R. R.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Salakhutdinov</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ChawlaN. V.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N. V.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chawla</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ChenC. L.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C. L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chen</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BorgwardtK. M.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K. M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Borgwardt</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GarciaE. A.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E. A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Garcia</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BowyerK. W.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K. W.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bowyer</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#MassartD. L.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D. L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Massart</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#MazurowskiM. A.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M. A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mazurowski</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#RaschM. J.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M. J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rasch</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#CarlucciF. M.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F. M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carlucci</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#KohP. W.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P. W.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Koh</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#HospedalesT. M.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T. M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hospedales</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#TorrP. H.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P. H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Torr</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#FanL.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fan</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#PeronaP.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Perona</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhaoQ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhao</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BudaM.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Buda</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#HannunA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hannun</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#CaballeroE.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caballero</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhangX.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X.</x_0.1:firstName>
   <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhang</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#BleiDavid">
+<x_0.1:Person rdf:about="#GaidonA.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blei</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gaidon</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#TanChenhao">
+<x_0.1:Person rdf:about="#YuanY.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chenhao</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tan</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yuan</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#VedaldiAndrea">
+<x_0.1:Person rdf:about="#GermainP.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Andrea</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vedaldi</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Germain</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#LeiTao">
+<x_0.1:Person rdf:about="#SmolaA.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tao</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lei</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Smola</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#GuestrinCarlos">
+<x_0.1:Person rdf:about="#BelongieS.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carlos</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guestrin</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Belongie</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#FongRuth">
+<x_0.1:Person rdf:about="#YooD.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ruth</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fong</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yoo</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#CartonSamuel">
+<x_0.1:Person rdf:about="#WenY.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Samuel</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carton</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wen</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#RibeiroTulio">
+<x_0.1:Person rdf:about="#BinasJ.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tulio</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ribeiro</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Binas</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#BarzilayRegina">
+<x_0.1:Person rdf:about="#XiangT.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Regina</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Barzilay</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xiang</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#RathoreAnirudh">
+<x_0.1:Person rdf:about="#TishbyN.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Anirudh</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rathore</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tishby</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#PatrickMandela">
+<x_0.1:Person rdf:about="#OuyangW.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mandela</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patrick</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ouyang</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#SinghSameer">
+<x_0.1:Person rdf:about="#LinY.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sameer</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Singh</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lin</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#BastingsJasmijn">
+<x_0.1:Person rdf:about="#RoweisS.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jasmijn</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bastings</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Roweis</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#AzizWilker">
+<x_0.1:Person rdf:about="#BlitzerJ.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wilker</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aziz</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blitzer</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#TitovIvan">
+<x_0.1:Person rdf:about="#HuangC.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ivan</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Titov</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huang</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#PooleBen">
+<x_0.1:Person rdf:about="#LeeH.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ben</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Poole</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lee</x_0.1:family_name>
 </x_0.1:Person>
 
-<x_0.1:Person rdf:about="#JangEric">
+<x_0.1:Person rdf:about="#SongY.">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eric</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jang</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Song</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SynnaeveG.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Synnaeve</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BissaccoA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bissacco</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#JiaM.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jia</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#WeiC.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wei</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SeelyJ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seely</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#LianL.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lian</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BalduzziD.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Balduzzi</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#EusebioJ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eusebio</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#WangH.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#KatabiD.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Katabi</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ParkJ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Park</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BaiQ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bai</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#MarchandM.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marchand</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#TianQ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tian</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#WangT.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#CaoK.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cao</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#FerisR.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feris</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#PereiraF.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pereira</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#FengJ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feng</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhuX.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhu</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#CoatesA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coates</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#CaoP.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cao</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ArabieP.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arabie</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ShuJ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shu</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GuptaA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gupta</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SunB.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sun</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhaK.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zha</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#LempitskyV.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">V.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lempitsky</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhanX.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhan</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#MengD.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Meng</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#KuleszaA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kulesza</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ChechikG.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chechik</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#PanchanathanS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Panchanathan</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ChenM.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chen</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#HaffnerP.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Haffner</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#HongL.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hong</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#CuiY.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cui</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#QiaoY.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Qiao</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#FangZ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#RenJ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ren</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SchoenauerM.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schoenauer</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GongM.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gong</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#WangJ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#RenS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ren</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GaninY.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ganin</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhangA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GongB.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gong</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#YanZ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yan</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GordoA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gordo</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#DredzeM.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dredze</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#WangB.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SunJ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sun</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#LeeG.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lee</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#CrammerK.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crammer</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#LiuT.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liu</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#LevineS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Levine</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#LiuZ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liu</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#YanS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yan</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#AjakanH.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ajakan</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#HuangZ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#LarochelleH.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Larochelle</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#XiaX.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xia</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhangY.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#MarklundH.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marklund</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhangW.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#NetzerY.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Netzer</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#PengX.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peng</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SebagM.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sebag</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#XieS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xie</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GongS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gong</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GoldbergerJ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Goldberger</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#VenkateswaraH.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Venkateswara</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BeeryS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beery</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GulrajaniI.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">I.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gulrajani</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#FangC.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#NamH.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nam</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BottouL.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bottou</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#YoonW.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yoon</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#XiaoT.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xiao</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#HeinrichL.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Heinrich</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#JacobsenH.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jacobsen</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BlanchardG.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blanchard</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#MuandetK.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muandet</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SaenkoK.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Saenko</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#CourvilleA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Courville</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SagawaS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sagawa</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhangM.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ShiY.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shi</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#DollarP.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dollar</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#RohrbachM.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rohrbach</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GoyalP.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Goyal</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#MakiA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maki</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#WangX.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ScholkopfB.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scholkopf</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GrettonA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gretton</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BengioY.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bengio</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ChakrabortyS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chakraborty</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SongZ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Song</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#LeCunY.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LeCun</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhouB.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhou</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#KalantidisY.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kalantidis</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#LavioletteF.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laviolette</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#TaoD.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tao</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ChenC.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chen</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#WangS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhangJ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhouS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhou</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#TangX.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#WangC.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#YangY.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#DongQ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dong</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#KruegerD.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Krueger</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GlobersonA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Globerson</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BucciS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bucci</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhouK.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhou</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SpecificallyA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifically</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#UstinovaE.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ustinova</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#TommasiT.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tommasi</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#CuiQ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cui</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#MiaoZ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Z.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Miao</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ArjovskyM.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arjovsky</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#FinnC.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finn</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#CaputoB.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caputo</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#HospedalesT.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hospedales</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#XieQ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xie</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#YangQ.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Q.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ArechigaN.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arechiga</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#LiangP.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#TianX.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tian</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#DoganU.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">U.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dogan</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#UsunierN.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Usunier</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#DInnocenteA.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DInnocente</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#IndykP.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Indyk</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SohnK.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sohn</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#BaiY.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bai</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#SiddharthN.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">N.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Siddharth</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ZhaoH.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhao</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#KangB.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kang</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#GirshickR.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Girshick</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#HooiB.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">B.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hooi</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#WeiS.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wei</x_0.1:family_name>
+</x_0.1:Person>
+
+<x_0.1:Person rdf:about="#ScottC.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scott</x_0.1:family_name>
 </x_0.1:Person>
 
 <x_0.1:Person rdf:about="#(None,)">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-  <est_reference_dans rdf:resource="#2203.08788v1"/>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Francesca</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Toni</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Christopher</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Potts.</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eric</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lehman</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">James</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Glass</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker Study</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interface</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Details</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Training</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Setups No Sufficiency No Continuity No Sparsity</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mingye</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gao</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No firstname</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stockholm</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chuang</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Piyawat</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lertvittayakumjorn</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ivan</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Titov.</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Subset Sampling</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Process</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Model</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Components</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mining</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yulia</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tsvetkov.</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virtual</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jianbo</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chen</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Random Baselines</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worker</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Group</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Punta</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cana</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Annual</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caiming</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xiong</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luke</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zettlemoyer.</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hua</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shen</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Byron C.</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wallace.</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alex</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Perelygin</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jain</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Human</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Computation</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rensis</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Likert</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shixiang</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gu</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eduard H</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hovy</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jason</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eisner</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Andrea</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vedaldi.</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lee</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">User</x_0.1:firstName>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jean</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wu</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Andrew</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ng</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tommi</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S.</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tsvetkov</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Potts</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sparse</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IB</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Movie</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Review</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eisner.</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Toni.</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Online</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abuse</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hannaneh</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jang</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Michael I.</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jordan.</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sarthak</x_0.1:firstName>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vidhisha</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Balachandran</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jay</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DeYoung</x_0.1:family_name>
+  <est_reference_dans rdf:resource="#2203.09513v1"/>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> A. A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blanchard</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> K. W.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chawla</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> L. O.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bowyer</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> G. E.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Goldberger</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> K. M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gretton</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> M. J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Borgwardt</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> E. A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bai</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> C. L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Li</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> R. L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Binas</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> S. J.</x_0.1:firstName>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> P. W.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sagawa</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> T. B.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Koh</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> L. F.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sebag</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> P. H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Seely</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhan</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> S.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hinton</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dredze</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> M.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xie</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> T.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ni</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> X.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Miao</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feris</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> H.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ustinova</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Buda</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Z.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rohrbach</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> B.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rasch</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> G.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dogan</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carlucci</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cui</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhang</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yuan</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Coates</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ajakan</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Eusebio</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wang</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laviolette</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cun</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> C.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cao</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schoenauer</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> W.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Park</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Qiao</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Y.</x_0.1:firstName>
   <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Huang</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Omar</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zaidan</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ben</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Poole.</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nazneen Fatema</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rajani</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Norm</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Minimization</x_0.1:family_name>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wilker</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Le</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Song</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yuval</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pinter</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Richard</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Socher</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dheeraj</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rajagopal</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mo</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jacobsen</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fan</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> K.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Blitzer</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> Q.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yi</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xu</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> I.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bottou</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ma</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shu</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chen</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> E.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Krueger</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yan</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lin</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Globerson</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jia</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yang</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Peng</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zha</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liu</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Venkateswara</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Caballero</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xia</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> D.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muandet</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">David</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> N.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gaidon</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tian</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">He</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wei</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Innocente</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> R.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Goyal</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bucci</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ren</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kang</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Torr</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Siddharth</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bissacco</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beery</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crammer</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gong</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> U.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deshmukh</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Netzer</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhao</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pan</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arjovsky</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> F.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kulesza</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marklund</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Zhou</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lee</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gordo</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maesschalck</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Germain</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Girshick</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chechik</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Xiao</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gupta</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nam</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hooi</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Heinrich</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ganin</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wen</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hannun</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fang</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lian</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Larochelle</x_0.1:family_name>
   <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yu</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sarah</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wiegreffe</x_0.1:family_name>
-  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongyin</x_0.1:firstName>
-  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luo</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dong</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shi</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algorithm L100 L38 L43</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L46</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">No firstname</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Focal</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Softmax</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adaptive</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Domains</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L43</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adam</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feature</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Discrepancy</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J. W.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vaughan.</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Van</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Horn</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Networks</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theorem</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Range</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deep</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Let</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R. R.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Salakhutdinov.</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Note</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L38</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algorithm</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S. J.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Altschuler.</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A. Y.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ng.</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Average</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Worst</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clipart Infographic</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Painting</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L100</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lemma</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Similar</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">L. F.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wu</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diverse Skewed</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Label</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M. A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mazurowski.</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">V. N.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vapnik.</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Classes</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Max</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pseudo</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Code</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algorithm L100 L38 L43 L46 Average</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Domain</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bbn</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Schoenauer-Sebag</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Euclidean</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Adasyn</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algorithm</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VLCS</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unified</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interpretation</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Balanced</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Maximum</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Studies</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T2</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ndi</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">D. L.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Massart.</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cartoon Photo Sketch Art Clipart Product Photo L100 L38 L43</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Deeper</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Smote</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Medium Few Zero</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Accuracy</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BoDA</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fig</x_0.1:family_name>
+  <x_0.1:firstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W. P.</x_0.1:firstName>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kegelmeyer.</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Clipart</x_0.1:family_name>
+  <x_0.1:family_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Input</x_0.1:family_name>
 </x_0.1:Person>
 
-<lien_url rdf:about="#washington.edu">
+<Papier rdf:about="#1907.02893">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</lien_url>
+</Papier>
 
-<lien_url rdf:about="#https://github.com/">
+<Papier rdf:about="#2003.00688">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
-</lien_url>
+</Papier>
 
-<lien_url rdf:about="#OpenReview.net">
+<Papier rdf:about="#2110.04596">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Papier>
+
+<Papier rdf:about="#2007.02931">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Papier>
+
+<Papier rdf:about="#1902.07379">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Papier>
+
+<Papier rdf:about="#2103.02503">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Papier>
+
+<Papier rdf:about="#2107.09249">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Papier>
+
+<Papier rdf:about="#2104.09937">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Papier>
+
+<Papier rdf:about="#2111.13998">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Papier>
+
+<lien_url rdf:about="#https://github.com/YyzHarry/multi-domain-imbalance">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
 </lien_url>
 

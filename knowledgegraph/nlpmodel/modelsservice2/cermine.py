@@ -13,7 +13,7 @@ class Cermine():
 
         headers = {'Content-Type': 'application/binary'}
         data = open(path, 'rb').read()
-        response = requests.post('http://cermine.ceon.plextract.do', headers=headers, data=data)
+        response = requests.post('http://cermine.ceon.pl/extract.do', headers=headers, data=data)
         return response 
     
     def get_entities(self): 
