@@ -126,9 +126,10 @@ class Textprocessed():
 
         specific_format_german = self.find_regex_style("[A-Z][a-z]+\svan\s[A-Z][a-z]+",text) #Prenom van Zantman 
         specifc_format_exception = self.find_regex_style("and\s[A-Z][a-z]+\s[A-Z][a-z]+[,.]",text) # and Romain Gernett, ou . 
+        specifc_format_exception = [x[3:-1] for x in specifc_format_exception] if len(specifc_format_exception)>0 else []
         result += specific_format_german
         result += specifc_format_exception
-
+        result = list(set(result))
 
         firstformat = self.find_regex_style("[A-Z]\. [a-zA-Z]+[,.]",text) # E. Behjat
         firstformat2 = self.find_regex_style("[A-Z]\. [a-zA-Z]+\sand",text) # E. Behjat and
