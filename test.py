@@ -14,11 +14,14 @@ a ="[1] K. J. Astrom and B. M. Appendices Bernhardsson, Comparison of riemann an
 forbidden_part =['Appendices','Supplementary Material','Supplementary material']
 #print(Text(a).entities)
 
-res = [a[40:].find(ele) for ele in forbidden_part ]
+res = [a[40:].find(ele) for ele in forbidden_part 
 
-processor = Textprocessed("https://arxiv.org/pdf/2203.07341v1.pdf") #before  data.link[0]        
+processor = Textprocessed("https://arxiv.org/pdf/2203.09382v1.pdf") #before  data.link[0]        
 text_processed = processor.get_data_from_pdf()
-print(text_processed)
+#print(text_processed)
+
+res = processor.find_entites_based_on_regex(text_processed)
+print(len(res))
 
 def find_regex_style(regexstyle, text):        
   regexp = re.compile(regexstyle)
@@ -155,4 +158,13 @@ dict['chunk_1']=data
 print(dict)
 
 with open('abc.json', 'w') as outfile:
-    json.dump(data, outfile, indent=4)"""
+    json.dump(data, outfile, indent=4)
+
+"""
+files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)
+
+for f in files:
+    try:
+        os.remove(f)
+    except OSError as e:
+        print("Error: %s : %s" % (f, e.strerror))

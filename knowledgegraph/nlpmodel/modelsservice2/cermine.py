@@ -13,7 +13,7 @@ class Cermine():
 
         headers = {'Content-Type': 'application/binary'}
         data = open(path, 'rb').read()
-        response = requests.post('http://cermine.ceon.pl/extract.do', headers=headers, data=data)
+        response = requests.post('http://localhost:8072/extract.do', headers=headers, data=data)
         return response 
     
     def get_entities(self): 
@@ -41,6 +41,6 @@ class Cermine():
                         p.set_nom("NoPrenom")
                     p.set_name(p.nom[0]+p.prenom[0])
                     result.append(p)
-                    
+        print(len(result))           
         return result
        

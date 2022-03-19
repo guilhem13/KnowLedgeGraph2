@@ -1,3 +1,4 @@
+from cgitb import text
 from http.client import FORBIDDEN
 import unicodedata
 import re 
@@ -27,8 +28,8 @@ class Textprocessed():
         #TODO inclure 
         """[u'references',u'r\u00C9f\u00E9rences',u'r\u00C9f\u00C9rences',u'r\xb4ef\xb4erences',u'bibliography',u'bibliographie',u'literaturverzeichnis',u'citations',u'refs',u'publications',u'r\u00E9fs',u'r\u00C9fs',u'reference',u'r\u00E9f\u00E9rence',u'r\u00C9f\u00C9rence']"""
         
-        keyword_list = ['\nReferences\n', '\nREFERENCES\n','\nreferences\n','REFERENCES','References\n','References'] #TODO voir les cas où c'est juste " Reference " exeple => https://arxiv.org/pdf/2202.03954v1.pdf
-        forbidden_part =['Appendices','Supplementary Material','Supplementary material']
+        keyword_list = ['\n\nReferences\n\n','\nReferences\n', '\nREFERENCES\n','\nreferences\n','REFERENCES','References\n','References'] #TODO voir les cas où c'est juste " Reference " exeple => https://arxiv.org/pdf/2202.03954v1.pdf
+        forbidden_part =['Appendices','Appendix','Supplementary Material','Supplementary material']
         keyword = [ele for ele in keyword_list if(ele in temp)]
         if keyword != None:
             if len(keyword) == 1: 
@@ -45,12 +46,13 @@ class Textprocessed():
                     if delta < 14: 
                         keyword = str(keyword[0]) 
                         indexstart  = temp.index(keyword) # check ici parcequ'il y a plusieurs versions de références 
-                        indexend = [temp[indexstart:].find(ele) for ele in forbidden_part ]
+                        indexstartstring = temp[indexstart:]
+                        indexend = [indexstartstring.find(ele) for ele in forbidden_part ]
                         indexend = [ele for ele in indexend  if ele != -1]
-                        result = temp[indexstart+len(keyword):indexend[0]] if len(indexend)>0 else temp[indexstart +len(keyword):] 
+                        result = temp[indexstart+len(keyword):indexstart+indexend[0]] if len(indexend)>0 else temp[indexstart +len(keyword):] 
                         return result
                     else: 
-                        return "erreur problème: Plusieurs références ! "  #TODO enlever cette partie non disruptive 
+                        return print("erreur problème: Plusieurs références ! ")  #TODO enlever cette partie non disruptive 
                 else:
                     if temp.count("Reference") == 1: 
                         indexstart  = temp.index("Reference") # check ici parcequ'il y a plusieurs versions de références 
@@ -59,7 +61,11 @@ class Textprocessed():
                         result = temp[indexstart +len(keyword):indexend[0]] if len(indexend)>0 else temp[indexstart +len(keyword):] 
                         return result
                     else: 
-                        return "erreur problème: Plusieurs références ! 2" 
+                        indexstart = temp.find("\nBibliography\n")
+                        if indexstart != -1:
+                            return temp[indexstart:]
+                        else:
+                            return temp
 
     def get_references_part2(filename): 
         references = extract_references_from_file(filename)
@@ -101,12 +107,14 @@ class Textprocessed():
 
         fourformat = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]+[,.]',text) #James J. Little,
         fourformat2 = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]+\sand',text) #James J. Little and
+        fourformat3 = self.find_regex_style('[A-Z][a-z]+\s[A-Z]\s[a-zA-Z]+[,.]',text) #James J Little 
         fourformat = [x[:-1] for x in fourformat] if len(fourformat)>0 else []
         fourformat2 = [x[:-4] for x in fourformat2] if len(fourformat2)>0 else []
-        Style_two = fourformat + fourformat2
+        fourformat3 = [x[:-1] for x in fourformat3] if len(fourformat3)>0 else []
+        Style_two = fourformat + fourformat2 + fourformat3
         Style_two = list(set(Style_two))
 
-        thirdformat = self.find_regex_style("[A-Z]\. [A-Z]\.\s[A-Z]\.\s[a-zA-Z]+[,.]",text) #J. F. P. Kooijffrr
+        thirdformat = self.find_regex_style("[A-Z]\. [A-Z]\.\s[A-Z]\.\s[a-zA-Z]+[,.]",text) #J. F. P. Kooijffrr,
         thirdformat2 = self.find_regex_style("[A-Z]\. [A-Z]\.\s[A-Z]\.\s[a-zA-Z]+\sand",text) #J. F. P. Kooijffrr and
         thirdformat = [x[:-1] for x in thirdformat] if len(thirdformat)>0 else []
         thirdformat2 = [x[:-4] for x in thirdformat2] if len(thirdformat2)>0 else []
@@ -115,6 +123,12 @@ class Textprocessed():
 
         result = Style_one + Style_two + Style_three
         result = list(set(result))
+
+        specific_format_german = self.find_regex_style("[A-Z][a-z]+\svan\s[A-Z][a-z]+",text) #Prenom van Zantman 
+        specifc_format_exception = self.find_regex_style("and\s[A-Z][a-z]+\s[A-Z][a-z]+[,.]",text) # and Romain Gernett, ou . 
+        result += specific_format_german
+        result += specifc_format_exception
+
 
         firstformat = self.find_regex_style("[A-Z]\. [a-zA-Z]+[,.]",text) # E. Behjat
         firstformat2 = self.find_regex_style("[A-Z]\. [a-zA-Z]+\sand",text) # E. Behjat and
@@ -142,7 +156,43 @@ class Textprocessed():
             firstformat = list(set(firstformat))
             result = result + firstformat
         
-        tenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-z]+",text) # 5 noms + and
+        
+        thirteenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) # 7 noms + and
+        if len(thirteenformat) >0:
+            newsevenformat =[]
+            for item in thirteenformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1])
+                newsevenformat.append(temp[2])
+                newsevenformat.append(temp[3])
+                newsevenformat.append(temp[4])
+                newsevenformat.append(temp[5])
+                newsevenformat.append(temp[6])
+                newsevenformat.append(temp[7][4:])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+
+        twelveformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) # 6 noms + and
+        if len(twelveformat) >0:
+            newsevenformat =[]
+            for item in twelveformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1])
+                newsevenformat.append(temp[2])
+                newsevenformat.append(temp[3])
+                newsevenformat.append(temp[4])
+                newsevenformat.append(temp[5])
+                newsevenformat.append(temp[6][4:])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+        
+        tenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) # 5 noms + and
         if len(tenformat) >0:
             newsevenformat =[]
             for item in tenformat:
@@ -158,7 +208,7 @@ class Textprocessed():
             newsevenformat = list(set(newsevenformat))
             result = result + newsevenformat
 
-        eightformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-z]+",text) # 4 noms + and
+        eightformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) # 4 noms + and
         if len(eightformat) >0:
             newsevenformat =[]
             for item in eightformat:
@@ -173,7 +223,7 @@ class Textprocessed():
             newsevenformat = list(set(newsevenformat))
             result = result + newsevenformat
 
-        nineformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-z]+",text) # 3 noms + and
+        nineformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) # 3 noms + and
         if len(nineformat) >0:
             newsevenformat =[]
             for item in nineformat:
@@ -187,7 +237,7 @@ class Textprocessed():
             newsevenformat = list(set(newsevenformat))
             result = result + newsevenformat
 
-        sevenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-z]+",text) #Alan Akbik, Duncan Blythe, and Roland Vollgraf
+        sevenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) #Alan Akbik, Duncan Blythe, and Roland Vollgraf
         if len(sevenformat) >0:
             newsevenformat =[]
             for item in sevenformat:
@@ -199,7 +249,130 @@ class Textprocessed():
                 newsevenformat = self.check_doublon (result, newsevenformat)
             newsevenformat = list(set(newsevenformat))
             result = result + newsevenformat
+        
+        elevenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+\sand\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+[,.]",text) # Duncan Blythe and Roland Vollgraf,
+        if len(elevenformat) >0:
+            newsevenformat =[]
+            for item in elevenformat:
+                temp = item.split(" and ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1][:-1])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat 
 
+        fifteenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+[,.]",text) # Duncan Blythe, Roland Vollgraf, guilhem maillebuau
+        if len(fifteenformat) >0:
+            newsevenformat =[]
+            for item in fifteenformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1])
+                newsevenformat.append(temp[2][:-1])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat 
+        
+        fourteenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+[,.]",text) # Duncan Blythe, Roland Vollgraf,
+        if len(fourteenformat) >0:
+            newsevenformat =[]
+            for item in fourteenformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1][:-1])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+
+        if len(result) > 0:
+            regex_remove = re.compile('^[A-Z]\. [A-Z]\.$')
+            regex_remove2 = re.compile('^[A-Z]\. [A-Z]$')
+            result = [x for x in result if regex_remove.match(x) == None]# remove "A. R "  part 
+            result = [x for x in result if regex_remove2.match(x) == None]
+            #result = [x[:-1] for x in result ]   
+            result = Data(1).process_authors(result)
+            Entitylist.extend(result)
+        else : 
+            #print("liste nulle")
+            pass
+        return Entitylist
+    
+    def get_first_format_two(self,text):
+        result =[]
+        Entitylist =[]
+        tenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,and\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) # 5 noms + and
+        if len(tenformat) >0:
+            newsevenformat =[]
+            for item in tenformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1])
+                newsevenformat.append(temp[2])
+                newsevenformat.append(temp[3])
+                newsevenformat.append(temp[4])
+                newsevenformat.append(temp[5][4:])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+
+        eightformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,and\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) # 4 noms + and
+        if len(eightformat) >0:
+            newsevenformat =[]
+            for item in eightformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1])
+                newsevenformat.append(temp[2])
+                newsevenformat.append(temp[3])
+                newsevenformat.append(temp[4][4:])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+
+        nineformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,and\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) # 3 noms + and
+        if len(nineformat) >0:
+            newsevenformat =[]
+            for item in nineformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1])
+                newsevenformat.append(temp[2])
+                newsevenformat.append(temp[3][4:])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+
+        sevenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,and\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) #Alan Akbik, Duncan Blythe, and Roland Vollgraf
+        if len(sevenformat) >0:
+            newsevenformat =[]
+            for item in sevenformat:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1])
+                newsevenformat.append(temp[2][4:])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+        
+        elevenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+\sand\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+[,.]",text) # Duncan Blythe and Roland Vollgraf,
+        if len(elevenformat) >0:
+            newsevenformat =[]
+            for item in elevenformat:
+                temp = item.split(" and ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1][:-1])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+            
         if len(result) > 0:
             regex_remove = re.compile('^[A-Z]\. [A-Z]\.$')
             regex_remove2 = re.compile('^[A-Z]\. [A-Z]$')
@@ -276,8 +449,9 @@ class Textprocessed():
         final_entity_list = []
 
         result_first_format = self.get_first_format(text)
+        result_first_format_two = self.get_first_format_two(text)
         result_second_format = self.get_sec_format(text)
-        final_entity_list = result_first_format + result_second_format
+        final_entity_list = result_first_format + result_first_format_two + result_second_format
         
              
         if len(final_entity_list) ==0: #TODO gérer le cas où ya pas de nom et prenom 
