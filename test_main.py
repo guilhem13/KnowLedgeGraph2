@@ -14,6 +14,7 @@ from knowledgegraph.models import Papier , Entity
 import glob
 from knowledgegraph.nlpmodel import service_two_extraction
 import ast
+import os 
 
 def main_function(block_paper):
 
@@ -24,7 +25,7 @@ def main_function(block_paper):
 
 if __name__ == '__main__':
 
-    nb_paper_to_request = 10
+    nb_paper_to_request = 1
     block_arxiv_size = 5
     #arxiv_data = Data(nb_paper_to_request).get_set_data()
     #print("nb papiers "+str(len(arxiv_data)))
@@ -41,6 +42,7 @@ if __name__ == '__main__':
             p = Entity()   
             p.set_prenom(item['prenom'])
             p.set_nom(item['nom'])
+            p.set_name(item['prenom']+item['nom'])
             entities_list.append(p)
 
         return entities_list
@@ -54,20 +56,49 @@ if __name__ == '__main__':
         for i in range(0,length ,block_arxiv_size):
             print(i) 
             papiers+= main_function(arxiv_data[i:i+block_arxiv_size])
-            """files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)
-            for fh in files:
+            for papier in papiers: 
+                if len(papier.entities_from_reference)<15:                    
+                    try:
+                        print("use of cermine")
+                        result = service_two_extraction.ServiceTwo('knowledgegraph/file/'+papier.doi+'.pdf').get_references()
+                        #papier.entities_from_reference + result
+                        if len(papier.entities_from_reference) >0 :
+                            if len(result)>0:                        
+                                for i in range(len(result)): 
+                                    stop =False
+                                    j = 0
+                                    while (j < (len(papier.entities_from_reference)-1)):
+                                        if stop ==False: 
+                                            if result[i].__eq__(papier.entities_from_reference[j])==True:
+                                                stop =True
+                                        j+=1
+                                    if stop == False: 
+                                        papier.entities_from_reference.append(result[i])
+
+                                #papier.entities_from_reference =  entities_from_regex
+                            else:
+                                pass
+                        else: 
+                            papier.entities_from_reference =  result
+
+                    except exception as e: 
+                        print("can't process with service two")
+
+            files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)
+            for f in files:
                 try:
-                    result = service_two_extraction.ServiceTwo(fh).get_references()
-                except exception as e: 
-                    print("can't process")"""
+                    os.remove(f)
+                except OSError as e:
+                    print("Error: %s : %s" % (f, e.strerror))
+
         if nb_paper_to_request-(block_arxiv_size*quotient) >0:
             papiers+= main_function(arxiv_data[length :int(length+(nb_paper_to_request - length))])
     else:
         papiers+= main_function(arxiv_data[0:nb_paper_to_request])
     #papiers = main_function()
-    """
+    
     print(len(papiers))
     owl = ontology.Ontology()
     for papier in papiers: 
         owl.add_papier(papier)
-    owl.save('result.owl')"""
+    owl.save('result.owl')

@@ -127,8 +127,15 @@ class Textprocessed():
         specific_format_german = self.find_regex_style("[A-Z][a-z]+\svan\s[A-Z][a-z]+",text) #Prenom van Zantman 
         specifc_format_exception = self.find_regex_style("and\s[A-Z][a-z]+\s[A-Z][a-z]+[,.]",text) # and Romain Gernett, ou . 
         specifc_format_exception = [x[3:-1] for x in specifc_format_exception] if len(specifc_format_exception)>0 else []
+        #TODO A voir car ils sont à l'origine de pleins de problème
+        specific_format_exception2 = self.find_regex_style("[A-Z][a-z]+-[A-Z][a-z]+\s[A-Z][a-z]+[,.]",text) # Minh-Thong Luang
+        specific_format_exception2 = [x[3:-1] for x in specific_format_exception2] if len(specific_format_exception2)>0 else [] 
+        specific_format_exception3 = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+-[A-Z][a-z]+[,.]",text) # Luang Minh-Thong
+        specific_format_exception3 = [x[3:-1] for x in specific_format_exception3] if len(specific_format_exception3)>0 else [] 
         result += specific_format_german
         result += specifc_format_exception
+        result += specific_format_exception2
+        result += specific_format_exception3
         result = list(set(result))
 
         firstformat = self.find_regex_style("[A-Z]\. [a-zA-Z]+[,.]",text) # E. Behjat
@@ -442,6 +449,7 @@ class Textprocessed():
                 p = Entity()
                 p.set_prenom(temp[1])
                 p.set_nom(temp[0])
+                p.set_name(str(temp[0]+temp[1]))
                 Entitylist.append(p)
         
         return Entitylist
@@ -459,6 +467,7 @@ class Textprocessed():
             p = Entity()
             p.set_prenom("guilhem")
             p.set_nom("maillebuau")
+            p.set_name("guilhemaillebuau")
             final_entity_list.append(p)
               
         return final_entity_list           

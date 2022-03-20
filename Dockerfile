@@ -1,5 +1,5 @@
 # For more information, please refer to https://aka.ms/vscode-docker-python
-FROM python:3.8-slim
+FROM debian:11
 
 EXPOSE 5000
 
@@ -12,12 +12,22 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # Install pip requirements
-#COPY requirements.txt .
-RUN python -m pip install -r requirements.txt
-RUN python -m nltk.downloader punkt
-RUN python -m nltk.downloader averaged_perceptron_tagger
-RUN python -m nltk.downloader maxent_ne_chunker
-RUN python -m nltk.downloader words
+COPY requirements.txt .
+RUN apt-get update -q -y
+RUN apt-get install -yf \
+    gcc python-dev libkrb5-dev python3-docopt python3-gssapi \
+    python3 \
+    python3-pip
+
+RUN python3 -m pip install --upgrade pip
+#RUN python3 pip install -U nltk
+#RUN python -m nltk.downloader -q all
+RUN python3 -m pip install -r requirements.txt
+RUN python3 -m nltk.downloader punkt
+RUN python3 -m nltk.downloader averaged_perceptron_tagger
+RUN python3 -m nltk.downloader maxent_ne_chunker
+RUN python3 -m nltk.downloader words
+
 
 WORKDIR /ProjetPythonAPI
 COPY . /ProjetPythonAPI
@@ -28,4 +38,7 @@ RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /
 USER appuser
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app.py"]
+ENTRYPOINT ["python", "app.py"]
+
+# execute the script:
+CMD [ "python", "app.py" ]

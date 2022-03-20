@@ -70,6 +70,7 @@ def convert_dict_to_entities(stringdict):
         p = Entity()   
         p.set_prenom(item['prenom'])
         p.set_nom(item['nom'])
+        p.set_name(item['prenom']+item['nom'])
         entities_list.append(p)
 
     return entities_list
