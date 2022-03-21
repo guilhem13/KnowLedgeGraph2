@@ -18,6 +18,7 @@ class Cermine():
     
     def get_entities(self): 
         response = self.request_service(self.path)
+        print(self.path)
         tree =  ElementTree(fromstring(response.content.decode("utf-8", errors="replace")))
         root = tree.getroot()
         result =[]
@@ -25,6 +26,8 @@ class Cermine():
             for persons in child.findall('mixed-citation/string-name'):
                 for person in persons:
                     p = Entity()
+                    p.set_nom("Nonom")
+                    p.set_prenom("Noprenom")
                     if person.tag == 'given-names':
                         if person.text is not None: 
                             p.set_prenom(person.text)
@@ -35,11 +38,7 @@ class Cermine():
                             p.set_nom(person.text)
                         else:
                             p.set_nom("Nonom")
-                    if p.nom[0] is None :
-                        p.set_nom("Nonom")
-                    if p.prenom is None: 
-                        p.set_nom("NoPrenom")
-                    p.set_name(p.nom[0]+p.prenom[0])
+                    p.set_name(p.nom +p.prenom)
                     result.append(p)
         print(len(result))           
         return result

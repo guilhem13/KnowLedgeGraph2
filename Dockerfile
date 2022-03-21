@@ -23,10 +23,10 @@ RUN python3 -m pip install --upgrade pip
 #RUN python3 pip install -U nltk
 #RUN python -m nltk.downloader -q all
 RUN python3 -m pip install -r requirements.txt
-RUN python3 -m nltk.downloader punkt
-RUN python3 -m nltk.downloader averaged_perceptron_tagger
-RUN python3 -m nltk.downloader maxent_ne_chunker
-RUN python3 -m nltk.downloader words
+#RUN python3 -m nltk.downloader punkt
+#RUN python3 -m nltk.downloader averaged_perceptron_tagger
+#RUN python3 -m nltk.downloader maxent_ne_chunker
+#RUN python3 -m nltk.downloader words
 
 
 WORKDIR /ProjetPythonAPI

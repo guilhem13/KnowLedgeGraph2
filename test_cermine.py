@@ -1,9 +1,9 @@
-"""import glob
+import glob
 from importlib.metadata import FileHash 
 from knowledgegraph.nlpmodel import service_two_extraction
 import requests
 import time
-
+"""
 headers = {'Content-Type': 'application/binary'}
 data = open('knowledgegraph/file/2203.09510v1.pdf', 'rb').read()
 response = requests.post('http://cermine.ceon.pl/extract.do', headers=headers, data=data)
@@ -16,7 +16,7 @@ for fh in files:
     data = open(fh, 'rb').read()
     response = requests.post('http://cermine.ceon.pl/extract.do', headers=headers, data=data)
     print(len(response.content))
-    print("done")"""
+    print("done")
 
 import requests
 import json
@@ -40,8 +40,8 @@ def extract_author(Text):
         if "author" in content: 
             temp = content.split("author = {")[1].split("},")[0]
             temp = [x for x in temp.split(",") if len(x.strip())>2 and x.strip().isupper()]
-    return authors
+    return authors"""
 
 #print(extract_author(texta))
-
+#result = service_two_extraction.ServiceTwo('knowledgegraph/file/2203.09361v1.pdf').get_references()
 

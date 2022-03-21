@@ -41,7 +41,6 @@ pathspec==0.9.0
 pathy==0.6.1
 pdfminer.six==20201018
 platformdirs==2.5.1
-polyglot==16.7.4
 pptree==3.1
 preshed==3.0.6
 pycparser==2.21
@@ -49,7 +48,6 @@ pydantic==1.8.2
 pygrobid==0.1.6
 pylev==1.4.0
 pyparsing==3.0.7
-PyPDF2==1.26.0
 pyspnego==0.5.0
 python-dateutil==2.8.2
 python-dotenv==0.19.2
@@ -68,9 +66,6 @@ six==1.16.0
 smart-open==5.2.1
 sortedcontainers==2.4.0
 soupsieve==2.3.1
-spacy==3.2.1
-spacy-legacy==3.0.8
-spacy-loggers==1.0.1
 SQLAlchemy==1.4.31
 srsly==2.4.2
 thinc==8.0.13

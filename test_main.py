@@ -25,7 +25,7 @@ def main_function(block_paper):
 
 if __name__ == '__main__':
 
-    nb_paper_to_request = 1
+    nb_paper_to_request = 40
     block_arxiv_size = 5
     #arxiv_data = Data(nb_paper_to_request).get_set_data()
     #print("nb papiers "+str(len(arxiv_data)))

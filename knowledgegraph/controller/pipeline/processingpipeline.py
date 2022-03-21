@@ -95,7 +95,7 @@ class Textprocessed():
         listaverifier = [x for x in listaverifier if x != "TOREMOVE"]
         return listaverifier
     
-    def get_first_format(self,text): #IEEE ACM
+    def get_format_ieee(self,text): #IEEE #liste of styles => https://dal.ca.libguides.com/csci/writing/examples
 
         Entitylist = []
         fithformat = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]\.\s[a-zA-Z]+[,.]',text) #James J. H. Little,
@@ -163,8 +163,30 @@ class Textprocessed():
                 firstformat = self.check_doublon(result, firstformat)
             firstformat = list(set(firstformat))
             result = result + firstformat
-        
-        
+
+        result_full_name = self. get_format_full_name(result,text)
+        if len(result_full_name)>0:
+            result = result_full_name
+        result_full_name2 = self.get_format_full_name_two(result,text)
+        if len(result_full_name2)>0: 
+            result = result_full_name2
+
+        if len(result) > 0:
+            regex_remove = re.compile('^[A-Z]\. [A-Z]\.$')
+            regex_remove2 = re.compile('^[A-Z]\. [A-Z]$')
+            result = [x for x in result if regex_remove.match(x) == None]# remove "A. R "  part 
+            result = [x for x in result if regex_remove2.match(x) == None]
+            #result = [x[:-1] for x in result ]   
+            result = Data(1).process_authors(result)
+            Entitylist.extend(result)
+        else : 
+            #print("liste nulle")
+            pass
+        return Entitylist
+    
+    def get_format_full_name(self,listofreference,text):#ACM
+
+        result = listofreference
         thirteenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) # 7 noms + and
         if len(thirteenformat) >0:
             newsevenformat =[]
@@ -294,23 +316,12 @@ class Textprocessed():
                 newsevenformat = self.check_doublon (result, newsevenformat)
             newsevenformat = list(set(newsevenformat))
             result = result + newsevenformat
-
-        if len(result) > 0:
-            regex_remove = re.compile('^[A-Z]\. [A-Z]\.$')
-            regex_remove2 = re.compile('^[A-Z]\. [A-Z]$')
-            result = [x for x in result if regex_remove.match(x) == None]# remove "A. R "  part 
-            result = [x for x in result if regex_remove2.match(x) == None]
-            #result = [x[:-1] for x in result ]   
-            result = Data(1).process_authors(result)
-            Entitylist.extend(result)
-        else : 
-            #print("liste nulle")
-            pass
-        return Entitylist
+        
+        return result
     
-    def get_first_format_two(self,text):
-        result =[]
-        Entitylist =[]
+    def get_format_full_name_two(self,listofreference,text): #ACM 2
+        result =listofreference
+        #Entitylist =[]
         tenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,[A-Z][a-z]+\s[A-Z][a-zA-Z]+,and\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+",text) # 5 noms + and
         if len(tenformat) >0:
             newsevenformat =[]
@@ -387,15 +398,16 @@ class Textprocessed():
             result = [x for x in result if regex_remove.match(x) == None]# remove "A. R "  part 
             result = [x for x in result if regex_remove2.match(x) == None]
             #result = [x[:-1] for x in result ]   
-            result = Data(1).process_authors(result)
-            Entitylist.extend(result)
+            #result = Data(1).process_authors(result)
+            #Entitylist.extend(result)
         else : 
             #print("liste nulle")
             pass
-        return Entitylist
+        return result
 
-    def get_sec_format(self,text): #APA style , 
-        result=[] 
+    def get_format_apa(self,text): #APA style , 
+        result=[]
+        result2=[] 
         Entitylist=[]
         
         template_one = self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.\s[A-Z]\.\s[A-Z]\.",text) #Johnson, D. D. P.
@@ -451,16 +463,33 @@ class Textprocessed():
                 p.set_nom(temp[0])
                 p.set_name(str(temp[0]+temp[1]))
                 Entitylist.append(p)
+
+        index_end_apa = len(result)-1
+        result_full_name = self. get_format_full_name(result,text)
+        result_full_name2 = self.get_format_full_name_two(result,text)      
+        if len(result_full_name)>0:
+            result2 += result_full_name
+        if len(result_full_name2)>0: 
+            result2 += result_full_name2
+        if len(result2)>0:
+            result2 = Data(1).process_authors(result2[index_end_apa:])
+            Entitylist.extend(result2)
         
         return Entitylist
         
     def find_entites_based_on_regex(self,text):        
         final_entity_list = []
-
-        result_first_format = self.get_first_format(text)
-        result_first_format_two = self.get_first_format_two(text)
-        result_second_format = self.get_sec_format(text)
-        final_entity_list = result_first_format + result_first_format_two + result_second_format
+        check_apa_style = self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.+,\s[A-Z][a-z]+,\s[A-Z]\.",text[:50])
+        if len( check_apa_style)>0:
+            result_second_format = self.get_format_apa(text)
+            #result_format_full_name = self.get_format_full_name(text)
+            #result_format_full_name_two = self.get_format_full_name_two(text)
+            final_entity_list = result_second_format #result_format_full_name + result_format_full_name_two + result_second_format
+        else: 
+            result_format_ieee = self.get_format_ieee(text)
+            #result_format_full_name = self.get_format_full_name(text)
+            #result_format_full_name_two = self.get_format_full_name_two(text)
+            final_entity_list = result_format_ieee #+ result_format_full_name + result_format_full_name_two
         
              
         if len(final_entity_list) ==0: #TODO gérer le cas où ya pas de nom et prenom 

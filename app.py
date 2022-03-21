@@ -8,6 +8,7 @@ import os
 import flask
 import webappmanager
 from flask import Response, render_template, request
+from flasgger import Swagger
 from werkzeug.utils import secure_filename
 from knowledgegraph.nlpmodel import service_one_extraction
 from knowledgegraph.models.notificationmodel import Notification
