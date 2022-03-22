@@ -7,7 +7,7 @@ import json
 import os
 import flask
 import webappmanager
-from flask import Response, render_template, request
+from flask import Response, render_template, request, send_from_directory
 from flasgger import Swagger
 from werkzeug.utils import secure_filename
 from knowledgegraph.nlpmodel import service_one_extraction
@@ -114,10 +114,19 @@ def create_pipeline_from_bdd(nb_paper):
                         mimetype="application/json",
                     )
 
+############################### get_ontology ########################################
+DOWNLOAD_DIRECTORY = "."
+@app.route('/get/ontology/<path:path>',methods = ['GET','POST'])
+def get_files(path):
 
-
-
-
+    try:
+        return send_from_directory(DOWNLOAD_DIRECTORY,path, as_attachment=True)
+    except FileNotFoundError:
+         return Response(
+                        Notification("404", "FileNotFound").message(), #TODO Retouner l'ontologie en version json 
+                        status=404,
+                        mimetype="application/json",
+                    )
 
 ############################### Error handler ########################################
 # route for error 500

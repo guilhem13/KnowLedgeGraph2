@@ -5,7 +5,12 @@ WORKDIR /ProjetPythonAPI
 
 
 COPY requirements.txt .
-
+RUN apt update -q -y
+RUN apt install -yf \
+    apt-get install python-pip libkrb5-dev \
+    build-essential libpoppler-cpp-dev pkg-config python3-dev \
+    python3 \
+    python3-pip
 RUN python3 --version
 RUN python3 -m pip install --upgrade pip
 RUN pip3 install nltk

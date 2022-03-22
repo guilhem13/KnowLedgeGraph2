@@ -1,7 +1,9 @@
-# Extract text from pdf 
+# Arxiv ontology API 
 
-It's a simple REST API which parses pdf files in order to extract text from it.
-The text file are stocked in a database
+It's a simple REST API which can : 
+- return entities of an uploading pdf 
+- return ontology from arxiv papers 
+- manage arxiv database 
 
 ***
 

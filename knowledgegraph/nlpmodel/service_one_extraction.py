@@ -1,8 +1,6 @@
 import nltk
 from operator import itemgetter
 from nltk.tag import StanfordNERTagger#, StanfordPOSTagger
-import polyglot
-from polyglot.text import Text
 PATH_TO_JAR='knowledgegraph/nlpmodel/rawnlpmodel/stanford-ner.jar'
 PATH_TO_MODEL = 'knowledgegraph/nlpmodel/rawnlpmodel/english.muc.7class.distsim.crf.ser.gz'
 stner = StanfordNERTagger(PATH_TO_MODEL,PATH_TO_JAR,encoding='utf-8')
@@ -103,7 +101,6 @@ class ServiceOne():
 
     def get_references(self):
         nltkresult = self.nltktreelist()["persons"]
-        #polyglotresult = self.polyglot_entities()
         Standfordresult = self.get_continuous_chunks()["persons"]
         resultList= list(set( nltkresult) | set(Standfordresult))
         resultList = [x for x in resultList if len(x)>1 ]
