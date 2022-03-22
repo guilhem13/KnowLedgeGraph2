@@ -17,10 +17,11 @@ from knowledgegraph.owl import ontology
 from bdd.manager_bdd import session_creator
 from bdd.paper_model_orm import PapierORM
 import AWS.aws as aws
-
+from flasgger import swag_from
 
 session = session_creator()
 app = flask.Flask(__name__)
+swagger = Swagger(app)
 app.config["UPLOAD_FOLDER"] = "."
 """
 import csv
@@ -38,24 +39,18 @@ out.writerow(['doi','title','authors','link','summary','date_published'])
 
 for item in session.query(PapierORM).all():
     out.writerow([item.doi, clean_string(item.title),clean_string(item.authors), item.link,clean_string(item.summary),clean_string(item.datepublished)])
-f.close()
-
-
-import csv
-
-f = open('metadatadatabase.csv', 'w')
-out = csv.writer(f)
-out.writerow(['doi','title','authors','link','summary','date_published'])
-
-
-for item in session.query(PapierORM).all():
-    out.writerow([item.doi, item.title,item.authors, item.link,item.summary,item.datepublished])
 f.close()"""
+
 
 ############################### get ner entities from one pdf  ########################################
 # Route where the client wants to get ner from an uploading pdf 
+
 @app.route("/getner", methods=["GET", "POST"])
+@swag_from('swagger/get_ner.yml')
 def upload_file():
+    """Endpoint returning list of Entities based on
+    AWS Comprehend service
+    """
     if request.method == "POST":
         if "file" not in request.files:  # no file part
             return Response(
@@ -170,4 +165,4 @@ def internal_server_error(error):
 session.close()
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run()#port=5000)

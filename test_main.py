@@ -83,6 +83,8 @@ if __name__ == '__main__':
 
                     except exception as e: 
                         print("can't process with service two")
+                        
+
 
             files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)
             for f in files:
