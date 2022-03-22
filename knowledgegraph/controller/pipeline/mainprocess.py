@@ -36,11 +36,6 @@ class Pipeline:
         # final_entities_list =[]
         # final_entities_list += entities_from_regex
         # print(test_cermine.extract_author(text_processed))
-        """headers = {'Content-Type': 'application/binary'}
-            fichier = open('knowledgegraph/file/'+str(data.doi)+'.pdf', 'rb').read()
-            response = requests.post('http://localhost:8072/extract.do', headers=headers, data=fichier)
-            print(response.content)
-            print("done")"""
         data.entities_from_reference = entities_from_regex  # final_entities_list
         data.url_in_text = processor.find_url_in_text()
         data.doi_in_text = processor.find_doi_in_text()
@@ -75,23 +70,3 @@ class Pipeline:
 
     # TODO récolter le nombre de coeur pour ensuite le mettre sur le code
     # gérer le problème quand c'est 10000
-
-
-"""if len(entities_from_regex) >0 :
-                if len(entities_from_serviceone)>0:                        
-                    for i in range(len(entities_from_serviceone)): 
-                        stop =False
-                        j = 0
-                        while (j < (len(entities_from_regex)-1)):
-                            if stop ==False: 
-                                if entities_from_serviceone[i].__eq__(entities_from_regex[j])==True:
-                                    stop =True
-                            j+=1
-                        if stop == False: 
-                            final_entities_list.append(entities_from_serviceone[i])
-
-                    data.entities_from_reference =  entities_from_regex
-                else:
-                    data.entities_from_reference =  entities_from_regex
-            else: 
-                data.entities_from_reference =  entities_from_serviceone """

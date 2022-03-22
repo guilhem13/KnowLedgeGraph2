@@ -7,12 +7,12 @@ nltk.download('maxent_ne_chunker')
 nltk.download('words')
 import multiprocessing as mp
 from knowledgegraph.owl import ontology
-from knowledgegraph.controller import Data
+from knowledgegraph.controller import Data , Textprocessed
 from bdd.manager_bdd import session_creator
 from bdd.paper_model_orm import PapierORM
 from knowledgegraph.models import Papier , Entity
 import glob
-from knowledgegraph.nlpmodel import service_two_extraction
+from knowledgegraph.nlpmodel import service_two_extraction , service_one_extraction
 import ast
 import os 
 
@@ -25,7 +25,7 @@ def main_function(block_paper):
 
 if __name__ == '__main__':
 
-    nb_paper_to_request = 40
+    nb_paper_to_request = 20
     block_arxiv_size = 5
     #arxiv_data = Data(nb_paper_to_request).get_set_data()
     #print("nb papiers "+str(len(arxiv_data)))
@@ -57,7 +57,8 @@ if __name__ == '__main__':
             print(i) 
             papiers+= main_function(arxiv_data[i:i+block_arxiv_size])
             for papier in papiers: 
-                if len(papier.entities_from_reference)<15:                    
+                if len(papier.entities_from_reference)<15:
+                    servicetwocheckout =True                    
                     try:
                         print("use of cermine")
                         result = service_two_extraction.ServiceTwo('knowledgegraph/file/'+papier.doi+'.pdf').get_references()
@@ -82,8 +83,30 @@ if __name__ == '__main__':
                             papier.entities_from_reference =  result
 
                     except exception as e: 
+                        servicetwocheckout =False
                         print("can't process with service two")
-                        
+
+                    if  servicetwocheckout ==False: 
+                        processor = Textprocessed('https://arxiv.org/pdf/'+str(papier.link)+'.pdf') 
+                        text_processed = processor.get_data_from_pdf()
+                        result = service_one_extraction.ServiceOne(text_processed).get_references()
+                        if len(papier.entities_from_reference) >0 :
+                            if len(result)>0:                        
+                                for i in range(len(result)): 
+                                    stop =False
+                                    j = 0
+                                    while (j < (len(papier.entities_from_reference)-1)):
+                                        if stop ==False: 
+                                            if result[i].__eq__(papier.entities_from_reference[j])==True:
+                                                stop =True
+                                        j+=1
+                                    if stop == False: 
+                                        papier.entities_from_reference.append(result[i])
+
+                            else:
+                                pass
+                        else: 
+                            papier.entities_from_reference =  result
 
 
             files = glob.glob('knowledgegraph/file/*.pdf', recursive=True)

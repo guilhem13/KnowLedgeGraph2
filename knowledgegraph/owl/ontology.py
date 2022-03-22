@@ -4,7 +4,7 @@ from xml.sax.saxutils import escape
 class Ontology():
 
     def __init__(self):
-        self.template_onto = get_ontology("file://knowledgegraph/owl/onto6.owl").load()
+        self.template_onto = get_ontology("file://knowledgegraph/owl/onto10.owl").load()
         self.foaf = self.template_onto.get_imported_ontologies().first().load()
     
                 

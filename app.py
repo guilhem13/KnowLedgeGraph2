@@ -23,23 +23,6 @@ session = session_creator()
 app = flask.Flask(__name__)
 swagger = Swagger(app)
 app.config["UPLOAD_FOLDER"] = "."
-"""
-import csv
-def clean_string(rowinformation): 
-    char_to_replace = {'\n': ' ',
-                       ',': ';',
-                      }
-    for key, value in char_to_replace.items():
-        rowinformation = rowinformation.replace(key, value)   
-    return rowinformation
-
-f = open('metadata_database.csv', 'w')
-out = csv.writer(f)
-out.writerow(['doi','title','authors','link','summary','date_published'])
-
-for item in session.query(PapierORM).all():
-    out.writerow([item.doi, clean_string(item.title),clean_string(item.authors), item.link,clean_string(item.summary),clean_string(item.datepublished)])
-f.close()"""
 
 
 ############################### get ner entities from one pdf  ########################################
@@ -84,6 +67,7 @@ def upload_file():
     return render_template("index.html")
 
 ############################### manage bdd ########################################
+
 @app.route("/arxiv/sizebdd")
 def size_of_bdd():
     nbrows = session.query(PapierORM).count()
