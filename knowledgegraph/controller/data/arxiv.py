@@ -22,23 +22,23 @@ class Data():
 
                 if len(seperate_name) >2:  # Prend en compte les noms du type David A. Strubbe
                     p = Entity()
-                    p.set_prenom(' '.join(seperate_name[0:-1]))
-                    p.set_nom(seperate_name[-1])
+                    p.set_prenom(' '.join(seperate_name[0:-1]).strip())
+                    p.set_nom(seperate_name[-1].strip())
                     if len(p.nom)>2: 
                         p.set_name(p.nom+p.prenom)
                         result.append(p)
                 else:
                     if len(seperate_name) >1: # cas normal nom prénom 
                         p = Entity()   
-                        p.set_prenom(seperate_name[0])
-                        p.set_nom(seperate_name[1])
+                        p.set_prenom(seperate_name[0].strip())
+                        p.set_nom(seperate_name[1].strip())
                         if len(p.nom)>2: 
                             p.set_name(p.nom+p.prenom)
                             result.append(p)
                     else: 
                         p = Entity()   # cas pas normal juste nom ou erreur 
-                        p.set_prenom("No firstname")
-                        p.set_nom(seperate_name[0])
+                        p.set_prenom("Nofirstname")
+                        p.set_nom(seperate_name[0].strip())
                         p.set_name(p.nom+p.prenom)
                         if len(p.nom)>2: 
                             result.append(p)

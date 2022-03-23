@@ -1,20 +1,19 @@
-FROM python:3.8-slim as builder
+FROM debian:11
 
 ADD . /ProjetPythonAPI
 WORKDIR /ProjetPythonAPI
 
 
 COPY requirements.txt .
-RUN apt update -q -y
-RUN apt install -yf \
-    apt-get install python-pip libkrb5-dev \
+RUN apt-get update -q -y
+RUN apt-get install -y python3-pip libkrb5-dev \
     build-essential libpoppler-cpp-dev pkg-config python3-dev \
     python3 \
-    python3-pip
+    python3-gssapi 
 RUN python3 --version
 RUN python3 -m pip install --upgrade pip
 RUN pip3 install nltk
-RUN [ "python", "-c", "import nltk; nltk.download('punkt'); nltk.download('averaged_perceptron_tagger');nltk.download('maxent_ne_chunker');nltk.download('words')" ]
+RUN [ "python3", "-c", "import nltk; nltk.download('punkt'); nltk.download('averaged_perceptron_tagger');nltk.download('maxent_ne_chunker');nltk.download('words')" ]
 RUN python3 -m pip install -r requirements.txt
 #RUN python3 -m nltk.downloader punkt
 #RUN python3 -m nltk.downloader averaged_perceptron_tagger
@@ -28,7 +27,7 @@ RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /
 USER appuser
 
 # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT ["python3", "app.py"]
 
 # execute the script:
-CMD [ "python", "app.py" ]
+CMD [ "python3", "app.py" ]

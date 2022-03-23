@@ -459,8 +459,8 @@ class Textprocessed():
             for item in result: 
                 temp = item.split(",")
                 p = Entity()
-                p.set_prenom(temp[1])
-                p.set_nom(temp[0])
+                p.set_prenom(temp[1].strip())
+                p.set_nom(temp[0].strip())
                 p.set_name(str(temp[0]+temp[1]))
                 Entitylist.append(p)
 
