@@ -1,0 +1,26 @@
+openapi: 3.0.3
+tags:
+  - "Retrun Ontoly  "
+summary: "Upload a PDF file"
+description: "This route allows the user to upload a pdf file and return the entities detected in this file"
+produces:
+- "application/file"
+parameters:
+      - name: path
+        in: path
+        type: string
+        enum: ['result.owl']
+        required: true
+responses:
+        '200':
+          schema:
+            type: file
+          headers:
+            Content-type:
+              type: string
+              description: text/owl; charset=utf-8
+            Content-Disposition:
+              type: string
+              description: attachment; filename=myfile.owl
+          description: Export ontology into a owl file
+            

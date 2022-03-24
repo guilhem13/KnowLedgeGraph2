@@ -6,7 +6,6 @@ from .pdfx import PDFx
 from .undesirable_char import undesirable_char_replacements 
 from knowledgegraph.controller import Data
 from knowledgegraph.models import Entity
-from refextract import extract_references_from_file
 
 class Textprocessed(): 
     url = None
@@ -67,9 +66,6 @@ class Textprocessed():
                         else:
                             return temp
 
-    def get_references_part2(filename): 
-        references = extract_references_from_file(filename)
-        return references
 
     def clean_references_part(self,data):
         temp = re.sub(' +', ' ', data)
@@ -479,14 +475,16 @@ class Textprocessed():
         
     def find_entites_based_on_regex(self,text):        
         final_entity_list = []
-        check_apa_style = self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.+,\s[A-Z][a-z]+,\s[A-Z]\.",text[:50])
+        check_apa_style = self.find_regex_style("[A-Z][a-z]+,\s[A-Z]\.+[,;]\s[A-Z][a-z]+,\s[A-Z]\.",text)
         if len( check_apa_style)>0:
             result_second_format = self.get_format_apa(text)
+            print("inside APA")
             #result_format_full_name = self.get_format_full_name(text)
             #result_format_full_name_two = self.get_format_full_name_two(text)
             final_entity_list = result_second_format #result_format_full_name + result_format_full_name_two + result_second_format
         else: 
             result_format_ieee = self.get_format_ieee(text)
+            print("inside IEEE")
             #result_format_full_name = self.get_format_full_name(text)
             #result_format_full_name_two = self.get_format_full_name_two(text)
             final_entity_list = result_format_ieee #+ result_format_full_name + result_format_full_name_two

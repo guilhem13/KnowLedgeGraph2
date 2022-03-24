@@ -18,6 +18,7 @@ from bdd.manager_bdd import session_creator
 from bdd.paper_model_orm import PapierORM
 import AWS.aws as aws
 from flasgger import swag_from
+from waitress import serve 
 
 session = session_creator()
 app = flask.Flask(__name__)
@@ -117,8 +118,8 @@ def create_pipeline_from_bdd(nb_paper):
 ############################### get_ontology ########################################
 DOWNLOAD_DIRECTORY = "."
 @app.route('/get/ontology/<path:path>',methods = ['GET','POST'])
+@swag_from('swagger/get_ontology.yml')
 def get_files(path):
-
     try:
         return send_from_directory(DOWNLOAD_DIRECTORY,path, as_attachment=True)
     except FileNotFoundError:
@@ -158,4 +159,4 @@ def internal_server_error(error):
 session.close()
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    serve(app, host="0.0.0.0",port=5000)
