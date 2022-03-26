@@ -25,7 +25,7 @@ def main_function(block_paper):
 
 if __name__ == '__main__':
 
-    nb_paper_to_request = 70
+    nb_paper_to_request = 1
     block_arxiv_size = 5
     #arxiv_data = Data(nb_paper_to_request).get_set_data()
     #print("nb papiers "+str(len(arxiv_data)))
@@ -87,6 +87,7 @@ if __name__ == '__main__':
                         print("can't process with service two")
 
                     if  servicetwocheckout ==False: 
+                        print("use of service One")
                         processor = Textprocessed('https://arxiv.org/pdf/'+str(papier.link)+'.pdf') 
                         text_processed = processor.get_data_from_pdf()
                         result = service_one_extraction.ServiceOne(text_processed).get_references()

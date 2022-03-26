@@ -1,0 +1,17 @@
+openapi: 3.0.3
+tags:
+  - "Return size of the database "
+summary: "Return the size of the database"
+description: "Return the size of the database"
+produces:
+- "application/json"
+responses:
+        '200':
+          description: "Successful response"
+          schema:
+            type: "json"
+                
+        '404':
+              description: "Problem occurs when requesting the database"
+              schema:
+                type: "json"

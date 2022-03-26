@@ -70,6 +70,7 @@ def upload_file():
 ############################### manage bdd ########################################
 
 @app.route("/arxiv/sizebdd")
+@swag_from('swagger/arxiv_sizebdd.yml')
 def size_of_bdd():
     nbrows = session.query(PapierORM).count()
     return Response(

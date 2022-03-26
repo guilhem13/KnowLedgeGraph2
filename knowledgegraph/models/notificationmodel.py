@@ -10,9 +10,9 @@ class Notification:
     id_ = None
     error = None
 
-    def __init__(self, id_, error):
-        self.id_error = id_
-        self.error = error
+    def __init__(self, id_, notification):
+        self.id = id_
+        self.notification = notification
 
     # function which create error message
     def message(self):
