@@ -30,6 +30,7 @@ class Pipeline:
     def multi_process(self, data, out_queue):
         time.sleep(3)
         processor = Textprocessed(data.link)  # before  data.link[0]
+        print(data.link)
         text_processed = processor.get_data_from_pdf()
         data.entities_include_in_text = processor.find_entities_in_raw_text()
         entities_from_regex = processor.find_entites_based_on_regex(text_processed)

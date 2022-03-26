@@ -50,8 +50,14 @@ class Textprocessed():
                         indexend = [ele for ele in indexend  if ele != -1]
                         result = temp[indexstart+len(keyword):indexstart+indexend[0]] if len(indexend)>0 else temp[indexstart +len(keyword):] 
                         return result
-                    else: 
-                        return print("erreur problème: Plusieurs références ! ")  #TODO enlever cette partie non disruptive 
+                    else: #cas où il y a plusieurs références dans le texte avec des formats diffférents 
+                        keyword = str(keyword[-1]) 
+                        indexstart  = temp.index(keyword) # check ici parcequ'il y a plusieurs versions de références 
+                        indexstartstring = temp[indexstart:]
+                        indexend = [indexstartstring.find(ele) for ele in forbidden_part ]
+                        indexend = [ele for ele in indexend  if ele != -1]
+                        result = temp[indexstart+len(keyword):indexstart+indexend[0]] if len(indexend)>0 else temp[indexstart +len(keyword):] 
+                        return result 
                 else:
                     if temp.count("Reference") == 1: 
                         indexstart  = temp.index("Reference") # check ici parcequ'il y a plusieurs versions de références 
@@ -104,10 +110,12 @@ class Textprocessed():
         fourformat = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]+[,.]',text) #James J. Little,
         fourformat2 = self.find_regex_style('[A-Z][a-z]+\s[a-zA-Z]\.\s[a-zA-Z]+\sand',text) #James J. Little and
         fourformat3 = self.find_regex_style('[A-Z][a-z]+\s[A-Z]\s[a-zA-Z]+[,.]',text) #James J Little 
+        fourformat4 = self.find_regex_style('[A-Z]\.\s[A-Z][a-z]+\s[A-Z][a-z]+[,.]',text) # E. Mark Glod,
         fourformat = [x[:-1] for x in fourformat] if len(fourformat)>0 else []
         fourformat2 = [x[:-4] for x in fourformat2] if len(fourformat2)>0 else []
         fourformat3 = [x[:-1] for x in fourformat3] if len(fourformat3)>0 else []
-        Style_two = fourformat + fourformat2 + fourformat3
+        fourformat4 = [x[:-1] for x in fourformat4] if len(fourformat4)>0 else []
+        Style_two = fourformat + fourformat2 + fourformat3 + fourformat4
         Style_two = list(set(Style_two))
 
         thirdformat = self.find_regex_style("[A-Z]\. [A-Z]\.\s[A-Z]\.\s[a-zA-Z]+[,.]",text) #J. F. P. Kooijffrr,
@@ -300,21 +308,39 @@ class Textprocessed():
                 newsevenformat = self.check_doublon (result, newsevenformat)
             newsevenformat = list(set(newsevenformat))
             result = result + newsevenformat 
+
+        ########################################### Exception ############################################################################################
         
-        fourteenformat = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+[,.]",text) # Duncan Blythe, Roland Vollgraf,
-        if len(fourteenformat) >0:
+        e1 = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-zA-Z]+,\s[A-Z][a-z]+\s[A-Z][a-zA-Z]+[,.]",text) # Orial Vinyals, and Jeffery Deano.
+        if len(e1) >0:
             newsevenformat =[]
-            for item in fourteenformat:
+            for item in e1:
                 temp = item.split(", ")
                 newsevenformat.append(temp[0])
                 newsevenformat.append(temp[1][:-1])
             if len(result) >0: 
                 newsevenformat = self.check_doublon (result, newsevenformat)
             newsevenformat = list(set(newsevenformat))
-            result = result + newsevenformat
+            result = result + newsevenformat        
         
-        return result
-    
+        e2= self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z]\.\s[A-Z][a-z]+[,.]",text) #Guilhem Maillebuau, T. Bennanine, pour choper guilhem maillebuau dans le cas d'une exception  impaire 
+        e3 = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\s[A-Z][a-z]+\s[A-Z]\.\s[A-Z][a-z]+[,.]",text) ##Guilhem Maillebuau, james T. Bennanine, pour choper guilhem maillebuau dans le cas d'une exception  impaire 
+        e4 = self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z]\.\s[A-Z][a-z]+",text) # Guilhem Maillebuau, and James T. Bennanine pour choper guilhem maillebuau dans le cas d'une exception  impaire 
+        e5 =self.find_regex_style("[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z]\.\s[A-Z][a-z]+",text) #Guilhem Maillebuau, and T. Bennanine , pour choper guilhem maillebuau dans le cas d'une exception  impaire 
+        exceptionlist = e2 + e3 + e4 + e5
+        if len(exceptionlist) >0:
+            newsevenformat =[]
+            for item in exceptionlist:
+                temp = item.split(", ")
+                newsevenformat.append(temp[0])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat
+
+        return result   
+
+
     def get_format_full_name_two(self,listofreference,text): #ACM 2
         result =listofreference
         #Entitylist =[]
@@ -387,7 +413,19 @@ class Textprocessed():
                 newsevenformat = self.check_doublon (result, newsevenformat)
             newsevenformat = list(set(newsevenformat))
             result = result + newsevenformat
-            
+        
+        fourteen = self.find_regex_style('[A-Z][a-z]+\s[A-Z][a-z]+,\sand\s[A-Z][a-z]+\s[A-Z][a-z]+[,.]',text) # Orial Vinyals, and Jeffrey Deans
+        if len(fourteen) >0:
+            newsevenformat =[]
+            for item in fourteen:
+                temp = item.split(", and ")
+                newsevenformat.append(temp[0])
+                newsevenformat.append(temp[1][:-1])
+            if len(result) >0: 
+                newsevenformat = self.check_doublon (result, newsevenformat)
+            newsevenformat = list(set(newsevenformat))
+            result = result + newsevenformat 
+
         if len(result) > 0:
             regex_remove = re.compile('^[A-Z]\. [A-Z]\.$')
             regex_remove2 = re.compile('^[A-Z]\. [A-Z]$')

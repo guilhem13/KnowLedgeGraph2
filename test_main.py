@@ -25,7 +25,7 @@ def main_function(block_paper):
 
 if __name__ == '__main__':
 
-    nb_paper_to_request = 1
+    nb_paper_to_request = 70
     block_arxiv_size = 5
     #arxiv_data = Data(nb_paper_to_request).get_set_data()
     #print("nb papiers "+str(len(arxiv_data)))
@@ -57,7 +57,7 @@ if __name__ == '__main__':
             print(i) 
             papiers+= main_function(arxiv_data[i:i+block_arxiv_size])
             for papier in papiers: 
-                if len(papier.entities_from_reference)<15:
+                if len(papier.entities_from_reference)<15: #TODO Faut voir en général si c'est ok ou pas , inférieur à 2à je dirai 
                     servicetwocheckout =True                    
                     try:
                         print("use of cermine")
@@ -123,7 +123,8 @@ if __name__ == '__main__':
     #papiers = main_function()
     
     print(len(papiers))
+    """
     owl = ontology.Ontology()
     for papier in papiers: 
         owl.add_papier(papier)
-    owl.save('result.owl')
+    owl.save('result.owl')"""
