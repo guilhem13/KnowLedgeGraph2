@@ -3,33 +3,34 @@
 PDF Backend: pdfMiner
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+from __future__ import (absolute_import, division, print_function,
+                        unicode_literals)
 
-import sys
 import logging
+import sys
 from io import BytesIO
 from re import compile
 
 # Character Detection Helper
 import chardet
-
-# Find URLs in text via regex
-#from . import extractor
-
 # Setting `psparser.STRICT` is the first thing to do because it is
 # referenced in the other pdfparser modules
 from pdfminer import settings as pdfminer_settings
 
+# Find URLs in text via regex
+# from . import extractor
+
+
 pdfminer_settings.STRICT = False
 from pdfminer import psparser  # noqa: E402
-from pdfminer.pdfdocument import PDFDocument  # noqa: E402
-from pdfminer.pdfparser import PDFParser  # noqa: E402
-from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter  # noqa: E402
-from pdfminer.pdfpage import PDFPage  # noqa: E402
-from pdfminer.pdftypes import resolve1, PDFObjRef  # noqa: E402
 from pdfminer.converter import TextConverter  # noqa: E402
 from pdfminer.layout import LAParams  # noqa: E402
-
+from pdfminer.pdfdocument import PDFDocument  # noqa: E402
+from pdfminer.pdfinterp import (PDFPageInterpreter,  # noqa: E402
+                                PDFResourceManager)
+from pdfminer.pdfpage import PDFPage  # noqa: E402
+from pdfminer.pdfparser import PDFParser  # noqa: E402
+from pdfminer.pdftypes import PDFObjRef, resolve1  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
@@ -72,7 +73,7 @@ def make_compat_str(in_str):
 
 
 class Reference(object):
-    """ Generic Reference """
+    """Generic Reference"""
 
     ref = ""
     reftype = "url"
@@ -134,7 +135,7 @@ class ReaderBackend(object):
         return self.metadata
 
     def metadata_key_cleanup(self, d, k):
-        """ Recursively clean metadata dictionaries """
+        """Recursively clean metadata dictionaries"""
         if isinstance(d[k], (str, unicode)):
             d[k] = d[k].strip()
             if not d[k]:
@@ -155,12 +156,13 @@ class ReaderBackend(object):
                 self.metadata_key_cleanup(d[k], k2)
 
     def metadata_cleanup(self):
-        """ Clean metadata (delete all metadata fields without values) """
+        """Clean metadata (delete all metadata fields without values)"""
         for k in list(self.metadata.keys()):
             self.metadata_key_cleanup(self.metadata, k)
 
     def get_text(self):
         return self.text
+
     """
     def get_references(self, reftype=None, sort=False):
         refs = self.references
@@ -203,7 +205,7 @@ class PDFMinerBackend(ReaderBackend):
             metadata = resolve1(doc.catalog["Metadata"]).get_data()
             # print(metadata)  # The raw XMP metadata
             # print(xmp_to_dict(metadata))
-            #self.metadata.update(xmp_to_dict(metadata))
+            # self.metadata.update(xmp_to_dict(metadata))
             # print("---")
 
         # Extract Content
@@ -303,5 +305,3 @@ class PDFMinerBackend(ReaderBackend):
             if "URI" in obj_resolved["A"]:
                 # print("->", a["A"]["URI"])
                 return Reference(obj_resolved["A"]["URI"].decode("utf-8"), self.curpage)
-
-

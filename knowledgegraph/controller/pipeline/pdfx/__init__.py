@@ -1,20 +1,17 @@
+# from __future__ import absolute_import, division, print_function, unicode_literals
 
 
-#from __future__ import absolute_import, division, print_function, unicode_literals
-
-
-
-import os
 import logging
-import regex as re 
-
-#from .extractor import extract_urls
-from .backends import PDFMinerBackend
-from .exceptions import FileNotFoundError, PDFInvalidError
-from pdfminer.pdfparser import PDFSyntaxError
-
+import os
 from io import BytesIO
 from urllib.request import Request, urlopen
+
+import regex as re
+from pdfminer.pdfparser import PDFSyntaxError
+
+# from .extractor import extract_urls
+from .backends import PDFMinerBackend
+from .exceptions import FileNotFoundError, PDFInvalidError
 
 unicode = str
 
@@ -22,7 +19,6 @@ logger = logging.getLogger(__name__)
 
 
 class PDFx(object):
-
 
     # Available after init
     uri = None  # Original URI
@@ -48,6 +44,7 @@ class PDFx(object):
 
         def extract_urls(text):
             return set(re.findall(URL_REGEX, text, re.IGNORECASE))
+
         # Find out whether pdf is an URL or local file
         url = extract_urls(uri)
         self.is_url = len(url)
@@ -61,12 +58,12 @@ class PDFx(object):
                 self.stream = BytesIO(content)
             except Exception as e:
                 print("Pas bon ")
-                
-            try: 
-                name = self.fn.replace(".pdf","")
-                with open(str("knowledgegraph/file/"+name+".pdf"), 'wb') as f:
+
+            try:
+                name = self.fn.replace(".pdf", "")
+                with open(str("knowledgegraph/file/" + name + ".pdf"), "wb") as f:
                     f.write(content)
-            except Exception as e : 
+            except Exception as e:
                 print("N'enregistre pas le fichier")
 
         else:
@@ -82,8 +79,9 @@ class PDFx(object):
             raise PDFInvalidError("Invalid PDF (%s)" % unicode(e))
         except Exception as e:
             raise
-    
+
     def get_text(self):
         return self.reader.get_text()
-    def get_uri(self): 
+
+    def get_uri(self):
         return self.fn

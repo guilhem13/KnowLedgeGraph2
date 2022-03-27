@@ -1,24 +1,26 @@
 import nltk
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('maxent_ne_chunker')
-nltk.download('words')
+
+nltk.download("punkt")
+nltk.download("averaged_perceptron_tagger")
+nltk.download("maxent_ne_chunker")
+nltk.download("words")
 import json
 import os
+
 import flask
-import webappmanager
+from flasgger import Swagger, swag_from
 from flask import Response, render_template, request, send_from_directory
-from flasgger import Swagger
+from waitress import serve
 from werkzeug.utils import secure_filename
-from knowledgegraph.nlpmodel import service_one_extraction
-from knowledgegraph.models.notificationmodel import Notification
-from knowledgegraph.controller import Data,Textprocessed
-from knowledgegraph.owl import ontology
+
+import AWS.aws as aws
+import webappmanager
 from bdd.manager_bdd import session_creator
 from bdd.paper_model_orm import PapierORM
-import AWS.aws as aws
-from flasgger import swag_from
-from waitress import serve 
+from knowledgegraph.controller import Data, Textprocessed
+from knowledgegraph.models.notificationmodel import Notification
+from knowledgegraph.nlpmodel import service_one_extraction
+from knowledgegraph.owl import ontology
 
 session = session_creator()
 app = flask.Flask(__name__)
@@ -27,10 +29,11 @@ app.config["UPLOAD_FOLDER"] = "."
 
 
 ############################### get ner entities from one pdf  ########################################
-# Route where the client wants to get ner from an uploading pdf 
+# Route where the client wants to get ner from an uploading pdf
+
 
 @app.route("/getner", methods=["GET", "POST"])
-@swag_from('swagger/get_ner.yml')
+@swag_from("swagger/get_ner.yml")
 def upload_file():
     """Endpoint returning list of Entities based on
     AWS Comprehend service
@@ -51,14 +54,18 @@ def upload_file():
                     mimetype="application/json",
                 )
             else:
-                if file and webappmanager.allowed_file(file.filename):  # Check if the file has the correct extension
+                if file and webappmanager.allowed_file(
+                    file.filename
+                ):  # Check if the file has the correct extension
                     filename = secure_filename(file.filename)
                     file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-                    #ners = service_one_extraction.ServiceOne(Textprocessed(None).get_data_from_file(filename)).get_references()
-                    ners = aws.Awsner(4900).get_entities(Textprocessed(None).get_data_from_file(filename))
+                    # ners = service_one_extraction.ServiceOne(Textprocessed(None).get_data_from_file(filename)).get_references()
+                    ners = aws.Awsner(4900).get_entities(
+                        Textprocessed(None).get_data_from_file(filename)
+                    )
                     os.remove(filename)
-                    #return json.dumps([ob.__dict__ for ob in ners])
-                    return json.dumps(ners)                      
+                    # return json.dumps([ob.__dict__ for ob in ners])
+                    return json.dumps(ners)
                 else:
                     return Response(
                         Notification("3", "File type not permitted").message(),
@@ -67,68 +74,86 @@ def upload_file():
                     )
     return render_template("index.html")
 
+
 ############################### manage bdd ########################################
 
+
 @app.route("/arxiv/sizebdd")
-@swag_from('swagger/arxiv_sizebdd.yml')
+@swag_from("swagger/arxiv_sizebdd.yml")
 def size_of_bdd():
     nbrows = session.query(PapierORM).count()
     return Response(
-                    Notification("200","number of papers "+str(nbrows)).message(),
-                    status=200,
-                    mimetype="application/json",
-                )
+        Notification("200", "number of papers " + str(nbrows)).message(),
+        status=200,
+        mimetype="application/json",
+    )
+
 
 @app.route("/arxiv/feedbdd/<nb_paper>")
 def injestpaper(nb_paper):
-    webappmanager.feed_bdd(int(nb_paper),session)
+    webappmanager.feed_bdd(int(nb_paper), session)
     return Response(
-                    Notification("200","papers had been injested in database").message(),
-                    status=200,
-                    mimetype="application/json",
-                ) 
+        Notification("200", "papers had been injested in database").message(),
+        status=200,
+        mimetype="application/json",
+    )
 
 
 ############################### Request directly from arxiv########################################
 @app.route("/arxiv/pipeline/<nb_paper>")
 def create_pipeline_from_arxiv(nb_paper):
-    webappmanager.pipeline_from_arxiv(nb_paper)#TODO retourner en mode json 
+    webappmanager.pipeline_from_arxiv(nb_paper)  # TODO retourner en mode json
     return Response(
-                    Notification("200", "Done").message(), #TODO Retouner l'ontologie en version json 
-                    status=400,
-                    mimetype="application/json",
-                )
+        Notification(
+            "200", "Done"
+        ).message(),  # TODO Retouner l'ontologie en version json
+        status=400,
+        mimetype="application/json",
+    )
+
 
 ############################### Request papers from db ########################################
 @app.route("/arxiv/bdd/pipeline/<nb_paper>")
 def create_pipeline_from_bdd(nb_paper):
-    Done = webappmanager.pipeline_from_bdd(session, nb_paper)#TODO retourner en mode json
+    Done = webappmanager.pipeline_from_bdd(
+        session, nb_paper
+    )  # TODO retourner en mode json
     if Done == True:
         return Response(
-                        Notification("200", "Done").message(), #TODO Retouner l'ontologie en version json 
-                        status=400,
-                        mimetype="application/json",
-                    )
-    else: 
+            Notification(
+                "200", "Done"
+            ).message(),  # TODO Retouner l'ontologie en version json
+            status=400,
+            mimetype="application/json",
+        )
+    else:
         return Response(
-                        Notification("400", "Can't generate ontology").message(), #TODO Retouner l'ontologie en version json 
-                        status=400,
-                        mimetype="application/json",
-                    )
+            Notification(
+                "400", "Can't generate ontology"
+            ).message(),  # TODO Retouner l'ontologie en version json
+            status=400,
+            mimetype="application/json",
+        )
+
 
 ############################### get_ontology ########################################
 DOWNLOAD_DIRECTORY = "."
-@app.route('/get/ontology/<path:path>',methods = ['GET','POST'])
-@swag_from('swagger/get_ontology.yml')
+
+
+@app.route("/get/ontology/<path:path>", methods=["GET", "POST"])
+@swag_from("swagger/get_ontology.yml")
 def get_files(path):
     try:
-        return send_from_directory(DOWNLOAD_DIRECTORY,path, as_attachment=True)
+        return send_from_directory(DOWNLOAD_DIRECTORY, path, as_attachment=True)
     except FileNotFoundError:
-         return Response(
-                        Notification("404", "FileNotFound").message(), #TODO Retouner l'ontologie en version json 
-                        status=404,
-                        mimetype="application/json",
-                    )
+        return Response(
+            Notification(
+                "404", "FileNotFound"
+            ).message(),  # TODO Retouner l'ontologie en version json
+            status=404,
+            mimetype="application/json",
+        )
+
 
 ############################### Error handler ########################################
 # route for error 500
@@ -155,9 +180,11 @@ def internal_server_error(error):
         status=404,
         mimetype="application/json",
     )
+
+
 ##########################################################################################
 
 session.close()
 
 if __name__ == "__main__":
-    serve(app, host="0.0.0.0",port=5000)
+    serve(app, host="0.0.0.0", port=5000)
