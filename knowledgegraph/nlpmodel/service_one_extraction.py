@@ -75,15 +75,6 @@ class ServiceOne:
 
         return entities
 
-    def polyglot_entities(self):
-        text = Text(self.text_processed)
-        result = []
-        for entity in text.entities:
-            etext = " ".join(entity)
-            if entity.tag == "I-PER":
-                result.append(etext)
-        return result
-
     def convert_string2entity(self, liste):
         result = []
         for i in range(len(liste)):
@@ -92,17 +83,20 @@ class ServiceOne:
                 p = Entity()
                 p.set_prenom(" ".join(temp[0:-1]))
                 p.set_nom(temp[-1])
+                p.set_name(p.nom + p.prenom)
                 result.append(p)
             else:
                 if len(temp) > 1:  # cas normal nom prénom
                     p = Entity()
                     p.set_prenom(temp[0])
                     p.set_nom(temp[1])
+                    p.set_name(p.nom + p.prenom)
                     result.append(p)
                 else:
                     p = Entity()  # cas pas normal juste nom ou erreur
                     p.set_prenom("No firstname")
                     p.set_nom(temp[0])
+                    p.set_name(p.nom + p.prenom)
                     result.append(p)
         return result
 

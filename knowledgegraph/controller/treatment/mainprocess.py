@@ -1,22 +1,7 @@
-import glob
 import json
 import multiprocessing as mp
-import os
-import threading
 import time
-import urllib.request
-from multiprocessing import Process, cpu_count
-from multiprocessing.pool import ThreadPool as Pool  # TODO A enlever
-from pickle import TRUE
-from unittest import result
-
-import requests
-
-import test_cermine
-from knowledgegraph.controller import Data, Textprocessed
-from knowledgegraph.nlpmodel import (service_one_extraction,
-                                     service_two_extraction)
-
+from knowledgegraph.controller.treatment.processingpipeline import Textprocessed
 
 class Pipeline:
 
@@ -26,8 +11,6 @@ class Pipeline:
         self.arxiv_url = arxiv_url
         self.start = start
         pass
-
-    ###########################################################################################################"""
 
     def multi_process(self, data, out_queue):
         time.sleep(3)

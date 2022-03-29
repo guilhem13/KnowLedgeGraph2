@@ -1,11 +1,7 @@
 import re
 import unicodedata
-from cgitb import text
-from http.client import FORBIDDEN
-
-from knowledgegraph.controller import Data
+from knowledgegraph.controller.data.arxiv import Data
 from knowledgegraph.models import Entity
-
 from .pdfx import PDFx
 from .undesirable_char import undesirable_char_replacements
 
@@ -149,6 +145,21 @@ class Textprocessed:
                     listaverifier[i] = "TOREMOVE"
         listaverifier = [x for x in listaverifier if x != "TOREMOVE"]
         return listaverifier
+    
+    def filter_entities(self, entity):
+        check_forbidden_word = False
+        stop =False
+        index = 0
+        forbidden_list =['Analysis','Pattern','Recognition','Vision','Computer','Learning','Machine','Artificial','Intelligence','Computer','Science','Representation','Continuous','Facilities','Council','Dominican','Republic','Multiagent','Systems','Autonomous','Agents','Biometrics','Lab','Physics','Neural','Systems','Mathematics','Mathematical','Computational','Meta-Learning',"Parameter","Available","Online","Practical","Momentum","AGCN","AGCN","Engineering","Data","Retrieval","Programming","Research","Verification","Network"]
+        while index < len(forbidden_list) or stop == False: 
+            if entity.get_nom == forbidden_list[index]:
+                check_forbidden_word = True
+            if entity.get_prenom == forbidden_list[index]:
+                check_forbidden_word = True
+            if index ==len(forbidden_list)-1:
+                stop = True
+            index +=1
+        return check_forbidden_word
 
     def get_format_ieee(
         self, text
@@ -277,12 +288,10 @@ class Textprocessed:
         if len(result) > 0:
             regex_remove = re.compile("^[A-Z]\. [A-Z]\.$")
             regex_remove2 = re.compile("^[A-Z]\. [A-Z]$")
-            result = [
-                x for x in result if regex_remove.match(x) == None
-            ]  # remove "A. R "  part
+            result = [x for x in result if regex_remove.match(x) == None]  # remove "A. R "  part
             result = [x for x in result if regex_remove2.match(x) == None]
-            # result = [x[:-1] for x in result ]
             result = Data(1).process_authors(result)
+            result =[x for x in result if self.filter_entities(x)==False] #filter wrong found based on a specific format guilhem maillebuau, and pettter brown 
             Entitylist.extend(result)
         else:
             # print("liste nulle")
@@ -578,15 +587,9 @@ class Textprocessed:
         if len(result) > 0:
             regex_remove = re.compile("^[A-Z]\. [A-Z]\.$")
             regex_remove2 = re.compile("^[A-Z]\. [A-Z]$")
-            result = [
-                x for x in result if regex_remove.match(x) == None
-            ]  # remove "A. R "  part
+            result = [x for x in result if regex_remove.match(x) == None]  # remove "A. R "  part
             result = [x for x in result if regex_remove2.match(x) == None]
-            # result = [x[:-1] for x in result ]
-            # result = Data(1).process_authors(result)
-            # Entitylist.extend(result)
         else:
-            # print("liste nulle")
             pass
         return result
 
@@ -657,8 +660,9 @@ class Textprocessed:
                 p = Entity()
                 p.set_prenom(temp[1].strip())
                 p.set_nom(temp[0].strip())
-                p.set_name(str(temp[0] + temp[1]))
-                Entitylist.append(p)
+                p.set_name(str(temp[0].strip() + temp[1].strip()))
+                if self.filter_entities(p) == False: 
+                    Entitylist.append(p)
 
         index_end_apa = len(result) - 1
         result_full_name = self.get_format_full_name(result, text)

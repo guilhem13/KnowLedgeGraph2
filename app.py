@@ -17,10 +17,7 @@ import AWS.aws as aws
 import webappmanager
 from bdd.manager_bdd import session_creator
 from bdd.paper_model_orm import PapierORM
-from knowledgegraph.controller import Data, Textprocessed
 from knowledgegraph.models.notificationmodel import Notification
-from knowledgegraph.nlpmodel import service_one_extraction
-from knowledgegraph.owl import ontology
 
 session = session_creator()
 app = flask.Flask(__name__)

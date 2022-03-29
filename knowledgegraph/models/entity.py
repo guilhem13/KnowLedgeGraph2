@@ -19,6 +19,12 @@ class Entity:
 
     def set_name(self, x):
         self.name = x
+    
+    def get_prenom(self):
+        return self.prenom
+
+    def get_nom(self):
+        return self.nom
 
     def __eq__(self, other):
         equals = False

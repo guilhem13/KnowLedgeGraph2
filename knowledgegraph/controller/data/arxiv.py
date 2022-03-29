@@ -1,7 +1,4 @@
-import re
-
 import arxiv
-
 from knowledgegraph.models import Entity, Papier
 
 

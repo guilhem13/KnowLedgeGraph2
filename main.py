@@ -1,29 +1,46 @@
-from logging import exception
-
 import nltk
-
-from knowledgegraph.controller import Pipeline
-
 nltk.download("punkt")
 nltk.download("averaged_perceptron_tagger")
 nltk.download("maxent_ne_chunker")
 nltk.download("words")
 import ast
-import glob
 import multiprocessing as mp
 import os
-
+import sys
+import getopt
+import requests
+from pathlib import Path
+from knowledgegraph.controller.treatment.mainprocess import Pipeline
 from bdd.manager_bdd import session_creator
 from bdd.paper_model_orm import PapierORM
-from knowledgegraph.controller import Data, Textprocessed
+from knowledgegraph.controller.treatment.processingpipeline import Textprocessed
 from knowledgegraph.models import Entity, Papier
 from knowledgegraph.nlpmodel import (service_one_extraction,
                                      service_two_extraction)
 from knowledgegraph.owl import ontology
 
 
-def main_function(block_paper):
+def main_args(argv):
+   nbpapier = ''
+   outputfile = Path("./")
+   try:
+      opts, args = getopt.getopt(argv,"hi:o:",["help","nbpapier=","ofile="])
+   except getopt.GetoptError:
+      print('main.py -i <nbpapier> -o <outputfile>')
+      sys.exit(2)
+   for opt, arg in opts:
+      if opt == '-h':
+         print('main.py -i <nbpapier> -o <outputfile>')
+         sys.exit()
+      elif opt in ("-i", "--nbpapier"):
+         nbpapier = arg
+      elif opt in ("-o", "--ofile"):
+         outputfile = arg
+   print('nbpapier is '+nbpapier)
+   print('Output file is '+outputfile)
+   return nbpapier,outputfile
 
+def main_function(block_paper):
     p = Pipeline("https://export.arxiv.org/pdf/", 0)
     out_queue = mp.Queue()
     batch_size = 5
@@ -35,9 +52,9 @@ def convert_dict_to_entities(stringdict):
     res = ast.literal_eval(stringdict)
     for item in res:
         p = Entity()
-        p.set_prenom(item["prenom"])
-        p.set_nom(item["nom"])
-        p.set_name(item["prenom"] + item["nom"])
+        p.set_prenom(item["prenom"].strip())
+        p.set_nom(item["nom"].strip())
+        p.set_name(item["nom"] + item["prenom"])
         entities_list.append(p)
 
     return entities_list
@@ -113,11 +130,11 @@ def remove_file(listedepapier):
 
 
 if __name__ == "__main__":
-
-    nb_paper_to_request = 17
+    
+    nb_paper_to_request, filename = main_args(sys.argv[1:])
+    #nb_paper_to_request = 5 
+    nb_paper_to_request = int(nb_paper_to_request)
     block_arxiv_size = 5
-    # arxiv_data = Data(nb_paper_to_request).get_set_data()
-    # print("nb papiers "+str(len(arxiv_data)))
     papiers = []
 
     session = session_creator()
@@ -137,6 +154,7 @@ if __name__ == "__main__":
         )
 
     quotient = nb_paper_to_request / block_arxiv_size
+    owl = ontology.Ontology()
 
     if quotient > 1:
         length = int(block_arxiv_size * quotient)
@@ -148,7 +166,13 @@ if __name__ == "__main__":
                 temp_papiers = main_function(arxiv_data[i : i + block_arxiv_size])
                 for papier in temp_papiers:
                     if len(papier.entities_from_reference) < 15:
+                        response = requests.post(papier.link+".pdf")
+                        with open("knowledgegraph/file/"+papier.doi+".pdf", 'wb') as f:
+                            f.write(response.content)
                         papier = services_manager(papier)
+                for papier in papiers: 
+                    owl.add_papier(papier)
+                owl.save('knowledgegraph/owl/onto10.owl')
                 papiers += temp_papiers
                 remove_file(temp_papiers)
 
@@ -168,6 +192,7 @@ if __name__ == "__main__":
         remove_file(temp_papiers)
 
     print(len(papiers))
+
     """
     owl = ontology.Ontology()
     for papier in papiers: 

@@ -4,7 +4,8 @@ import multiprocessing as mp
 import arxiv
 
 from bdd.paper_model_orm import PapierORM
-from knowledgegraph.controller import Data, Pipeline
+from knowledgegraph.controller.data.arxiv import Data
+from knowledgegraph.controller.treatment.mainprocess import Pipeline
 from knowledgegraph.models import Entity, Papier
 from knowledgegraph.owl import ontology
 
@@ -91,9 +92,9 @@ def convert_dict_to_entities(stringdict):
     res = ast.literal_eval(stringdict)
     for item in res:
         p = Entity()
-        p.set_prenom(item["prenom"])
-        p.set_nom(item["nom"])
-        p.set_name(item["prenom"] + item["nom"])
+        p.set_prenom(item["prenom"].strip())
+        p.set_nom(item["nom"].strip())
+        p.set_name(item["nom"] + item["prenom"])
         entities_list.append(p)
 
     return entities_list

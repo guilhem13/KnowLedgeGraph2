@@ -3,12 +3,10 @@ import json
 """
 This class return a json with id_error and its message for the user
 """
-
-
 class Notification:
 
     id_ = None
-    error = None
+    notification = None
 
     def __init__(self, id_, notification):
         self.id = id_

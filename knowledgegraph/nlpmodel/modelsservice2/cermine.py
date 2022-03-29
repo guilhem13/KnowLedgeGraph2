@@ -37,15 +37,15 @@ class Cermine:
                     p.set_prenom("Noprenom")
                     if person.tag == "given-names":
                         if person.text is not None:
-                            p.set_prenom(person.text)
+                            p.set_prenom(person.text.strip())
                         else:
                             p.set_prenom("NoPrenom")
                     if person.tag == "surname":
                         if person.text is not None:
-                            p.set_nom(person.text)
+                            p.set_nom(person.text.strip())
                         else:
                             p.set_nom("Nonom")
-                    p.set_name(p.nom + p.prenom)
+                    p.set_name(p.prenom + p.nom)
                     result.append(p)
         print(len(result))
         return result
