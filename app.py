@@ -18,6 +18,7 @@ import webappmanager
 from bdd.manager_bdd import session_creator
 from bdd.paper_model_orm import PapierORM
 from knowledgegraph.models.notificationmodel import Notification
+from knowledgegraph.controller.treatment.processingpipeline import Textprocessed
 
 session = session_creator()
 app = flask.Flask(__name__)

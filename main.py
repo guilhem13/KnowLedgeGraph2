@@ -6,6 +6,7 @@ nltk.download("words")
 import ast
 import multiprocessing as mp
 import os
+import json 
 import sys
 import getopt
 import requests
@@ -92,7 +93,7 @@ def services_manager(papier):
         servicetwocheckout = False
         print("can't process with service two")
 
-    if servicetwocheckout == True:
+    if servicetwocheckout == False:
         print("use of service One")
         processor = Textprocessed("https://arxiv.org/pdf/" + str(papier.doi) + ".pdf")
         text_processed = processor.get_data_from_pdf()
@@ -121,12 +122,34 @@ def services_manager(papier):
     return papier
 
 
-def remove_file(listedepapier):
-    for papier in listedepapier:
+def remove_file(papier):
         try:
             os.remove(str("knowledgegraph/file/" + papier.doi + ".pdf"))
         except OSError as e:
             print("Error while deleting the file")
+
+
+
+def client_api_ner(self,papiers): 
+    links = [x.link for x in papiers]
+    json_data={}
+    for i in range(len(links)):
+        json_data[i] =links[i]
+    headers = {'content-type': 'application/json'}
+
+    r = requests.post(url = "http://localhost:6000/get/entities", data =json.dumps(json_data), headers =headers)
+    reponse = ast.literal_eval(r.text)
+    for item in reponse: 
+        papier_json = json.loads(item)
+        for papier in papiers:
+            if papier.link == papier_json.link:
+                papier.doi_in_text =papier_json.doi_in_text
+                papier.url_in_text = papier_json.url_in_text
+                papier.entities_include_in_text = papier_json.entities_include_in_text
+                papier.entities_from_reference = self.convert_dict_to_entities(papier_json.entities_from_reference)
+    
+    return papiers
+
 
 
 if __name__ == "__main__":
@@ -163,34 +186,41 @@ if __name__ == "__main__":
             print(i)
             if i + block_arxiv_size < length + 1:
                 stop += 5
-                temp_papiers = main_function(arxiv_data[i : i + block_arxiv_size])
+                papiers_t = client_api_ner(arxiv_data[i : i + block_arxiv_size])
+                #temp_papiers = main_function(arxiv_data[i : i + block_arxiv_size])
                 for papier in temp_papiers:
                     if len(papier.entities_from_reference) < 15:
                         response = requests.post(papier.link+".pdf")
                         with open("knowledgegraph/file/"+papier.doi+".pdf", 'wb') as f:
                             f.write(response.content)
                         papier = services_manager(papier)
+                        remove_file(papier)
+
                 for papier in papiers: 
                     owl.add_papier(papier)
                 owl.save('knowledgegraph/owl/onto10.owl')
                 papiers += temp_papiers
-                remove_file(temp_papiers)
 
         if nb_paper_to_request - stop > 0:
             temp_papiers = main_function(arxiv_data[stop:nb_paper_to_request])
             for papier in temp_papiers:
                 if len(papier.entities_from_reference) < 15:
+                    response = requests.post(papier.link+".pdf")
+                    with open("knowledgegraph/file/"+papier.doi+".pdf", 'wb') as f:
+                        f.write(response.content)
                     papier = services_manager(papier)
+                    remove_file(papier)
             papiers += temp_papiers
-            remove_file(temp_papiers)
     else:
         temp_papiers = main_function(arxiv_data[0:nb_paper_to_request])
         for papier in temp_papiers:
             if len(papier.entities_from_reference) < 15:
+                response = requests.post(papier.link+".pdf")
+                with open("knowledgegraph/file/"+papier.doi+".pdf", 'wb') as f:
+                    f.write(response.content)
                 papier = services_manager(papier)
+                remove_file(papier)
         papiers += temp_papiers
-        remove_file(temp_papiers)
-
     print(len(papiers))
 
     """
