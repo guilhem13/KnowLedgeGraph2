@@ -128,9 +128,18 @@ def remove_file(papier):
         except OSError as e:
             print("Error while deleting the file")
 
+def convert_json_to_entities(slistjson):
+    entities_list = []
+    for item in slistjson:
+        item_ = json.loads(json.dumps(item))
+        p = Entity()
+        p.set_prenom(item_["prenom"].strip())
+        p.set_nom(item_["nom"].strip())
+        p.set_name(item_["name"])
+        entities_list.append(p)
+    return entities_list
 
-
-def client_api_ner(self,papiers): 
+def client_api_ner(papiers): 
     links = [x.link for x in papiers]
     json_data={}
     for i in range(len(links)):
@@ -138,15 +147,16 @@ def client_api_ner(self,papiers):
     headers = {'content-type': 'application/json'}
 
     r = requests.post(url = "http://localhost:6000/get/entities", data =json.dumps(json_data), headers =headers)
-    reponse = ast.literal_eval(r.text)
+
+    reponse =  ast.literal_eval(r.text)
     for item in reponse: 
         papier_json = json.loads(item)
         for papier in papiers:
-            if papier.link == papier_json.link:
-                papier.doi_in_text =papier_json.doi_in_text
-                papier.url_in_text = papier_json.url_in_text
-                papier.entities_include_in_text = papier_json.entities_include_in_text
-                papier.entities_from_reference = self.convert_dict_to_entities(papier_json.entities_from_reference)
+            if papier.link == papier_json['link']:
+                papier.doi_in_text =papier_json['doi_in_text']
+                papier.url_in_text = papier_json['url_in_text']
+                papier.entities_include_in_text = papier_json['entities_include_in_text']
+                papier.entities_from_reference = convert_json_to_entities(papier_json['entities_from_reference'])
     
     return papiers
 
@@ -154,9 +164,9 @@ def client_api_ner(self,papiers):
 
 if __name__ == "__main__":
     
-    nb_paper_to_request, filename = main_args(sys.argv[1:])
+    #nb_paper_to_request, filename = main_args(sys.argv[1:])
     #nb_paper_to_request = 5 
-    nb_paper_to_request = int(nb_paper_to_request)
+    nb_paper_to_request = 5#int(nb_paper_to_request)
     block_arxiv_size = 5
     papiers = []
 
@@ -186,7 +196,7 @@ if __name__ == "__main__":
             print(i)
             if i + block_arxiv_size < length + 1:
                 stop += 5
-                papiers_t = client_api_ner(arxiv_data[i : i + block_arxiv_size])
+                temp_papiers = client_api_ner(arxiv_data[i : i + block_arxiv_size])
                 #temp_papiers = main_function(arxiv_data[i : i + block_arxiv_size])
                 for papier in temp_papiers:
                     if len(papier.entities_from_reference) < 15:
