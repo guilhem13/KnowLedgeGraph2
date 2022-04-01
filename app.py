@@ -137,12 +137,12 @@ def create_pipeline_from_bdd(nb_paper):
 ############################### get_ontology ########################################
 DOWNLOAD_DIRECTORY = "."
 
-
-@app.route("/get/ontology/<path:path>", methods=["GET", "POST"])
+@app.route("/get/ontology", methods=["GET", "POST"])
 @swag_from("swagger/get_ontology.yml")
-def get_files(path):
+def get_files():
+    base_path ="Knowledgegraph/owl/onto10.owl"
     try:
-        return send_from_directory(DOWNLOAD_DIRECTORY, path, as_attachment=True)
+        return send_from_directory(DOWNLOAD_DIRECTORY, base_path, as_attachment=True)
     except FileNotFoundError:
         return Response(
             Notification(

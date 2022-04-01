@@ -29,6 +29,7 @@ class Cermine:
         )
         root = tree.getroot()
         result = []
+        forbidden_list =['Analysis','Pattern','Recognition','Vision','Computer','Learning','Machine','Artificial','Intelligence','Computer','Science','Representation','Continuous','Facilities','Council','Dominican','Republic','Multiagent','Systems','Autonomous','Agents','Biometrics','Lab','Physics','Neural','Systems','Mathematics','Mathematical','Computational','Meta-Learning',"Parameter","Available","Online","Practical","Momentum","AGCN","AGCN","Engineering","Data","Retrieval","Programming","Research","Verification","Network"]
         for child in root.find("./back/ref-list"):
             for persons in child.findall("mixed-citation/string-name"):
                 for person in persons:
@@ -46,6 +47,9 @@ class Cermine:
                         else:
                             p.set_nom("Nonom")
                     p.set_name(p.prenom + p.nom)
-                    result.append(p)
-        print(len(result))
+
+                    if p.get_nom not in forbidden_list and p.get_prenom not in forbidden_list:
+                        result.append(p)
+
+        print("Cermine a trouvé un nombre d'entités de "+str(len(result)))
         return result

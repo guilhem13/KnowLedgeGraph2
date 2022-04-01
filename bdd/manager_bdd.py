@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-SQLALCHEMY_DATABASE_URI = "sqlite:///bdd/bddarxiv.db?check_same_thread=False"  # ajout de false pour la gestion de probleme des threads
+SQLALCHEMY_DATABASE_URI = "sqlite:///bdd/bddarxiv.db?check_same_thread=False"  # ajout de false pour la gestion de problèmes des threads
 Base = declarative_base()
 
 

@@ -76,10 +76,7 @@ def services_manager(papier):
                     j = 0
                     while j < (len(papier.entities_from_reference) - 1):
                         if stop == False:
-                            if (
-                                result[i].__eq__(papier.entities_from_reference[j])
-                                == True
-                            ):
+                            if (result[i].__eq__(papier.entities_from_reference[j]) == True ):
                                 stop = True
                         j += 1
                     if stop == False:

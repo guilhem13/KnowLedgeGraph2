@@ -3,7 +3,7 @@ import textwrap
 import boto3
 from botocore.exceptions import ClientError, NoCredentialsError
 
-from knowledgegraph.controller import Data
+from knowledgegraph.controller.data.arxiv import Data
 from knowledgegraph.models import Entity
 
 
