@@ -164,9 +164,9 @@ def client_api_ner(papiers):
 
 if __name__ == "__main__":
     
-    #nb_paper_to_request, filename = main_args(sys.argv[1:])
+    nb_paper_to_request, filename = main_args(sys.argv[1:])
     #nb_paper_to_request = 5 
-    nb_paper_to_request = 5#int(nb_paper_to_request)
+    nb_paper_to_request = int(nb_paper_to_request)
     block_arxiv_size = 5
     papiers = []
 
@@ -199,6 +199,7 @@ if __name__ == "__main__":
                 temp_papiers = client_api_ner(arxiv_data[i : i + block_arxiv_size])
                 #temp_papiers = main_function(arxiv_data[i : i + block_arxiv_size])
                 for papier in temp_papiers:
+                    papier.datepublished = str(papier.datepublished) # ajout
                     if len(papier.entities_from_reference) < 15:
                         response = requests.post(papier.link+".pdf")
                         with open("knowledgegraph/file/"+papier.doi+".pdf", 'wb') as f:
@@ -206,31 +207,43 @@ if __name__ == "__main__":
                         papier = services_manager(papier)
                         remove_file(papier)
 
-                for papier in papiers: 
+                for papier in temp_papiers: 
                     owl.add_papier(papier)
                 owl.save('knowledgegraph/owl/onto10.owl')
-                papiers += temp_papiers
+                #papiers += temp_papiers
 
         if nb_paper_to_request - stop > 0:
-            temp_papiers = main_function(arxiv_data[stop:nb_paper_to_request])
+            #temp_papiers = main_function(arxiv_data[stop:nb_paper_to_request])
+            temp_papiers = client_api_ner(arxiv_data[stop:nb_paper_to_request])
             for papier in temp_papiers:
+                papier.datepublished = str(papier.datepublished) # ajout
                 if len(papier.entities_from_reference) < 15:
                     response = requests.post(papier.link+".pdf")
                     with open("knowledgegraph/file/"+papier.doi+".pdf", 'wb') as f:
                         f.write(response.content)
                     papier = services_manager(papier)
                     remove_file(papier)
-            papiers += temp_papiers
+
+            for papier in temp_papiers: 
+                owl.add_papier(papier)
+            owl.save('knowledgegraph/owl/onto10.owl')
+            #papiers += temp_papiers
     else:
-        temp_papiers = main_function(arxiv_data[0:nb_paper_to_request])
+        temp_papiers = client_api_ner(arxiv_data[0:nb_paper_to_request])
+        #temp_papiers = main_function(arxiv_data[0:nb_paper_to_request])
         for papier in temp_papiers:
+            papier.datepublished = str(papier.datepublished) # ajout
             if len(papier.entities_from_reference) < 15:
                 response = requests.post(papier.link+".pdf")
                 with open("knowledgegraph/file/"+papier.doi+".pdf", 'wb') as f:
                     f.write(response.content)
                 papier = services_manager(papier)
                 remove_file(papier)
-        papiers += temp_papiers
+
+        for papier in temp_papiers: 
+            owl.add_papier(papier)
+        owl.save('knowledgegraph/owl/onto10.owl')
+        #papiers += temp_papiers
     print(len(papiers))
 
     """
