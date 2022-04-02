@@ -673,6 +673,7 @@ class Textprocessed:
             result2 += result_full_name2
         if len(result2) > 0:
             result2 = Data(1).process_authors(result2[index_end_apa:])
+            result2 =[x for x in result2 if self.filter_entities(x)==False] ####CHANGE HERE FOR REMOVE ANALYSIS PATTERN
             Entitylist.extend(result2)
 
         return Entitylist

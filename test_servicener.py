@@ -15,6 +15,7 @@ def convert_json_to_entities(slistjson):
 
     return entities_list
 
+
 """'papier_2':'https://export.arxiv.org/pdf/2203.06416v1',
     'papier_3':'https://export.arxiv.org/pdf/2203.07372v1'"""
 

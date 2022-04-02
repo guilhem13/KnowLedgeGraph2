@@ -1,23 +1,27 @@
 # Arxiv ontology API 
 
-It's a simple REST API which can : 
-- return entities of an uploading pdf 
-- return ontology from arxiv papers 
-- manage arxiv database 
+It's a simple API which can : 
+- return entities of an uploading pdf (front)
+- return ontology made with 1000 papers in zip format (front)
+- manage arxiv database (front)
+- Process papers to generate ontology (back)
 
 ***
 
 ### Features included 
 
- *  Feature 1 :  Upload pdf. Save its data into a database and return Id 's document
-      * Endpoint : /documents
+ *  Feature 1 : return entities of an uploading pdf
+      * Endpoint : /getner
       * Type : POST
- *  Feature 2 : Get the metadata of an uploading file by its id  
-      * Endpoint : /documents/{id}
+ *  Feature 2 : get ontology made with 1000 papers  
+      * Endpoint : /get/ontology
       * Type : GET
- *  Feature 3 : Request the text of files uploaded by id
-      * Endpoint : /text/{id}.txt
+ *  Feature 3 : get the size of the database
+      * Endpoint : /arxiv/sizebdd
       * Type : Get
+ *  Feature 4 : get the size of the database
+      * Endpoint : /arxiv/sizebdd
+      * Type : Get 
 
 ***
 ## Installation 
