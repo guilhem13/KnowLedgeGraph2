@@ -4,6 +4,9 @@ from .modelsservice2.grobid import Grobid
 
 class ServiceTwo:
 
+    """
+    Service which use cermine to extract entities from text. it can use grobid 
+    """
     path = None
 
     def __init__(self, path):

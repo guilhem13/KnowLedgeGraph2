@@ -7,6 +7,9 @@ from knowledgegraph.models import Entity
 
 class Grobid:
 
+    """
+    Grobid client object to manage response from grobid server
+    """
     path = None
 
     def __init__(self, path):

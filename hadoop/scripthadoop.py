@@ -2,7 +2,7 @@ from logging import exception
 from hdfs.ext.kerberos import KerberosClient
 
 folder_hdfs = "/education/cs_2022_spring_1/g.maillebuau-cs/project"
-csv_localisation = "/home/guigui/Documents/ProjetPyhtonAPI/hadoop/metadata_database.csv"
+csv_localisation = "ProjetPyhtonAPI/hadoop/metadata_database.csv"#"/home/guigui/Documents/ProjetPyhtonAPI/hadoop/metadata_database.csv"
 
 
 try:

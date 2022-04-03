@@ -4,6 +4,10 @@ from knowledgegraph.models import Entity, Papier
 
 class Data:
 
+    """
+    Object witch interact with arxiv Api in order to get data from paper
+    """
+
     count = 10
 
     def __init__(self, count):

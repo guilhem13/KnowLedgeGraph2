@@ -20,12 +20,16 @@ def convert_json_to_entities(slistjson):
     'papier_3':'https://export.arxiv.org/pdf/2203.07372v1'"""
 
 json_data = {
-    'papier_1':'https://export.arxiv.org/pdf/2203.06419v1',  
-}
+            'papier_1':'https://export.arxiv.org/pdf/2203.00193v2',
+            'papier_2':'https://export.arxiv.org/pdf/2203.00192v1',
+            'papier_3':'https://export.arxiv.org/pdf/2203.00190v3',  
+            'papier_4':'https://export.arxiv.org/pdf/2203.00183v2',
+            'papier_5':'https://export.arxiv.org/pdf/2203.00160v1'
+            }
 
 import ast 
 headers = {'content-type': 'application/json'}
-r = requests.post(url = "http://localhost:6000/get/entities", data =json.dumps(json_data), headers =headers)
+r = requests.post(url = "http://localhost:5000/get/entities", data =json.dumps(json_data), headers =headers)
 
 print(type(r.text))
 a = ast.literal_eval(r.text)
@@ -37,7 +41,7 @@ for item in a :
     print(b['entities_from_reference'])
     print(type(b['entities_from_reference'])) 
     c = convert_json_to_entities(b['entities_from_reference'])
-    print(c[0].prenom)
+    print(b)
             
   
 

@@ -7,6 +7,11 @@ from .undesirable_char import undesirable_char_replacements
 
 
 class Textprocessed:
+
+    """
+    Class which makes the processing of paper in order to extract its entities
+    """
+
     url = None
     raw_text = None
 
@@ -29,8 +34,6 @@ class Textprocessed:
         except:
             temp = Pdf_Readed
 
-        # TODO inclure
-        """[u'references',u'r\u00C9f\u00E9rences',u'r\u00C9f\u00C9rences',u'r\xb4ef\xb4erences',u'bibliography',u'bibliographie',u'literaturverzeichnis',u'citations',u'refs',u'publications',u'r\u00E9fs',u'r\u00C9fs',u'reference',u'r\u00E9f\u00E9rence',u'r\u00C9f\u00C9rence']"""
 
         keyword_list = [
             "\n\nReferences\n\n",
@@ -40,7 +43,7 @@ class Textprocessed:
             "REFERENCES",
             "References\n",
             "References",
-        ]  # TODO voir les cas où c'est juste " Reference " exeple => https://arxiv.org/pdf/2202.03954v1.pdf
+        ]  
         forbidden_part = [
             "Appendices",
             "Appendix",
@@ -70,7 +73,7 @@ class Textprocessed:
                         keyword = str(keyword[0])
                         indexstart = temp.index(
                             keyword
-                        )  # check ici parcequ'il y a plusieurs versions de références
+                        )  
                         indexstartstring = temp[indexstart:]
                         indexend = [
                             indexstartstring.find(ele) for ele in forbidden_part
@@ -86,7 +89,7 @@ class Textprocessed:
                         keyword = str(keyword[-1])
                         indexstart = temp.index(
                             keyword
-                        )  # check ici parcequ'il y a plusieurs versions de références
+                        )  
                         indexstartstring = temp[indexstart:]
                         indexend = [
                             indexstartstring.find(ele) for ele in forbidden_part
@@ -102,7 +105,7 @@ class Textprocessed:
                     if temp.count("Reference") == 1:
                         indexstart = temp.index(
                             "Reference"
-                        )  # check ici parcequ'il y a plusieurs versions de références
+                        )  
                         indexend = [
                             temp[indexstart:].find(ele) for ele in forbidden_part
                         ]
@@ -152,9 +155,9 @@ class Textprocessed:
         index = 0
         forbidden_list =['Analysis','Pattern','Recognition','Vision','Computer','Learning','Machine','Artificial','Intelligence','Computer','Science','Representation','Continuous','Facilities','Council','Dominican','Republic','Multiagent','Systems','Autonomous','Agents','Biometrics','Lab','Physics','Neural','Systems','Mathematics','Mathematical','Computational','Meta-Learning',"Parameter","Available","Online","Practical","Momentum","AGCN","AGCN","Engineering","Data","Retrieval","Programming","Research","Verification","Network"]
         while index < len(forbidden_list) or stop == False: 
-            if entity.get_nom == forbidden_list[index]:
+            if entity.nom == forbidden_list[index]:
                 check_forbidden_word = True
-            if entity.get_prenom == forbidden_list[index]:
+            if entity.prenom == forbidden_list[index]:
                 check_forbidden_word = True
             if index ==len(forbidden_list)-1:
                 stop = True
@@ -221,7 +224,7 @@ class Textprocessed:
             if len(specifc_format_exception) > 0
             else []
         )
-        # TODO A voir car ils sont à l'origine de pleins de problème
+       
         specific_format_exception2 = self.find_regex_style(
             "[A-Z][a-z]+-[A-Z][a-z]+\s[A-Z][a-z]+[,.]", text
         )  # Minh-Thong Luang
@@ -278,12 +281,14 @@ class Textprocessed:
             firstformat = list(set(firstformat))
             result = result + firstformat
 
+        index_end_ieee = len(result)-1
+        result2=[]
         result_full_name = self.get_format_full_name(result, text)
         if len(result_full_name) > 0:
-            result = result_full_name
+            result2 += result_full_name
         result_full_name2 = self.get_format_full_name_two(result, text)
         if len(result_full_name2) > 0:
-            result = result_full_name2
+            result2 += result_full_name2
 
         if len(result) > 0:
             regex_remove = re.compile("^[A-Z]\. [A-Z]\.$")
@@ -293,9 +298,12 @@ class Textprocessed:
             result = Data(1).process_authors(result)
             result =[x for x in result if self.filter_entities(x)==False] #filter wrong found based on a specific format guilhem maillebuau, and pettter brown 
             Entitylist.extend(result)
-        else:
-            # print("liste nulle")
-            pass
+
+        if len(result2)>0:
+            result2 = Data(1).process_authors(result2[index_end_ieee:])
+            result2 = [x for x in result2 if self.filter_entities(x)==False]
+            Entitylist.extend(result2)
+
         return Entitylist
 
     def get_format_full_name(self, listofreference, text):  # ACM
@@ -686,24 +694,12 @@ class Textprocessed:
         if len(check_apa_style) > 0:
             result_second_format = self.get_format_apa(text)
             print("inside APA")
-            # result_format_full_name = self.get_format_full_name(text)
-            # result_format_full_name_two = self.get_format_full_name_two(text)
-            final_entity_list = result_second_format  # result_format_full_name + result_format_full_name_two + result_second_format
+            final_entity_list = result_second_format 
         else:
             result_format_ieee = self.get_format_ieee(text)
             print("inside IEEE")
-            # result_format_full_name = self.get_format_full_name(text)
-            # result_format_full_name_two = self.get_format_full_name_two(text)
-            final_entity_list = result_format_ieee  # + result_format_full_name + result_format_full_name_two
+            final_entity_list = result_format_ieee
 
-        if len(final_entity_list) == 0:  # TODO gérer le cas où ya pas de nom et prenom
-            p = Entity()
-            p.set_prenom("guilhem")
-            p.set_nom("maillebuau")
-            p.set_name("guilhemaillebuau")
-            final_entity_list.append(p)
-
-        # listevide =[]
         return final_entity_list
 
     def find_url_in_text(self):

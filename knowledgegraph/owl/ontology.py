@@ -4,6 +4,10 @@ from owlready2 import get_ontology
 
 
 class Ontology:
+
+    """
+    object which manage the creation and updating of ontology 
+    """
     def __init__(self):
         self.template_onto = get_ontology("file://knowledgegraph/owl/onto10.owl").load()
         self.foaf = self.template_onto.get_imported_ontologies().first().load()

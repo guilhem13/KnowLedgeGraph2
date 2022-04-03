@@ -1,5 +1,7 @@
 class Papier:
-
+    """
+    Data model witch represents a paper
+    """
     title = (None,)
     doi = None
     authors = (None,)

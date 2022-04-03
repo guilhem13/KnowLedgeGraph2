@@ -1,7 +1,7 @@
 from operator import itemgetter
 
 import nltk
-from nltk.tag import StanfordNERTagger  # , StanfordPOSTagger
+from nltk.tag import StanfordNERTagger  
 
 PATH_TO_JAR = "knowledgegraph/nlpmodel/rawnlpmodel/stanford-ner.jar"
 PATH_TO_MODEL = (
@@ -12,6 +12,10 @@ from knowledgegraph.models import Entity
 
 
 class ServiceOne:
+
+    """
+    Service which use nltk and Stanford ner to extract entities from text 
+    """
 
     text_processed = None
 

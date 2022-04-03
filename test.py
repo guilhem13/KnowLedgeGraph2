@@ -174,10 +174,24 @@ for f in files:
 
 for i in range(0, 17, 5):
     print(i)"""
+from knowledgegraph.models import Entity, Papier
 
-import json 
+p = Entity()
+p.set_nom("Machine")
+p.set_prenom("gaetan")
+def filter_entities( entity):
+        check_forbidden_word = False
+        stop =False
+        index = 0
+        forbidden_list =['Analysis','Pattern','Recognition','Vision','Computer','Learning','Machine','Artificial','Intelligence','Computer','Science','Representation','Continuous','Facilities','Council','Dominican','Republic','Multiagent','Systems','Autonomous','Agents','Biometrics','Lab','Physics','Neural','Systems','Mathematics','Mathematical','Computational','Meta-Learning',"Parameter","Available","Online","Practical","Momentum","AGCN","AGCN","Engineering","Data","Retrieval","Programming","Research","Verification","Network"]
+        while index < len(forbidden_list) or stop == False: 
+            if entity.nom == forbidden_list[index]:
+                check_forbidden_word = True
+            if entity.prenom == forbidden_list[index]:
+                check_forbidden_word = True
+            if index ==len(forbidden_list)-1:
+                stop = True
+            index +=1
+        return check_forbidden_word
 
-b = a[0]
-c = json.loads(b)
-print(type(c))
-print(c['link'])
+print(filter_entities(p))

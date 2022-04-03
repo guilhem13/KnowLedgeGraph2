@@ -16,7 +16,7 @@ def clean_string(rowinformation):
     return rowinformation
 
 
-f = open("hadoop/metadata_database2.csv", "w")
+f = open("hadoop/metadata_database.csv", "w")
 out = csv.writer(f)
 out.writerow(["doi", "title", "authors", "link", "summary", "date_published"])
 

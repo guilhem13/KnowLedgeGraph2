@@ -1,7 +1,7 @@
 # Arxiv ontology API 
 
 It's a simple API which can : 
-- return entities of an uploading pdf (front)
+- return entities of an uploading pdf thanks to AWS comprehend Service(front)
 - return ontology made with 1000 papers in zip format (front)
 - manage arxiv database (front)
 - Process papers to generate ontology (back)
@@ -59,5 +59,18 @@ if flask run doesn't work make :
 
 ```shell
 python -m flask run
+```
+***
+## Run with docker
+
+### Installation
+
+```shell
+docker build -t projetpythonapi .
+```
+### Installation
+
+```shell
+docker run -d -p 5000:5000 projetpythonapi
 ```
 
