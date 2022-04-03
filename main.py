@@ -23,9 +23,9 @@ from knowledgegraph.owl import ontology
 
 def main_args(argv):
    nbpapier = ''
-   outputfile = Path("./")
+   #outputfile = Path("./")
    try:
-      opts, args = getopt.getopt(argv,"hi:o:",["help","nbpapier=","ofile="])
+      opts, args = getopt.getopt(argv,"hi:",["help","nbpapier="])
    except getopt.GetoptError:
       print('main.py -i <nbpapier> -o <outputfile>')
       sys.exit(2)
@@ -35,11 +35,9 @@ def main_args(argv):
          sys.exit()
       elif opt in ("-i", "--nbpapier"):
          nbpapier = arg
-      elif opt in ("-o", "--ofile"):
-         outputfile = arg
    print('nbpapier is '+nbpapier)
-   print('Output file is '+outputfile)
-   return nbpapier,outputfile
+   #print('Output file is '+outputfile)
+   return nbpapier
 
 def main_function(block_paper):
     p = Pipeline("https://export.arxiv.org/pdf/", 0)
@@ -162,7 +160,7 @@ def client_api_ner(papiers):
 
 if __name__ == "__main__":
     
-    nb_paper_to_request, filename = main_args(sys.argv[1:])
+    nb_paper_to_request = main_args(sys.argv[1:])
     nb_paper_to_request = int(nb_paper_to_request)
     block_arxiv_size = 5
     papiers = []

@@ -20,6 +20,7 @@ class Awsner:
         )
         dict = {}
         compteur_chunk = 0
+        check = False
 
         for chunk in chunks:
 
@@ -51,13 +52,12 @@ class Awsner:
                         title_objects.append(entity["Text"])
 
             except NoCredentialsError:
-                print("Unable to locate AWS credentials")
+                check = True
+                print("No AWS credentials")
+                
             except ClientError:
-                print(
-                    "An error occurred (UnrecognizedClientException) \
-                when calling the DetectEntities operation: \
-                The security AWS token included in the request is invalid"
-                )
+                check = True
+                print("Something went wrong with the security token")
 
             information = {}
             information["organisations"] = organisations_objects
@@ -75,4 +75,7 @@ class Awsner:
             dict[chunk_num] = information
             compteur_chunk += 1
 
-        return dict
+        if check==True: 
+            return check 
+        else: 
+            return dict

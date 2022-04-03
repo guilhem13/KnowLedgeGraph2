@@ -62,8 +62,14 @@ def upload_file():
                         Textprocessed(None).get_data_from_file(filename)
                     )
                     os.remove(filename)
-                    # return json.dumps([ob.__dict__ for ob in ners])
-                    return json.dumps(ners)
+                    if ners == True: 
+                        return Response(
+                        Notification("400", "Problem with the AWS credentials").message(),
+                        status=400,
+                        mimetype="application/json",
+                    )
+                    else:
+                        return json.dumps(ners)
                 else:
                     return Response(
                         Notification("3", "File type not permitted").message(),
@@ -137,7 +143,7 @@ def create_pipeline_from_bdd(nb_paper):
 ############################### get_ontology ########################################
 DOWNLOAD_DIRECTORY = "."
 
-@app.route("/get/ontology", methods=["GET", "POST"])
+@app.route("/get/ontology")
 @swag_from("swagger/get_ontology.yml")
 def get_files():
     base_path ="Knowledgegraph/owl/onto10.owl"

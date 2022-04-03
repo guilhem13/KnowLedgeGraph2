@@ -18,10 +18,10 @@ It's a simple API which can :
       * Type : GET
  *  Feature 3 : get the size of the database
       * Endpoint : /arxiv/sizebdd
-      * Type : Get
+      * Type : GET
  *  Feature 4 : get the size of the database
       * Endpoint : /arxiv/sizebdd
-      * Type : Get 
+      * Type : GET 
 
 ***
 ## Installation 
@@ -72,5 +72,37 @@ docker build -t projetpythonapi .
 
 ```shell
 docker run -d -p 5000:5000 projetpythonapi
+```
+
+***
+## Usage
+***
+
+## Entrypoint /getner 
+
+You have to add you AWS security token. For that: 
+- Be sure to start your Lab
+- Create a folder in your computer  => ~/.aws/ 
+- Add a credentials file inside this folder 
+- Then you have  ~/.aws/credentials
+- Inside this credentials file add the content of the Cloud Access AWS with vi or vim
+
+The cloud access aws looks like that : 
+
+```shell
+[default]
+aws_access_key_id=********
+aws_secret_access_key=********
+aws_session_token=**********
+```
+Once that, you can use this entrypoint 
+
+You can watch the documentation with => http://localhost:5000/apidocs/
+
+Usage of the entrypoint: 
+- Directly by the web interface via http://localhost:5000/getner
+- By curl 
+```shell
+curl -F 'file=@document.pdf' localhost:5000/getner
 ```
 

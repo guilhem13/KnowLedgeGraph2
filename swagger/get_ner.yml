@@ -22,7 +22,7 @@ responses:
             type: "array"
             
     '400':
-          description: "Wrong files uploaded "
+          description: "Wrong files uploaded or security problem"
           schema:
             type: "array"
             
